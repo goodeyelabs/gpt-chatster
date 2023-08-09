@@ -12,6 +12,7 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
     const bodyEl = document.body;
     const [overlayIsOpen, setOverlayIsOpen] = useState(false);
     const [overlayIsClosing, setOverlayIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     const newContent = React.cloneElement(
         content,
@@ -77,16 +78,24 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
         return () => window.removeEventListener('keydown', handleEsc);
     },[]);
 
-    return (
-        <>
-            {React.cloneElement(
-                children,
-                {onClick: () => setOverlayIsOpen(true)}
-            )}
-            {overlayIsOpen && createPortal(
-                <Wrapper />,
-                bodyEl
-            )}
-        </>
-    )
+    useEffect(() => {
+        setIsMounted(true);
+    },[setIsMounted])
+
+    if (isMounted) {
+        return (
+            <>
+                {React.cloneElement(
+                    children,
+                    {onClick: () => setOverlayIsOpen(true)}
+                )}
+                {overlayIsOpen && createPortal(
+                    <Wrapper />,
+                    bodyEl
+                )}
+            </>
+        )
+    }
+
+    return null
 }
