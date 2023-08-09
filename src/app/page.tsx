@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'GPT Chatty - By Goodeye Labs',
+  title: 'GPT Chatty - Goodeye Labs',
 }
 
 export default function Home() {
