@@ -12,13 +12,13 @@ function Header() {
                 <Link className="grid" href="/">
                     <div className='grid grid-flow-col gap-2 items-center select-none cursor-pointer'>
                         <Image 
-                            src='/logo.svg'
+                            src='/logo.png'
                             alt='Logo'
                             width='64'
                             height='64'
                             className='w-6 h-6'
                         />
-                        <p className='text-zinc-800 font-bold text-xl tracking-tight'>Goodeye</p>
+                        <p className='text-zinc-800 font-bold text-xl tracking-tight'>GPT Chatty</p>
                     </div>
                 </Link>
                 <div className='grid grid-flow-col gap-10'>

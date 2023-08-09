@@ -13,7 +13,7 @@ function Button({ icon, text, classProp, onClick }:buttonProps) {
     )
 
     return (
-        <button className='group cursor-pointer hidden md:grid grid-flow-col gap-2 text-sm font-semibold text-white pl-3 pr-4 py-2 bg-gradient-to-r from-[var(--color-pink)] to-[var(--color-purple)] hover:bg-gradient-to-l transition-all duration-75 rounded-lg border-0 outline-none select-none'>
+        <button className='group cursor-pointer hidden md:grid grid-flow-col gap-2 text-sm font-semibold text-white pl-3 pr-4 py-2 bg-gradient-to-r from-[var(--color-light-blue)] to-[var(--color-dark-blue)] hover:bg-gradient-to-l transition-all duration-75 rounded-lg border-0 outline-none select-none'>
             {styledIcon}
             <span>{text}</span>
         </button>
