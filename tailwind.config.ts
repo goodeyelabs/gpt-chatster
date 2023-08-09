@@ -62,9 +62,6 @@ const config: Config = {
   plugins: [
     plugin(function ({ addComponents }) {
       addComponents({
-        '.logo .st0:nth-of-type(3)': {
-          fill: 'var(--color-pink)',
-        },
         '.flag': {
           display: 'block',
           width: '26px',

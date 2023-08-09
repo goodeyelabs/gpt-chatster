@@ -66,7 +66,7 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
   
           return () => clearTimeout(timer);
       }
-    }, [overlayIsClosing]);
+    }, [overlayIsClosing, bodyEl.classList]);
 
     useEffect(() => {
         function handleEsc(event: any) {
