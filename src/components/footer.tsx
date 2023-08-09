@@ -11,8 +11,8 @@ function Footer() {
                     <div className='items-center grid grid-flow-col gap-2'>
                         <p className='text-sm text-zinc-500'>Made in</p>
                         <Image 
-                            src='/logo.svg'
-                            alt='Logo'
+                            src='/uk-flag.svg'
+                            alt='UK Flag'
                             width='64'
                             height='64'
                             className='flag'
