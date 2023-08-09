@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <View>
-      <div className='grid h-screen w-screen place-content-center pb-[4rem]'>
-        <Image 
-          src='/logo.png'
-          alt='Logo'
-          width='100'
-          height='100'
-          className='logo'
-        />
-      </div>
+        <div className='grid h-screen w-screen place-content-center pb-[4rem]'>
+            <Image 
+                src='/logo.png'
+                alt='Logo'
+                width='64'
+                height='69'
+                className='h-fit w-30'
+            />
+        </div>
     </View>
   )
 }

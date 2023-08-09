@@ -25,8 +25,8 @@ function Footer() {
                             src='/logo.png'
                             alt='Logo'
                             width='64'
-                            height='64'
-                            className=' p-2 md:p-0 w-12 h-12 md:w-6 md:h-6'
+                            height='69'
+                            className=' p-2 md:p-0 w-12 h-fill md:w-6 md:h-fit'
                         />
                   </div>
             </div>

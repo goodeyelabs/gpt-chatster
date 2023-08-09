@@ -1,4 +1,4 @@
-import { Bars3Icon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, HandRaisedIcon, SunIcon } from '@heroicons/react/24/outline'
 import Button from './button'
 import Overlay from './overlay'
 import Contact from '@/views/contact'
@@ -15,8 +15,8 @@ function Header() {
                             src='/logo.png'
                             alt='Logo'
                             width='64'
-                            height='64'
-                            className='w-6 h-6'
+                            height='69'
+                            className='w-6 h-fit'
                         />
                         <p className='text-zinc-800 font-bold text-xl tracking-tight'>GPT Chatster</p>
                     </div>
@@ -45,6 +45,9 @@ function Header() {
                             />
                         </div>
                     </Overlay>
+                    <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid select-none'>
+                        <SunIcon className="h-6 w-6 text-zinc-800 group-hover:text-blue-400" />
+                    </div>
                     <Overlay overlayType={'drawer-right'} content={<div><p>Side menu</p></div>}>
                         <div className='group transition-all duration-75 items-center cursor-pointer grid md:hidden select-none'>
                             <Bars3Icon className="h-6 w-6 text-zinc-800 group-hover:text-blue-400" />

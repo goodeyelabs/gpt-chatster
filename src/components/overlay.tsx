@@ -95,5 +95,9 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
         )
     }
 
-    return null
+    return (
+        <>
+            {children}
+        </>    
+    )
 }

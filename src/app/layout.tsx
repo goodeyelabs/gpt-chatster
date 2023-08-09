@@ -19,8 +19,8 @@ export default function RootLayout({
     <>
       <GTM />
       <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+        <body className={inter.className}>{children}</body>
+      </html>
     </>
   )
 }
