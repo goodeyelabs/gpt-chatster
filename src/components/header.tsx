@@ -2,31 +2,40 @@ import { Bars3Icon, HandRaisedIcon } from '@heroicons/react/24/outline'
 import Button from './button'
 import Overlay from './overlay'
 import Image from 'next/image'
+import Link from 'next/link';
 
 function Header() {
     return (
         <div className='grid col-span-full bg-white h-16 sticky top-0 border-b border-slate-200 px-4 sm:px-8'>
             <div className='grid h-full w-full mx-auto max-w-7xl items-center justify-items-start grid-cols-[1fr_auto]'>
-                <div className='grid grid-flow-col gap-2 items-center select-none cursor-pointer'>
-                    <Image 
-                        src='/logo.svg'
-                        alt='Logo'
-                        width='64'
-                        height='64'
-                        className='w-6 h-6'
-                    />
-                    <p className='text-zinc-800 font-bold text-xl tracking-tight'>Goodeye</p>
-                </div>
+                <Link className="grid" href="/">
+                    <div className='grid grid-flow-col gap-2 items-center select-none cursor-pointer'>
+                        <Image 
+                            src='/logo.svg'
+                            alt='Logo'
+                            width='64'
+                            height='64'
+                            className='w-6 h-6'
+                        />
+                        <p className='text-zinc-800 font-bold text-xl tracking-tight'>Goodeye</p>
+                    </div>
+                </Link>
                 <div className='grid grid-flow-col gap-10'>
-                    <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                        <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>Services</p>
-                    </div>
-                    <div  className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                        <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>Projects</p>
-                    </div>
-                    <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                        <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>About</p>
-                    </div>
+                    <Link className="grid" href="/services">
+                        <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
+                            <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>Services</p>
+                        </div>
+                    </Link>
+                    <Link className="grid" href="/projects">
+                        <div  className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
+                            <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>Projects</p>
+                        </div>
+                    </Link>
+                    <Link className="grid" href="/about">
+                        <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
+                            <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>About</p>
+                        </div>
+                    </Link>
                     <Overlay overlayType={'popup'} content={<div />}>
                         <div>
                             <Button

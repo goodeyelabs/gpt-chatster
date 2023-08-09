@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 function Footer() {
     return (
@@ -20,13 +21,15 @@ function Footer() {
                     </div>
                   </div>
                   <div className='order-1 md:order-2 grid md:grid-flow-col gap-2 items-center pb-4 md:py-0'>
-                        <Image 
-                            src='/logo.svg'
-                            alt='Logo'
-                            width='64'
-                            height='64'
-                            className='bg-white md:bg-none rounded-full md:rounded-none p-2 md:p-0 w-12 h-12 md:w-6 md:h-6'
-                        />
+                        <Link className="grid" href="/">
+                            <Image 
+                                src='/logo.svg'
+                                alt='Logo'
+                                width='64'
+                                height='64'
+                                className='bg-white md:bg-none rounded-full md:rounded-none p-2 md:p-0 w-12 h-12 md:w-6 md:h-6'
+                            />
+                        </Link>
                   </div>
             </div>
         </div>
