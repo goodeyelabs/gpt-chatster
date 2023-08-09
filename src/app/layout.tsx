@@ -6,8 +6,8 @@ import GTM from './gtm'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Goodeye Labs',
-  description: 'Frontend Development',
+  title: 'GPT Chatty | By Goodeye Labs',
+  description: 'How GPT chat apps should be.',
 }
 
 export default function RootLayout({
