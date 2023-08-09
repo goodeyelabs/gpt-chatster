@@ -1,5 +1,10 @@
 import View from '../components/view'
 import Image from 'next/image'
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'GPT Chatty - By Goodeye Labs',
+}
 
 export default function Home() {
   return (
