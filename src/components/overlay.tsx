@@ -9,7 +9,6 @@ type overlayProps = {
 }
 
 export default function Overlay({ children, content, overlayType }:overlayProps) {
-    const bodyEl = document.body;
     const [overlayIsOpen, setOverlayIsOpen] = useState(false);
     const [overlayIsClosing, setOverlayIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
@@ -62,12 +61,11 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
           const timer = setTimeout(() => {
               setOverlayIsOpen(false);
               setOverlayIsClosing(false);
-              bodyEl.classList.remove('modal-open');
           }, 250)
   
           return () => clearTimeout(timer);
       }
-    }, [overlayIsClosing, bodyEl.classList]);
+    }, [overlayIsClosing]);
 
     useEffect(() => {
         function handleEsc(event: any) {
@@ -91,7 +89,7 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
                 )}
                 {overlayIsOpen && createPortal(
                     <Wrapper />,
-                    bodyEl
+                    document.body
                 )}
             </>
         )
