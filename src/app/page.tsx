@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <View>
-      <div className='grid h-screen w-screen place-content-center'>
+      <div className='grid h-screen w-screen place-content-center pb-[4rem]'>
         <Image 
           src='/logo.svg'
           alt='Logo'
