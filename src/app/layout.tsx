@@ -6,7 +6,7 @@ import GTM from '@/tools/gtm'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'GPT Chatty | Goodeye Labs',
+  title: 'GPT Chatster | Goodeye Labs',
   description: 'How GPT chat apps should be.',
 }
 

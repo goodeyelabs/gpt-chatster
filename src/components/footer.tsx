@@ -7,7 +7,7 @@ function Footer() {
             <div className='grid h-full w-full mx-auto max-w-7xl items-center justify-items-center md:justify-items-start grid-cols-[1fr] md:grid-cols-[1fr_auto]'>
                 <div className='grid order-2 md:order-1 justify-items-center md:justify-items-start md:grid-flow-col gap-1 md:gap-10'>
                     <div className='items-center grid'>
-                        <p className='text-sm text-zinc-500'>GPT Chatty &copy; 2023</p>
+                        <p className='text-sm text-zinc-500'>GPT Chatster &copy; 2023</p>
                     </div>
                     <div className='items-center grid grid-flow-col gap-2'>
                         <p className='text-sm text-zinc-500'>Made by</p>

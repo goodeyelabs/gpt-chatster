@@ -18,7 +18,7 @@ function Header() {
                             height='64'
                             className='w-6 h-6'
                         />
-                        <p className='text-zinc-800 font-bold text-xl tracking-tight'>GPT Chatty</p>
+                        <p className='text-zinc-800 font-bold text-xl tracking-tight'>GPT Chatster</p>
                     </div>
                 </Link>
                 <div className='grid grid-flow-col gap-10'>
