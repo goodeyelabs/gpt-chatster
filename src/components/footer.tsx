@@ -1,5 +1,4 @@
-import { ReactComponent as Logo } from '../assets/logo.svg';
-import { ReactComponent as Flag } from '../assets/uk-flag.svg';
+import Image from "next/image"
 
 function Footer() {
     return (
@@ -11,11 +10,23 @@ function Footer() {
                     </div>
                     <div className='items-center grid grid-flow-col gap-2'>
                         <p className='text-sm text-zinc-500'>Made in</p>
-                        <Flag className='flag' />
+                        <Image 
+                            src='/logo.svg'
+                            alt='Logo'
+                            width='64'
+                            height='64'
+                            className='flag'
+                        />
                     </div>
                   </div>
                   <div className='order-1 md:order-2 grid md:grid-flow-col gap-2 items-center pb-4 md:py-0'>
-                      <Logo className='logo bg-white md:bg-none rounded-full md:rounded-none p-2 md:p-0 w-12 h-12 md:w-6 md:h-6' />    
+                        <Image 
+                            src='/logo.svg'
+                            alt='Logo'
+                            width='64'
+                            height='64'
+                            className='bg-white md:bg-none rounded-full md:rounded-none p-2 md:p-0 w-12 h-12 md:w-6 md:h-6'
+                        />
                   </div>
             </div>
         </div>
