@@ -1,6 +1,7 @@
 import { Bars3Icon, HandRaisedIcon } from '@heroicons/react/24/outline'
 import Button from './button'
 import Overlay from './overlay'
+import Contact from '@/views/contact'
 import Image from 'next/image'
 import Link from 'next/link';
 
@@ -36,7 +37,7 @@ function Header() {
                             <p className='text-sm font-semibold text-slate-700 group-hover:text-blue-400'>About</p>
                         </div>
                     </Link>
-                    <Overlay overlayType={'popup'} content={<div />}>
+                    <Overlay overlayType={'popup'} content={<Contact />}>
                         <div>
                             <Button
                                 icon={<HandRaisedIcon />}
