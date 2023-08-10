@@ -21,7 +21,7 @@ export default function ThemeSwitcher() {
                 ${mounted && appearance === 'system_dark' ? 'text-zinc-700 ' : ''}
                 ${mounted && appearance.startsWith('light_') ? 'text-slate-300 ' : ''}
                 ${mounted && appearance.startsWith('dark_') ? 'text-slate-300 ' : ''}
-                cursor-pointer h-5 w-5 hover:text-blue-400
+                cursor-pointer h-5 w-5 hover:text-blue-400 transition-all duration-75 
             `} />
             <SunIcon onClick={() => mounted ? setTheme('light') : null} className={`
                 ${mounted && appearance === 'system_light' ? 'text-slate-300 ' : ''}
@@ -29,7 +29,7 @@ export default function ThemeSwitcher() {
                 ${mounted && appearance.startsWith('light_') ? 'text-zinc-700 ' : ''}
                 ${mounted && appearance.startsWith('dark_') ? 'text-zinc-600 ' : ''}
                 ${!mounted ? 'text-slate-300 ' : ''}
-                cursor-pointer h-5 w-5 hover:text-blue-400
+                cursor-pointer h-5 w-5 hover:text-blue-400 transition-all duration-75 
             `} />
             <div onClick={() => mounted ? setTheme('system') : null} className={`
                 ${mounted && appearance === 'system_light' ? 'bg-zinc-800 ' : ''}
@@ -37,7 +37,7 @@ export default function ThemeSwitcher() {
                 ${mounted && appearance.startsWith('light_') ? 'bg-slate-300 ' : ''}
                 ${mounted && appearance.startsWith('dark_') ? 'bg-zinc-700 ' : ''}
                 ${!mounted ? 'bg-slate-300 ' : ''}
-                group cursor-pointer h-5 w-5 grid place-content-center rounded-full hover:bg-blue-400
+                group cursor-pointer h-5 w-5 grid place-content-center rounded-full hover:bg-blue-400 transition-all duration-75 
             `}>
                 <p className={`
                     ${mounted && appearance === 'system_light' ? 'text-white ' : ''}
@@ -45,7 +45,7 @@ export default function ThemeSwitcher() {
                     ${mounted && appearance.startsWith('light_') ? 'text-white ' : ''}
                     ${mounted && appearance.startsWith('dark_') ? 'text-black ' : ''}
                     ${!mounted ? 'text-white ' : ''}
-                    text-xs font-light group-hover:text-white
+                    text-xs font-light group-hover:text-white transition-all duration-75 
                 `}>
                     A
                 </p>

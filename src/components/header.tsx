@@ -1,4 +1,4 @@
-import { Bars3Icon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ChatBubbleLeftIcon } from '@heroicons/react/24/outline'
 import Button from './button'
 import Overlay from './overlay'
 import Contact from '@/views/contact'
@@ -19,30 +19,30 @@ function Header() {
                             height='69'
                             className='w-6 h-fit'
                         />
-                        <p className='truncate text-zinc-800 dark:text-zinc-300 font-bold text-xl tracking-tight'>GPT Chatster</p>
+                        <p className='truncate text-zinc-800 dark:text-zinc-300 font-bold text-lg tracking-tight'>GPT Chatster</p>
                     </div>
                 </Link>
                 <div className='grid grid-flow-col gap-10'>
                     <Link className="grid" href="/services">
                         <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Services</p>
+                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Help</p>
                         </div>
                     </Link>
                     <Link className="grid" href="/projects">
                         <div  className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Projects</p>
+                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Feedback</p>
                         </div>
                     </Link>
                     <Link className="grid" href="/about">
                         <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>About</p>
+                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Upgrade</p>
                         </div>
                     </Link>
                     <Overlay overlayType={'popup'} content={<Contact />}>
                         <div>
                             <Button
-                                icon={<HandRaisedIcon />}
-                                text='Get in touch'
+                                icon={<ChatBubbleLeftIcon />}
+                                text='New chat'
                             />
                         </div>
                     </Overlay>
