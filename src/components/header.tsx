@@ -19,7 +19,7 @@ function Header() {
                             height='69'
                             className='w-6 h-fit'
                         />
-                        <p className='text-zinc-800 dark:text-zinc-300 font-bold text-xl tracking-tight'>GPT Chatster</p>
+                        <p className='truncate text-zinc-800 dark:text-zinc-300 font-bold text-xl tracking-tight'>GPT Chatster</p>
                     </div>
                 </Link>
                 <div className='grid grid-flow-col gap-10'>
