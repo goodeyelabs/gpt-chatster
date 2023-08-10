@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <View>
           <div className='grid place-content-center h-screen px-4 sm:px-8 pb-32 border-b border-slate-200'>
-              <h1 className='text-zinc-800 font-bold text-6xl sm:text-8xl tracking-tighter'>About</h1>
+              <h1 className='text-zinc-800 dark:text-zinc-300 font-bold text-6xl sm:text-8xl tracking-tight'>About</h1>
           </div>
           <div className='grid place-content-center h-screen bg-slate-50 border-b border-slate-200'>
               <h1 className='text-zinc-800 font-bold text-6xl sm:text-8xl tracking-tighter'>Goodeye</h1>
