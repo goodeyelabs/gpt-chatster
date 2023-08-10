@@ -12,13 +12,6 @@ export default function ThemeSwitcher() {
         setMounted(true)
     },[])
 
-    switch (theme) {
-        case 'dark': 
-            output = <SunIcon className="h-5 w-5 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
-        default:
-            output = <MoonIcon className="h-5 w-5 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
-        }
-
     if (mounted) {
         return (
             <div onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className='group transition-all duration-75 items-center cursor-pointer hidden md:grid select-none'>
@@ -36,7 +29,7 @@ export default function ThemeSwitcher() {
 
     return (
         <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid select-none'>
-            <MoonIcon className="h-5 w-5 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
+            <SunIcon className="h-5 w-5 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
         </div>
     )
     
