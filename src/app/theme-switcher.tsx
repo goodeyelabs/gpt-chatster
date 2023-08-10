@@ -29,7 +29,7 @@ export default function ThemeSwitcher() {
 
     return (
         <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid select-none'>
-            <SunIcon className="h-5 w-5 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
+            <div className='invisible h-5 w-5' />
         </div>
     )
     
