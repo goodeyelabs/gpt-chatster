@@ -37,7 +37,6 @@ export default function DarkModeSwitch() {
     }
 
     function ActiveOption() {
-        console.log(theme, systemTheme)
         return (
             <>
                 {
@@ -51,6 +50,7 @@ export default function DarkModeSwitch() {
                 {
                     (theme === 'system' && systemTheme === 'light') &&
                         <SunIcon className='h-5 w-5 text-zinc-700 hover:text-blue-400' />
+
                 }
                 {
                     (theme === 'system' && systemTheme === 'dark') &&
@@ -65,7 +65,9 @@ export default function DarkModeSwitch() {
             {
                 mounted &&
                     <Overlay overlayType='menu' content={<Options />}>
-                        <div><ActiveOption /></div>
+                        <div>
+                            <ActiveOption />
+                        </div>
                     </Overlay>
             }
             {

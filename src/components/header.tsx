@@ -46,6 +46,7 @@ function Header() {
                             />
                         </div>
                     </Overlay>
+                    <div className='h-6 border-r border-dotted border-slate-300 dark:border-zinc-700 self-center' />
                     <DarkModeSwitch />
                     <Overlay overlayType={'drawer-right'} content={<div><p>Side menu</p></div>}>
                         <div className='group transition-all duration-75 items-center cursor-pointer grid md:hidden select-none'>
