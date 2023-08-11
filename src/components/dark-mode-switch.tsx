@@ -42,7 +42,7 @@ export default function DarkModeSwitch() {
             <>
                 {
                     theme === 'light' &&
-                        <SunIcon className='h-5 w-5 text-zinc-600 hover:text-blue-400' />
+                        <SunIcon className='h-5 w-5 text-zinc-700 hover:text-blue-400' />
                 }
                 {
                     theme === 'dark' &&
@@ -50,7 +50,7 @@ export default function DarkModeSwitch() {
                 }
                 {
                     (theme === 'system' && systemTheme === 'light') &&
-                        <SunIcon className='h-5 w-5 text-slate-300 hover:text-blue-400' />
+                        <SunIcon className='h-5 w-5 text-zinc-700 hover:text-blue-400' />
                 }
                 {
                     (theme === 'system' && systemTheme === 'dark') &&
