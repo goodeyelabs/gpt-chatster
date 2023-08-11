@@ -38,6 +38,12 @@ export default function Overlay({ children, content, overlayType }:overlayProps)
                         {newContent}
                     </div>
                 )
+            case 'menu':
+                return (
+                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid absolute right-0 z-20 w-auto h-auto justify-self-start self-start shadow-xl`}>
+                        {newContent}
+                    </div>
+                )
             default:
                 return null
         }
