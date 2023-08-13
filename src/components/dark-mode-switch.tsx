@@ -1,8 +1,32 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { useTheme } from "next-themes";
+import { cloneElement, useEffect, useState } from 'react'
+import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid'
 import Overlay from '@/components/overlay';
+
+type listTypes = {
+    mode: string,
+    name: string,
+    icon: any,
+}
+
+const list: listTypes[] = [
+    {
+        mode: 'light',
+        name: 'Light',
+        icon: <SunIcon />
+    },
+    {
+        mode: 'dark',
+        name: 'Dark',
+        icon: <MoonIcon />
+    },
+    {
+        mode: 'system',
+        name: 'Automatic',
+        icon: <ComputerDesktopIcon />
+    },
+]
 
 export default function DarkModeSwitch() {
     const { theme, setTheme, systemTheme } = useTheme()
@@ -19,19 +43,30 @@ export default function DarkModeSwitch() {
         }
 
         return (
-            <div className='grid items-start bg-white dark:bg-zinc-800 rounded-lg overflow-hidden'>
-                <div onClick={() => mounted ? handleClick('light') : null} className='grid grid-flow-col grid-cols-[4rem_1fr] pr-6 items-center justify-start h-[4rem] border-b dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-600 cursor-pointer'>
-                    <SunIcon className='h-5 w-5 text-gray-300 grid place-self-center' />
-                    <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Light</p>
-                </div>
-                <div onClick={() => mounted ? handleClick('dark') : null} className='grid grid-flow-col grid-cols-[4rem_1fr] pr-6 items-center justify-start h-[4rem] border-b dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-zinc-600 cursor-pointer'>
-                    <MoonIcon className='h-5 w-5 text-gray-300 grid place-self-center' />
-                    <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Dark</p>
-                </div>
-                <div onClick={() => mounted ? handleClick('system') : null} className='grid grid-flow-col grid-cols-[4rem_1fr] pr-6 items-center justify-start h-[4rem] hover:bg-gray-100 dark:hover:bg-zinc-600 cursor-pointer'>
-                    <ComputerDesktopIcon className='h-5 w-5 text-gray-300 grid place-self-center' />
-                    <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>System</p>
-                </div>
+            <div className='grid items-start bg-white dark:bg-zinc-800 auto-rows-[4rem]'>
+                {
+                    list.map((itm:any, key:number) => {
+                        const Icon = ({ className }: { className: string}) => {
+                            return (
+                                <>
+                                    {cloneElement(
+                                        itm.icon,
+                                        {
+                                            className: className
+                                        }
+                                    )}
+                                </>
+                            )
+                        }
+                        
+                        return (
+                            <div key={key} onClick={() => mounted ? handleClick(itm.mode) : null} className='group grid grid-flow-col grid-cols-[4rem_1fr] pr-4 items-center justify-start h-full border-b dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-600 transition-all ease-in-out cursor-pointer'>
+                                <Icon className={`h-5 w-5 ${theme === itm.mode ? 'text-blue-400' :  'dark:text-gray-300'} group-hover:text-blue-400 transition-all ease-in-out grid place-self-center`} />
+                                <p className={`text-sm font-semibold group-hover:text-blue-400 transition-all ease-in-out ${theme === itm.mode ? 'text-blue-400 dark:text-blue-400' : 'text-slate-700 dark:text-zinc-300'}`}>{itm.name}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
@@ -64,8 +99,8 @@ export default function DarkModeSwitch() {
         <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
             {
                 mounted &&
-                    <Overlay overlayType='menu' content={<Options />}>
-                        <div>
+                    <Overlay overlayType='drawer-right' content={<Options />}>
+                        <div className='h-full w-full grid place-content-center relative'>
                             <ActiveOption />
                         </div>
                     </Overlay>
