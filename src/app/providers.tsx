@@ -9,10 +9,10 @@ type providerProps = {
 
 export default function Providers({ children }:providerProps) {
     return (
-        <ThemeProvider attribute="class">
-            <Provider store={store}>
+        <Provider store={store}>
+            <ThemeProvider attribute="class">
                 {children}
-            </Provider>
-        </ThemeProvider>
+            </ThemeProvider>
+        </Provider>
     )
 }

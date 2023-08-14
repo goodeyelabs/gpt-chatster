@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import promptReducer from "./promptReducer";
+import sessionsReducer from "./sessionsReducer";
+import messagesReducer from "./messagesReducer";
 
 export const store = configureStore({
     reducer: {
-        prompt: promptReducer
+        sessions: sessionsReducer,
+        messages: messagesReducer,
     }
 })
 

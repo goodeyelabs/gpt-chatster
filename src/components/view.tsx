@@ -37,7 +37,7 @@ function View({ children }:viewProps) {
     return (
         <div className='w-screen grid grid-cols-1 grid-rows-[4rem_1fr] bg-white dark:bg-zinc-900'>
             <Header />
-            <div>
+            <div className="grid w-full max-w-7xl mx-auto">
                 {children}
                 <Footer />
             </div>
