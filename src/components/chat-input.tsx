@@ -1,12 +1,15 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
+import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import { addPrompt } from '@/redux/promptReducer'
 
 export default function ChatInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
-    const [prompt, setPrompt] = useState('')
+    const dispatch = useAppDispatch();
+    const { prompt } = useAppSelector(state => state.prompt.data)
 
     function handlePromptChange(val:string) {
-        setPrompt(val)
+        dispatch(addPrompt(val))
     }
 
     useEffect(() => {

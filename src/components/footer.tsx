@@ -1,10 +1,7 @@
 'use client'
 import Image from "next/image"
-import { useTheme } from 'next-themes';
 
 function Footer() {
-    const { theme } = useTheme()
-
     return (
         <div className='grid col-span-full md:h-24 px-4 md:px-8 py-8 md:py-0 bg-slate-100 md:bg-white dark:bg-zinc-900 dark:md:bg-zinc-900'>
             <div className='grid h-full w-full mx-auto max-w-7xl items-center justify-items-center md:justify-items-start grid-cols-[1fr] md:grid-cols-[1fr_auto]'>
@@ -15,7 +12,7 @@ function Footer() {
                     <div className='items-center grid grid-flow-col gap-2'>
                         <p className='text-sm text-zinc-500'>Made by</p>
                         <Image 
-                            src={`/${theme === 'dark' ? 'logo-dark' : 'logo'}.svg`}
+                            src='logo.svg'
                             alt='Goodeye Labs'
                             width='64'
                             height='64'
