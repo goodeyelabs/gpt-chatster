@@ -13,7 +13,7 @@ function Header() {
                 <Link className="grid" href="/">
                     <div className='grid grid-flow-col gap-2 items-center select-none cursor-pointer'>
                         <Image 
-                            src='/logo.png'
+                            src='/logo-circle.svg'
                             alt='Logo'
                             width='64'
                             height='69'

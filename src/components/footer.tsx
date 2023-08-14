@@ -22,7 +22,7 @@ function Footer() {
                   </div>
                   <div className='order-1 md:order-2 grid md:grid-flow-col gap-2 items-center pb-4 md:py-0'>
                         <Image 
-                            src='/logo.png'
+                            src='/logo-circle.svg'
                             alt='Logo'
                             width='64'
                             height='69'
