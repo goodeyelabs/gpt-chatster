@@ -48,7 +48,7 @@ function Header() {
                     <Button
                         icon={<ChatBubbleLeftIcon />}
                         text='New chat'
-                        onClick={() => dispatch(addSession('Test name'))}
+                        onClick={() => dispatch(addSession())}
                     />
                     <Overlay overlayType={'drawer-right'} content={<div><p>Side menu</p></div>}>
                         <div className='group transition-all duration-75 items-center cursor-pointer grid md:hidden select-none'>

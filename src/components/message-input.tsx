@@ -1,21 +1,17 @@
 'use client'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { setCurrentPrompt, setMessages } from '@/redux/messagesReducer'
 import Button from './button'
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
     const dispatch = useAppDispatch();
-    const { currentPrompt } = useAppSelector(state => state.messages.data)
+    const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
 
     function handleMessageChange(val:string) {
         dispatch(setCurrentPrompt(val))
-    }
-
-    function updateMessageHistory() {
-        dispatch(setMessages(currentPrompt))
     }
 
     useEffect(() => {
@@ -26,18 +22,18 @@ export default function MessageInput() {
           }
     },[textareaRef, currentPrompt])
 
-    useEffect(() => {
-        function handleEnter(event: any) {
-            if (event.keyCode === 13 && !event.shiftKey) {
-                dispatch(setMessages(currentPrompt))
-                event.preventDefault()
-            }
-        }
-        window.addEventListener('keydown', handleEnter)
+    // useEffect(() => {
+    //     function handleEnter(event: any) {
+    //         if (event.keyCode === 13 && !event.shiftKey) {
+    //             dispatch(setMessages(currentPrompt))
+    //             event.preventDefault()
+    //         }
+    //     }
+    //     window.addEventListener('keydown', handleEnter)
   
-        return () => window.removeEventListener('keydown', handleEnter)
-    },[]);
-    
+    //     return () => window.removeEventListener('keydown', handleEnter)
+    // },[]);
+
     return (
         <>
             <textarea 
@@ -52,8 +48,10 @@ export default function MessageInput() {
             <Button
                 icon={<PaperAirplaneIcon />}
                 text='Send'
-                onClick={updateMessageHistory}
+                onClick={() => dispatch(addMessage({sessionID: activeSession, message: currentPrompt}))}
             />
         </>
-    ) 
+    )
+
+    return null
 }
