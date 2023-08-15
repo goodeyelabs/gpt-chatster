@@ -36,9 +36,9 @@ type viewProps = {
 
 function View({ children, noFooter }:viewProps) {
     return (
-        <div className='w-screen h-screen grid grid-cols-1 grid-rows-[4rem_1fr] bg-white dark:bg-zinc-900'>
+        <div className='w-screen h-screen grid grid-cols-1 grid-rows-[4rem_1fr] bg-white dark:bg-zinc-900 overflow-y-auto'>
             <Header />
-            <div className="grid w-full max-w-7xl mx-auto">
+            <div className="grid w-full max-w-10xl mx-auto">
                 {children}
                 {
                     !noFooter &&

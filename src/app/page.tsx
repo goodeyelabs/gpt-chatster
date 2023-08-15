@@ -1,6 +1,6 @@
 import View from '../components/view'
 import { Metadata } from 'next'
-import ChatInput from '@/components/message-input'
+import MessageInput from '@/components/message-input'
 import Sessions from '@/components/sessions'
 import Messages from '@/components/messages'
 import Settings from '@/components/settings'
@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <View noFooter>
-            <div className='grid w-full h-full grid-cols-[1fr_400px]'>
-                <div className=' grid h-full w-full px-20 py-8 grid-rows-[auto_1fr_auto] items-center'>
-                    <Settings />
-                    <Messages />
-                    <ChatInput /> 
-                </div>
-                <div className='grid h-full w-full border-l border-slate-200 dark:border-zinc-800 px-12 py-8'>
+            <div className='grid grid-cols-[400px_1fr]'>
+                <div className='sticky top-16 grid h-[calc(100vh-4rem)] w-full grid-rows-[1fr_auto] border-r border-slate-200 dark:border-zinc-800 px-8 overflow-y-auto'>
                     <Sessions />
                     <Footer />
+                </div>
+                <div className=' grid gap-4 h-full w-full px-20 grid-rows-[1fr_auto] items-start'>
+                    {/* <Settings /> */}
+                    <Messages />
+                    <MessageInput /> 
                 </div>
             </div>
         </View>

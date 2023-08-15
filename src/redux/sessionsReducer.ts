@@ -15,6 +15,7 @@ export interface InitialState {
                 messages: {
                     [messageTimestamp:string]: {
                         message: string,
+                        author: string,
                     }
                 }
             }
@@ -31,13 +32,16 @@ const initialState: InitialState = {
                 sessionName: 'Session 0',
                 messages: {
                     '1692076758': {
-                        message: "I am a test message"
+                        message: "I am a test message",
+                        author: 'user',
                     },
                     '1692076760': {
-                        message: "I am another test message"
+                        message: "I am another test message",
+                        author: 'user',
                     },
                     '1692076768': {
-                        message: "Here we go again on our own, blah blah. Just another part of me, said a famous singer once."
+                        message: "Here we go again on our own, blah blah. Just another part of me, said a famous singer once.",
+                        author: 'user',
                     }
                 }
             },
@@ -45,13 +49,16 @@ const initialState: InitialState = {
                 sessionName: 'Session 1',
                 messages: {
                     '1692076815': {
-                        message: "Oh look at that, I am a test message"
+                        message: "Oh look at that, I am a test message",
+                        author: 'user',
                     },
                     '1692076715': {
-                        message: "I am another test message"
+                        message: "I am another test message",
+                        author: 'user',
                     },
                     '1692056815': {
-                        message: "Here we go again on our own, blah blah. Just another part of me, said a famous singer once."
+                        message: "Here we go again on our own, blah blah. Just another part of me, said a famous singer once.",
+                        author: 'user',
                     }
                 }
             }
@@ -72,9 +79,9 @@ export const sessionsSlice = createSlice({
         addSession: (state) => {
             state.data = {...state.data, activeSession: Object.keys(state.data.sessions).length, currentPrompt: '', sessions: {...state.data.sessions, [Object.keys(state.data.sessions).length]: {sessionName: '', messages: {}, [getCurrentTimestamp()]: {message: ''}}}}        
         },
-        addMessage: (state, action: PayloadAction<{sessionID: number, message: string}>) => {
-            const { sessionID, message } = action.payload
-            state.data = {...state.data, currentPrompt: '', sessions: {...state.data.sessions, [sessionID]: {sessionName: '', messages: {...state.data.sessions[sessionID].messages, [getCurrentTimestamp()]: {message: message}}}}}
+        addMessage: (state, action: PayloadAction<{sessionID: number, author: string, message: string}>) => {
+            const { sessionID, message, author } = action.payload
+            state.data = {...state.data, currentPrompt: '', sessions: {...state.data.sessions, [sessionID]: {sessionName: '', messages: {...state.data.sessions[sessionID].messages, [getCurrentTimestamp()]: {message: message, author: author}}}}}
         },
     }
 })

@@ -13,26 +13,35 @@ export default function Messages() {
 
     if (sessions[activeSession]) {
         return (
-            <div className='grid gap-8 py-2 content-start'>
-                 <div className='grid gap-8 content-start'>
-                     {
-                        Object.keys(sessions[activeSession].messages).map((m:string, m_index:number) => {
-                            const msg = sessions[activeSession].messages[m_index]
+            <div className='grid content-start gap-8 pt-8'>
+                {
+                    Object.keys(sessions[activeSession].messages).map((m:string, m_index:number) => {
+                        const msg = sessions[activeSession].messages[m]
 
+                        if (msg.author === 'server') {
                             return (
-                                <div key={m_index} className='grid pb-6 hover:bg-black/20 cursor-pointer gap-4 border-b border-dashed border-slate-200 dark:border-zinc-700'>
-                                    <p className='text-base text-slate-300 font-medium tracking-tight'>{sessions[activeSession].messages[m].message || 'New chat session'}</p>
-                                    <p className='text-sm text-slate-500'>{formatDate(m)}</p>
+                                <div className='grid gap-2 w-[80%]'>
+                                    <div key={m_index} className='grid cursor-pointer rounded-3xl bg-slate-500/30 px-6 py-4'>
+                                        <p className='text-base text-slate-300 font-medium tracking-tight'>{msg.message || 'New message'}</p>
+                                    </div>
+                                    <p className='text-xs text-slate-600'>{formatDate(m)}</p>
                                 </div>
                             )
-                        })
-                    }
-                </div>
+                        }
+
+                        return (
+                            <div className='grid gap-2 w-[90%] place-self-end justify-end'>
+                                <div key={m_index} className='grid cursor-pointer rounded-3xl bg-slate-800/40 px-6 py-4'>
+                                    <p className='text-base text-slate-300 font-medium tracking-tight'>{msg.message || 'New message'}</p>
+                                </div>
+                                <p className='text-xs text-slate-600'>{formatDate(m)}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
     
-    return (
-        <></>
-    )
+    return null
 }
