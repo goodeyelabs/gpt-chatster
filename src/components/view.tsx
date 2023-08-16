@@ -22,7 +22,7 @@ export function SideBar() {
 
 function AppView({ children }:viewProps) {    
     return (
-        <div id='view' className='grid grid-cols-[1fr] md:grid-cols-[400px_1fr] grid-rows-[4.25rem_1fr] h-full'>
+        <div id='view' className='grid grid-cols-[1fr] md:grid-cols-[400px_1fr] grid-rows-[4.25rem_1fr] h-full h-screen-ios overflow-y-hidden'>
             <div id='header' className='grid col-span-2'>
                 <Header />
             </div>

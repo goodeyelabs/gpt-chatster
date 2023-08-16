@@ -68,7 +68,24 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function ({ addComponents }) {
+    plugin(function ({ addComponents, addUtilities }) {
+      const supportsTouchRule = '@supports (-webkit-touch-callout: none)';
+      const webkitFillAvailable = '-webkit-fill-available';
+
+      const utilities = {
+          '.min-h-screen-ios': {
+              [supportsTouchRule]: {
+                  minHeight: webkitFillAvailable,
+              },
+          },
+          '.h-screen-ios': {
+              [supportsTouchRule]: {
+                  height: webkitFillAvailable,
+              },
+          },
+      };
+
+      addUtilities(utilities)
       addComponents({
         '.flag': {
           display: 'block',
