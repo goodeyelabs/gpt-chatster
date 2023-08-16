@@ -35,7 +35,7 @@ export default function Sessions() {
 
                         return (
                             <div 
-                                className={`${activeSession === s_index ? 'bg-slate-200/50 dark:bg-neutral-800' : 'bg-transparent hover:bg-slate-100 dark:hover:bg-neutral-900'} group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-[10px]`}
+                                className={`${activeSession === s_index ? 'bg-slate-200/70 dark:bg-neutral-800' : 'bg-transparent hover:bg-slate-100 dark:hover:bg-neutral-900'} group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-[10px]`}
                                 onClick={() => handleClick(s_index)} 
                                 key={s_index} 
                             >

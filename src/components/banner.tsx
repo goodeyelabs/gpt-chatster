@@ -6,6 +6,7 @@ import { addSession } from "@/redux/sessionsReducer"
 import { useAppDispatch } from '@/redux/hooks'
 import Overlay from "./overlay"
 import Button from "./button"
+import ChatButton from "./chat-button"
 
 function SearchMenu() {
     return (
@@ -23,9 +24,8 @@ export default function Banner() {
 
     return (
         <div className='grid gap-4 grid-rows-[1fr] grid-cols-[auto_1fr] grid-flow-col justify-start px-8 border-b border-slate-200 dark:border-neutral-800/80'>
-            
             <div className='grid grid-flow-col gap-3 items-center select-none cursor-pointer'>
-                <Button icon={<ChatBubbleLeftIcon />} text='New' onClick={() => dispatch(addSession())} />
+                <ChatButton onClick={() => dispatch(addSession())} />
             </div>
             <div className='grid grid-flow-col gap-3 items-center select-none cursor-pointer'>
                 <Overlay overlayType='popup' title='Search' content={<SearchMenu />}>

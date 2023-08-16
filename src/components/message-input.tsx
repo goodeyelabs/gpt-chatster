@@ -1,10 +1,8 @@
 'use client'
 import { useEffect, useState, useRef, KeyboardEventHandler } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { Cog8ToothIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
 import { setScrollMain, setGptResponseIndex } from '@/redux/commonReducer'
-import RoundButton from './round-button'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -107,7 +105,7 @@ export default function MessageInput() {
     return (
         <div className='sticky bottom-0 bg-white dark:bg-redax-dark min-h-[5rem] py-8 grid grid-flow-col gap-6 border-t border-none px-24 items-end'>
             {/* <RoundButton onClick={handleSubmit} icon={<Cog8ToothIcon />} /> */}
-            <div className='grid bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-700 w-full min-h-[12px] py-2 px-6 items-center rounded-[20px]'>
+            <div className='grid bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 w-full min-h-[12px] py-2 px-6 items-center rounded-[20px]'>
                 <textarea 
                     ref={textareaRef}
                     autoFocus
@@ -116,7 +114,7 @@ export default function MessageInput() {
                     onChange={event => handleMessageChange(event.currentTarget.value)}
                     rows={1}
                     placeholder='Send a message to RedaxGPT...' 
-                    className='resize-none bg-transparent w-full h-full font-medium tracking-tight overflow-y-auto text-slate-500 dark:text-neutral-400 dark:placeholder:text-neutral-500 text-md text-left appearance-none outline-none'>
+                    className='resize-none bg-transparent w-full h-full font-medium tracking-tight overflow-y-auto text-slate-500 dark:text-neutral-300 dark:placeholder:text-neutral-400 text-md text-left appearance-none outline-none'>
                 </textarea>
             </div>
             {/* <RoundButton startColor='bg-blue-700' onClick={handleSubmit} icon={<PaperAirplaneIcon />} /> */}
