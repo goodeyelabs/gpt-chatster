@@ -1,13 +1,17 @@
-import { Cog8ToothIcon, ComputerDesktopIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import RoundButton from "./round-button";
+import { Cog8ToothIcon, ComputerDesktopIcon, GiftIcon, MoonIcon, PaperAirplaneIcon, SunIcon } from "@heroicons/react/24/outline";
+import Overlay from "./overlay";
+import Button from "./button";
 
 export default function SideFooter() {
+
     return (
-        <div className='grid grid-flow-col grid-cols-[1fr_auto_auto_auto] gap-6 border-t border-none border-slate-200 dark:border-neutral-800/80 px-8 items-center'>
-            <RoundButton icon={<Cog8ToothIcon />} />
-            <RoundButton icon={<MoonIcon />} />
-            <RoundButton icon={<SunIcon />} />
-            <RoundButton icon={<ComputerDesktopIcon />} />
+        <div className="px-8 py-8 grid grid-flow-col grid-cols-[1fr_auto] gap-6">
+            <Overlay overlayType='popup' title='Upgrade to Enterprise' content={<div />}>
+                <Button icon={<GiftIcon />} text='Upgrade' />
+            </Overlay>
+            <Overlay overlayType='popup' title='Send feedback' content={<div />}>
+                <Button icon={<PaperAirplaneIcon />} text='Send feedback' />
+            </Overlay>
         </div>
     )
 }

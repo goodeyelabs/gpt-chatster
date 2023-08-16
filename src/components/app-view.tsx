@@ -12,7 +12,7 @@ type viewProps = {
 function AppView({ children }:viewProps) {    
     return (
         <div id='view' className='grid grid-cols-[400px_1fr] grid-rows-1'>
-            <div id='sidebar' className="sticky top-0 overflow-y-auto grid grid-rows-[5rem_1fr_5rem] h-screen w-full border-r border-slate-200 dark:border-neutral-800/80 bg-slate-50/50 dark:bg-redax-light">
+            <div id='sidebar' className="sticky top-0 overflow-y-auto grid grid-rows-[5rem_1fr_auto] h-screen w-full border-r border-slate-200 dark:border-neutral-800/80 bg-slate-50/50 dark:bg-redax-light">
                 <Banner />
                 <Sessions />
                 <SideFooter />
