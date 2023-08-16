@@ -26,7 +26,7 @@ function FeedbackMenu() {
 
 export default function SideFooter() {
     return (
-        <div className="px-8 py-8 grid grid-flow-col grid-cols-[1fr_auto] gap-4">
+        <div className="py-8 px-5 sm:px-8 grid grid-flow-col grid-cols-[1fr_auto] gap-4">
             <Overlay overlayType='popup' title='RedaxGPT settings' content={<SettingsMenu />}>
                 <Button text='GPT 3.5 Turbo' icon={<Cog8ToothIcon />} />
             </Overlay>

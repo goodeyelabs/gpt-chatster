@@ -111,7 +111,7 @@ const initialState: InitialState = {
                     },
                     6: {
                         timestamp: 1692200898,
-                        message: "That\'s perfect, I will do that. My niece Emily should be able to help me.",
+                        message: "That\'s perfect, I will do that. My sister-in-law Emily should be able to help me.",
                         author: 'user',
                     },
                     7: {

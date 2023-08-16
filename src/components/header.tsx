@@ -34,7 +34,7 @@ function Header() {
         <div className='grid col-span-full bg-white dark:bg-zinc-900 h-full sticky top-0 border-b border-slate-200 dark:border-neutral-800/80 px-4 sm:px-8'>
             <div className='grid h-full w-full mx-auto max-w-10xl items-center justify-items-start grid-cols-[1fr_auto]'>
                 <div className='grid md:hidden items-center grid-flow-col gap-3'>
-                    <Overlay overlayType={'drawer-left'} content={<SideBar />}>
+                    <Overlay overlayType={'drawer-left'} title='Chat sessions' content={<SideBar />}>
                         <div className='group transition-all duration-75 items-center cursor-pointer grid select-none'>
                             <Bars3Icon className="h-6 w-6 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
                         </div>

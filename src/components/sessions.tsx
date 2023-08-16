@@ -24,7 +24,7 @@ export default function Sessions() {
         output = output.reverse()
 
         return (
-            <div className='grid content-start gap-4 px-8 py-6 h-full overflow-y-auto'>
+            <div className='grid content-start gap-4 px-5 sm:px-8 py-6 h-full overflow-y-auto'>
                 {
                     sessions && Object.keys(sessions).sort((a,b) => Number(b) - Number(a)).map((s:string, s_index:number) => {
                         let name = 'New chat session'

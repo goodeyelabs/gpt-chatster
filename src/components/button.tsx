@@ -21,7 +21,7 @@ function Button({ icon, text, classProp, onClick, noBackground }:buttonProps) {
             {styledIcon}
             {
                 text &&
-                    <span>{text}</span>
+                    <span className='truncate'>{text}</span>
             }
         </button>
     )

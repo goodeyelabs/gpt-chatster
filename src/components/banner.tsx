@@ -23,7 +23,7 @@ export default function Banner() {
     const dispatch = useAppDispatch();
 
     return (
-        <div className='grid gap-4 grid-rows-[1fr] grid-cols-[auto_1fr] grid-flow-col justify-start px-8 border-b border-slate-200 dark:border-neutral-800/80'>
+        <div className='grid gap-4 grid-rows-[1fr] grid-cols-[auto_1fr] grid-flow-col justify-start px-5 sm:px-8 border-b border-slate-200 dark:border-neutral-800/80'>
             <div className='grid grid-flow-col gap-3 items-center select-none cursor-pointer'>
                 <ChatButton onClick={() => dispatch(addSession())} />
             </div>
