@@ -103,7 +103,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='sticky bottom-0 bg-white dark:bg-redax-dark min-h-[5rem] py-8 grid grid-flow-col gap-6 border-t border-none px-5 sm:px-8 md:px-24 items-end'>
+        <div className='sticky bottom-0 bg-white dark:bg-redax-dark min-h-[5rem] py-8 grid grid-flow-col gap-6 border-t border-none px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 items-end'>
             {/* <RoundButton onClick={handleSubmit} icon={<Cog8ToothIcon />} /> */}
             <div className='grid bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 w-full min-h-[12px] py-2 px-6 items-center rounded-[20px]'>
                 <textarea 

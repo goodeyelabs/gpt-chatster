@@ -1,11 +1,12 @@
 'use client'
-import { Bars3Icon, InformationCircleIcon, StarIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, InformationCircleIcon, PaperAirplaneIcon, StarIcon } from '@heroicons/react/24/outline'
 import Overlay from './overlay'
 import Image from 'next/image'
 import Link from 'next/link';
 import DarkModeSwitch from '@/components/dark-mode-switch'
 import UserAvatar from './user'
 import { SideBar } from './view';
+import Button from './button';
 
 function UpgradeMenu() {
     return (
@@ -24,6 +25,17 @@ function HelpMenu() {
             <div className='grid items-center place-content-center justify-items-center gap-4'>
                 <InformationCircleIcon className='w-16 h-16 text-slate-500' />
                 <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400'>Help docs are on the way...</p>
+            </div>
+        </div>
+    )
+}
+
+function FeedbackMenu() {
+    return (
+        <div className='grid place-content-center'>
+            <div className='grid items-center place-content-center justify-items-center gap-4'>
+                <PaperAirplaneIcon className='w-16 h-16 text-slate-500' />
+                <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400'>Send feedback functionality is on the way...</p>
             </div>
         </div>
     )
@@ -66,6 +78,11 @@ function Header() {
                     </Overlay>
                     <div className='hidden md:grid h-6 border-r border-dotted border-slate-300 dark:border-zinc-700 self-center' />
                     <div className='grid grid-flow-col gap-4'>
+                        <Overlay overlayType='popup' title='Send feedback' content={<FeedbackMenu />}>
+                            <div className='hidden md:grid'>
+                                <Button icon={<PaperAirplaneIcon />} text='Feedback' />
+                            </div>
+                        </Overlay> 
                         <DarkModeSwitch />
                         <UserAvatar />
                     </div>

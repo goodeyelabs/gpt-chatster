@@ -26,7 +26,7 @@ export default function Messages() {
 
     if (sessions[activeSession]) {
         return (
-            <div className='grid content-start gap-8 w-full px-5 sm:px-8 md:px-24 pt-6 pb-10 mx-auto'>
+            <div className='grid content-start gap-8 w-full px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 pt-6 pb-10 mx-auto'>
                 {
                     Object.keys(sessions[activeSession].messages).map((m:string, m_index:number) => {
                         const msg = sessions[activeSession].messages[m_index]
