@@ -9,7 +9,7 @@ type buttonProps = {
 
 function Button({ icon, text, classProp, onClick }:buttonProps) {
     const styledIcon = cloneElement(
-        icon, {className: classProp || 'h-5 w-5 dark:text-stone-400/90 dark:group-hover:text-stone-200'},
+        icon, {className: classProp || 'h-6 w-6 dark:text-stone-400/90 dark:group-hover:text-stone-200'},
     )
 
     return (

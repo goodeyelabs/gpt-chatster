@@ -35,11 +35,11 @@ export default function Sessions() {
 
                         return (
                             <div 
-                                className={`${activeSession === s_index ? 'bg-blue-500 dark:blue-400' : 'bg-transparent hover:bg-slate-100 dark:hover:bg-stone-800'} group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-[10px]`}
+                                className={`${activeSession === s_index ? 'bg-slate-400 dark:bg-slate-700' : 'bg-transparent hover:bg-slate-100 dark:hover:bg-stone-800'} group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-[10px]`}
                                 onClick={() => handleClick(s_index)} 
                                 key={s_index} 
                             >
-                                <p className={`${activeSession === s_index ? 'text-stone-100 dark:text-stone-100' : 'text-slate-500 dark:text-slate-400'} text-sm font-medium tracking-tight`}>{name}</p>
+                                <p className={`${activeSession === s_index ? 'text-white dark:text-stone-100' : 'text-slate-500 dark:text-slate-400'} text-sm font-medium tracking-tight`}>{name}</p>
                             </div>
                         )
                     })
