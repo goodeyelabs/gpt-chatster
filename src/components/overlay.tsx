@@ -82,7 +82,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
 
     function Wrapper() {
         return (
-            <div id='overlay_wrapper' className='fixed grid w-screen h-full z-50 inset-0'>
+            <div id='overlay_wrapper' className='fixed grid w-screen h-screen h-screen-ios z-50 inset-0'>
                 <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8] w-screen h-screen`} onClick={closeOverlay} />
                 <Content />
             </div>
