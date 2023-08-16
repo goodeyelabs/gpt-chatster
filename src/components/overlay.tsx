@@ -56,7 +56,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
 
     function Header() {
         return (
-            <div className='grid grid-rows-[5rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
+            <div className='grid grid-rows-[4.25rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
                 <div className='group grid col-start-1 row-start-1 grid-flow-col gap-2 items-center justify-start select-none cursor-pointer'>
                     <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>{title}</p>
                 </div>
@@ -69,7 +69,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
 
     function PopupHeader() {
         return (
-            <div className='grid grid-rows-[4rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
+            <div className='grid grid-rows-[4.25rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
                 <div className='group grid col-start-1 row-start-1 grid-flow-col gap-2 items-center justify-start select-none cursor-pointer'>
                     <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>{title}</p>
                 </div>

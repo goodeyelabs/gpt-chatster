@@ -1,91 +1,87 @@
 'use client'
-import { cloneElement, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
 import Overlay from '@/components/overlay';
 import RoundButton from './round-button';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
+import Button from './button';
 
 export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
     const { theme, setTheme, systemTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
 
-    function AppearanceMenu() {
+    function AccountMenu() {
         return (
-            <div className='grid place-content-center'>
-                <div className='grid items-center grid-flow-col gap-4 place-content-center justify-items-center'>
-                    <div 
-                        onClick={() => mounted ? handleClick('light') : null}
-                        className='relative group grid gap-2 place-content-center justify-items-center rounded-[10px] py-4 px-4 bg-slate-100 dark:bg-stone-800 hover:bg-slate-200 dark:hover:bg-stone-700 cursor-pointer'
-                    >
-                        {
-                            theme === 'light' &&
-                                <CheckCircleIcon className='absolute top-1 right-1 w-5 h-5' />
-                        }
-                        <SunIcon className='w-12 h-12 text-slate-800 dark:text-stone-400 group-hover:text-slate-900 dark:group-hover:text-slate-200' />
-                        <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-stone-400'>Light</p>
-                    </div>
-                    <div 
-                        onClick={() => mounted ? handleClick('dark') : null}
-                        className='relative group grid gap-2 place-content-center justify-items-center rounded-[10px] py-4 px-4 bg-slate-100 dark:bg-stone-800 hover:bg-slate-200 dark:hover:bg-stone-700 cursor-pointer'
-                    >   
-                        {
-                            theme === 'dark' &&
-                                <CheckCircleIcon className='absolute top-1 right-1 w-5 h-5' />
-                        }
-                        <MoonIcon className='w-12 h-12 text-slate-800 dark:text-stone-400 group-hover:text-slate-900 dark:group-hover:text-slate-200' />
-                        <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-stone-400'>Dark</p>
-                    </div>
-                    <div 
-                        onClick={() => mounted ? handleClick('system') : null}
-                        className='relative group grid gap-2 place-content-center justify-items-center rounded-[10px] py-4 px-4 bg-slate-100 dark:bg-stone-800 hover:bg-slate-200 dark:hover:bg-stone-700 cursor-pointer'
-                    >
-                        {
-                            theme === 'system' &&
-                                <CheckCircleIcon className='absolute top-1 right-1 w-5 h-5' />
-                        }
-                        <ComputerDesktopIcon className='w-12 h-12 text-slate-800 dark:text-stone-400 group-hover:text-slate-900 dark:group-hover:text-slate-200' />
-                        <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-stone-400'>System</p>
-                    </div>
+            <div className="grid gap-4 px-8 py-6">
+                <div className='relative grid'>
+                    {
+                        theme === 'light' &&
+                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5' />
+                    }
+                    <Button icon={<SunIcon />} text='Light' onClick={() => mounted ? handleClick('light') : null} />
+                </div>
+                <div className='relative grid'>
+                    {
+                        theme === 'dark' &&
+                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5' />
+                    }
+                    <Button icon={<MoonIcon />} text='Dark' onClick={() => mounted ? handleClick('dark') : null} />
+                </div>
+                <div className='relative grid'>
+                    {
+                        theme === 'system' &&
+                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5' />
+                    }
+                    <Button icon={<ComputerDesktopIcon />} text='System' onClick={() => mounted ? handleClick('system') : null} />
                 </div>
             </div>
         )
     }
 
+
     function handleClick(mode:string) {
         setTheme(mode)
-        return closeOverlay()
+        closeOverlay()
     }
 
     useEffect(() => {
         setMounted(true)
     },[])
 
+    useEffect(() => {
+        console.log(theme)
+        if (!theme) {
+            setTheme('dark')
+        }
+    },[])
+
     if (mounted) {
         return (
+            //  TODO: check if repeating the outer overlay wrapper each time is necessary (threw an error on cosolidating)
             <>
                 {
                     theme === 'light' &&
-                        <Overlay overlayType='popup' title='Appearance' content={<AppearanceMenu />}>
+                        <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
                             <RoundButton icon={<SunIcon />} />
                         </Overlay>
                 }
                 {
                     theme === 'dark' &&
-                        <Overlay overlayType='popup' title='Appearance' content={<AppearanceMenu />}>
+                        <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
                             <RoundButton icon={<MoonIcon />} />
                         </Overlay>
                 }
                 {
                     (theme === 'system' && systemTheme === 'light') &&
-                        <Overlay overlayType='popup' title='Appearance' content={<AppearanceMenu />}>
+                        <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
                             <RoundButton icon={<SunIcon />} />
                         </Overlay>
 
                 }
                 {
                     (theme === 'system' && systemTheme === 'dark') &&
-                        <Overlay overlayType='popup' title='Appearance' content={<AppearanceMenu />}>
+                        <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
                             <RoundButton icon={<MoonIcon />} />
                         </Overlay>
                 }

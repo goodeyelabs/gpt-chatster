@@ -14,8 +14,8 @@ const config: Config = {
       colors: {
         'redax': {
           light: '#191919',
-          DEFAULT: '#161616',
-          dark: '#131313',
+          DEFAULT: '#121212',
+          dark: '#151515',
         },
       },
       fontFamily: {

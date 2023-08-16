@@ -26,7 +26,7 @@ export default function UserAvatar() {
     function AccountMenu() {
         return (
             <div className="grid px-8 py-6">
-                <Button icon={<ArrowLeftOnRectangleIcon />} text='Sign out' onClick={() => dispatch(setAuth(false))} />
+                <Button icon={<ArrowLeftOnRectangleIcon />} text='Sign out' onClick={() => alert('This demo doesnt support auth actions.')} />
             </div>
         )
     }

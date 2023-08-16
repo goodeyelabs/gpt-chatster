@@ -1,8 +1,7 @@
-import RoundButton from "./round-button";
 import DarkModeSwitch from "./dark-mode-switch";
 import UserAvatar from "./user";
 import Overlay from "./overlay";
-import { Cog8ToothIcon } from "@heroicons/react/24/outline";
+import { Cog8ToothIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import Button from "./button";
 
 function SettingsMenu() {
@@ -18,12 +17,8 @@ function SettingsMenu() {
 
 export default function MainHeader() {
       return (
-        <div className='sticky top-0 grid grid-flow-col grid-cols-[1fr_auto_auto] gap-6 px-8 h-[5rem] justify-items-start items-center bg-white dark:bg-redax-dark'>
-            <Overlay overlayType='popup' title='RedaxGPT settings' content={<SettingsMenu />}>
-                <Button text='GPT 3.5 Turbo' icon={<Cog8ToothIcon />} />
-            </Overlay>
-            <DarkModeSwitch />
-            <RoundButton icon={<UserAvatar />} />
+        <div className='grid grid-flow-col grid-cols-[1fr] gap-6 px-8 h-full place-content-center items-center bg-white dark:bg-redax-dark'>
+            <Button noBackground text='New chat session' icon={<SparklesIcon />} />
         </div>
     )
 }
