@@ -58,7 +58,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
         return (
             <div className='grid grid-rows-[4.25rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
                 <div className='group grid col-start-1 row-start-1 grid-flow-col gap-2 items-center justify-start select-none cursor-pointer'>
-                    <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>{title}</p>
+                    <p className='truncate text-zinc-800 dark:text-neutral-300 font-bold text-xl tracking-tight'>{title}</p>
                 </div>
                 <div className='grid place-content-center'>
                     <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 dark:text-stone-50 cursor-pointer hover:text-blue-400 dark:hover:text-blue-400'/>
@@ -71,7 +71,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
         return (
             <div className='grid grid-rows-[4.25rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
                 <div className='group grid col-start-1 row-start-1 grid-flow-col gap-2 items-center justify-start select-none cursor-pointer'>
-                    <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>{title}</p>
+                    <p className='truncate text-zinc-800 dark:text-neutral-300 font-bold text-xl tracking-tight'>{title}</p>
                 </div>
                 <div className='grid place-content-center'>
                     <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 dark:text-stone-50 cursor-pointer hover:text-blue-400 dark:hover:text-blue-400'/>
@@ -83,7 +83,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
     function Wrapper() {
         return (
             <div id='overlay_wrapper' className='fixed grid w-screen h-full z-50 inset-0'>
-                <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} z-10 absolute inset-0 cursor-pointer bg-black/[0.8] w-screen h-screen`} onClick={closeOverlay} />
+                <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8] w-screen h-screen`} onClick={closeOverlay} />
                 <Content />
             </div>
         )
