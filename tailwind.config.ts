@@ -11,6 +11,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'redax': {
+          light: '#191919',
+          DEFAULT: '#161616',
+          dark: '#131313',
+        },
+      },
       fontFamily: {
         'sans': ['Inter', ...defaultTheme.fontFamily.sans],
       },

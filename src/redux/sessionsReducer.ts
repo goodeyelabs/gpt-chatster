@@ -61,6 +61,23 @@ const initialState: InitialState = {
                         author: 'user',
                     }
                 }
+            },
+            2: {
+                sessionName: 'Session 2',
+                messages: {
+                    '1692056805': {
+                        message: "How do I cash a check when my bank account is entirely virtual? I don't have a branch to visit.",
+                        author: 'user',
+                    },
+                    '1692076715': {
+                        message: "I am another test message",
+                        author: 'user',
+                    },
+                    '1692056825': {
+                        message: "Here we go again on our own, blah blah. Just another part of me, said a famous singer once.",
+                        author: 'user',
+                    }
+                }
             }
         },
     }

@@ -5,10 +5,16 @@ import { addSession } from '@/redux/sessionsReducer'
 import { useAppDispatch } from '@/redux/hooks'
 import RoundButton from './round-button'
 import { ChatBubbleLeftIcon, PlusIcon } from '@heroicons/react/24/outline'
+import { setScrollMain } from '@/redux/commonReducer'
 
 export default function Sessions() {
     const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
     const dispatch = useAppDispatch();
+
+    function handleClick(index:number) {
+        dispatch(setActiveSession(index))
+        dispatch(setScrollMain(true))
+    }
 
     if (sessions) {
         return (
@@ -32,8 +38,8 @@ export default function Sessions() {
 
                         return (
                             <div 
-                                className={`${activeSession === s_index ? 'bg-stone-700/60' : 'bg-stone-900/90'} hover:bg-stone-700/60 group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-lg`}
-                                onClick={() => dispatch(setActiveSession(s_index))} 
+                                className={`${activeSession === s_index ? 'bg-stone-700/60' : 'bg-stone-900/90'} hover:bg-stone-700/60 group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-[20px]`}
+                                onClick={() => handleClick(s_index)} 
                                 key={s_index} 
                             >
                                 <p className={`${activeSession === s_index ? 'text-slate-200' : 'text-slate-400'} group-hover:text-slate-200 text-sm font-medium tracking-tight`}>{name}</p>

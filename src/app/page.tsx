@@ -7,7 +7,7 @@ import Settings from '@/components/settings'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-    title: 'RedactGPT - Goodeye Labs',
+    title: 'RedaxGPT - Goodeye Labs',
 }
 
 export default function Home() {

@@ -19,7 +19,7 @@ function Header() {
                             height='69'
                             className='w-6 h-fit'
                         />
-                        <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-lg tracking-tight'>RedactGPT</p>
+                        <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-lg tracking-tight'>RedaxGPT</p>
                     </div>
                 </Link>
                 <div className='grid grid-flow-col gap-8'>

@@ -7,7 +7,7 @@ import Providers from './providers'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'RedactGPT | Goodeye Labs',
+    title: 'RedaxGPT | Goodeye Labs',
     description: 'How GPT chat apps should be.',
 }
 

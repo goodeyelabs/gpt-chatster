@@ -2,7 +2,7 @@ import View from '../../components/view'
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'About - RedactGPT - Goodeye Labs',
+  title: 'About - RedaxGPT - Goodeye Labs',
 }
 export default function Home() {
   return (

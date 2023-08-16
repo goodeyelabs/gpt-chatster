@@ -1,7 +1,7 @@
 'use client'
 import { cloneElement, useEffect, useState } from 'react'
 import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/solid'
+import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
 import Overlay from '@/components/overlay';
 
 type listTypes = {
@@ -99,7 +99,7 @@ export default function DarkModeSwitch() {
         <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
             {
                 mounted &&
-                    <Overlay overlayType='drawer-right' content={<Options />}>
+                    <Overlay overlayType='drawer-right' title='Appearance' content={<Options />}>
                         <div className='h-full w-full grid place-content-center relative'>
                             <ActiveOption />
                         </div>
