@@ -50,7 +50,6 @@ export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
     },[])
 
     useEffect(() => {
-        console.log(theme)
         if (!theme) {
             setTheme('dark')
         }
