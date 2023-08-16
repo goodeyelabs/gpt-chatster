@@ -3,8 +3,9 @@ import RoundButton from "./round-button"
 import Image from "next/image"
 import { setAuth } from '@/redux/commonReducer'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
-import { UserIcon } from "@heroicons/react/24/outline"
+import { ArrowLeftOnRectangleIcon, UserIcon } from "@heroicons/react/24/outline"
 import Overlay from "./overlay"
+import Button from "./button"
 
 const Avatar = () => {
     return (
@@ -21,10 +22,18 @@ const Avatar = () => {
 export default function UserAvatar() {
     const dispatch = useAppDispatch();
     const { auth } = useAppSelector(state => state.common.data)
+
+    function AccountMenu() {
+        return (
+            <div className="grid px-8 py-6">
+                <Button icon={<ArrowLeftOnRectangleIcon />} text='Sign out' onClick={() => dispatch(setAuth(false))} />
+            </div>
+        )
+    }
     
     if (auth) {
         return (
-            <Overlay overlayType='drawer-right' title='Stanley Tucci' content={<div><p onClick={() => dispatch(setAuth(false))}>Log out</p></div>}>
+            <Overlay overlayType='drawer-right' title='Account' content={<AccountMenu />}>
                 <RoundButton icon={<Avatar />} />
             </Overlay>
         )

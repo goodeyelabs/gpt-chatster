@@ -35,7 +35,7 @@ export default function Messages() {
                         //  GPT response bubble
                         if (msg.author === 'server') {
                             return (
-                                <div key={m_index} className='grid gap-3 w-full place-self-start justify-start justify-items-start'>
+                                <div key={m_index} className='grid gap-3 w-[90%] place-self-start justify-start justify-items-start'>
                                     <div className='grid cursor-pointer rounded-[20px] bg-slate-200/40 dark:bg-slate-800/50 px-6 py-2'>
                                         <p className='text-base text-slate-500 dark:text-slate-400 font-medium tracking-tight'>{msg.message || 'New message'}</p>
                                     </div>
@@ -46,7 +46,7 @@ export default function Messages() {
 
                         //  User response bubble
                         return (
-                            <div key={m_index} className='grid gap-3 w-full place-self-end justify-end justify-items-end'>
+                            <div key={m_index} className='grid gap-3 w-[90%] place-self-end justify-end justify-items-end'>
                                 <div className='grid cursor-pointer rounded-[20px] bg-blue-500 dark:blue-500 px-6 py-2'>
                                     <p className='text-base text-slate-100 dark:text-slate-200 font-medium tracking-tight'>{msg.message || 'New message'}</p>
                                 </div>

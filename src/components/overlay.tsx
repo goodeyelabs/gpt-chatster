@@ -24,22 +24,22 @@ export default function Overlay({ children, content, overlayType, title }:overla
         switch(overlayType) {
             case 'drawer-right':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-right' : 'animate-slide-out-to-right'} grid z-20 w-[90%] sm:w-[450px] h-screen overflow-y-auto bg-white justify-self-end shadow-xl grid-rows-[auto_1fr] items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-right' : 'animate-slide-out-to-right'} grid z-20 w-[90%] sm:w-[450px] h-screen overflow-y-auto bg-white dark:bg-redax-light justify-self-end shadow-xl grid-rows-[auto_1fr] items-start`}>
                         <Header />
                         {newContent}
                     </div>
                 )
             case 'drawer-left':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid z-20 w-[90%] sm:w-[450px] h-screen overflow-y-auto bg-white justify-self-start shadow-xl grid-rows-[auto_1fr] items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid z-20 w-[90%] sm:w-[450px] h-screen overflow-y-auto bg-white dark:bg-redax-light justify-self-start shadow-xl grid-rows-[auto_1fr] items-start`}>
                         <Header />
                         {newContent}
                     </div>
                 )
             case 'popup':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid z-20 w-[95%] md:w-[650px] h-[60vh] md:h-[500px] mb-[2.5%] md:mb-0 bg-white justify-self-center self-end md:self-center rounded-2xl sm:rounded-xl shadow-xl items-start`}>
-                        <Header />
+                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid z-20 w-[95%] md:w-[650px] h-[60vh] md:h-[500px] mb-[2.5%] md:mb-0 bg-white dark:bg-redax-light justify-self-center self-end md:self-center rounded-2xl sm:rounded-xl shadow-xl items-start`}>
+                        <PopupHeader />
                         {newContent}
                     </div>
                 )
@@ -60,7 +60,20 @@ export default function Overlay({ children, content, overlayType, title }:overla
                 <div className='group grid col-start-1 row-start-1 grid-flow-col gap-2 items-center justify-start select-none cursor-pointer'>
                     <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>{title}</p>
                 </div>
-                <div className='grid place-content-center h-[4rem] w-[4rem]'>
+                <div className='grid place-content-center'>
+                    <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 dark:text-stone-50 cursor-pointer hover:text-blue-400 dark:hover:text-blue-400'/>
+                </div>
+            </div>
+        )
+    }
+
+    function PopupHeader() {
+        return (
+            <div className='grid grid-rows-[4rem] grid-cols-[auto_1fr] grid-flow-col items-center justify-between justify-items-end px-8 border-b border-slate-200 dark:border-neutral-800/80'>
+                <div className='group grid col-start-1 row-start-1 grid-flow-col gap-2 items-center justify-start select-none cursor-pointer'>
+                    <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>{title}</p>
+                </div>
+                <div className='grid place-content-center'>
                     <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 dark:text-stone-50 cursor-pointer hover:text-blue-400 dark:hover:text-blue-400'/>
                 </div>
             </div>
