@@ -106,7 +106,7 @@ export default function MessageInput() {
 
     return (
         <div className='grid gap-3 grid-cols-[auto_auto_1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-200 items-end'>
-            <Button icon={<Cog6ToothIcon />} text='Settings' />    
+            <Button icon={<Cog6ToothIcon />} text='Config' />    
             <Button icon={<BeakerIcon />} text='GPT 3.5' />    
             <textarea 
                 ref={textareaRef}

@@ -5,18 +5,22 @@ import Image from 'next/image'
 
 export default function Header() {   
     return (
-        <div className='grid gap-3 grid-cols-[auto_1fr_auto] justify-items-center h-[4rem] px-5 bg-white items-center'>
-            <Button icon={<ChatBubbleLeftIcon />} text='Chats' />    
-            <div>
-            <Image 
-                src='/logo-circle.svg'
-                alt='Logo'
-                width='64'
-                height='69'
-                className='w-7 h-fit'
-            />
+        <div className='grid gap-3 grid-cols-[1fr_auto_1fr] h-[4rem] px-5 bg-white items-center'>
+            <div className='grid justify-items-start'>
+                <Button icon={<ChatBubbleLeftIcon />} text='Conversations' />   
             </div>
-            <Button icon={<Bars3BottomRightIcon />} />    
+            <div>
+                <Image 
+                    src='/logo-circle.svg'
+                    alt='Logo'
+                    width='64'
+                    height='69'
+                    className='w-8 h-fit'
+                />
+            </div>
+            <div className='grid justify-items-end'>
+                <Button icon={<Bars3BottomRightIcon />} />    
+            </div>
         </div>
     )
 }
