@@ -36,7 +36,7 @@ export default function View({ children }:viewProps) {
 
         <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr] overflow-y-auto overscroll-contain">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10"></div>
-            <div className="grid grid-rows-[4rem_1fr_4rem]">
+            <div className="grid grid-rows-[4rem_1fr_auto]">
                 <div className="grid sticky top-[4rem] items-center bg-neutral-50">
                     <p>Top</p>
                 </div>
@@ -51,8 +51,8 @@ export default function View({ children }:viewProps) {
                         <p>Middle</p>
                     </div>
                 </div>
-                <div className="grid sticky bottom-0 items-center border-t border-gray-200 bg-white z-10">
-                    <p>Bottom</p>
+                <div className="grid sticky bottom-0 items-center border-t border-gray-200 bg-white z-10 items-center">
+                    <MessageInput />
                 </div>
             </div>
         </div>
