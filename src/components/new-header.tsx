@@ -20,9 +20,9 @@ function Menu() {
 
 export default function Header() {   
     return (
-        <div className='grid gap-3 grid-cols-[1fr_auto_1fr] md:grid-cols-[auto_1fr] h-[4rem] px-5 md:px-8 xl:px-12 2xl:px-16 bg-white items-center'>
+        <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-[4rem] px-5 md:px-8 xl:px-12 2xl:px-16 bg-white items-center'>
             <div className='grid justify-items-start md:hidden'>
-                <Overlay overlayType='drawer-left' content={<SideBar />}>
+                <Overlay overlayType='drawer-left' title='Conversations' content={<SideBar />}>
                     <ChevronLeftIcon className='w-6 h-auto'/>
                 </Overlay>
             </div>
@@ -32,12 +32,12 @@ export default function Header() {
                     alt='Logo'
                     width='64'
                     height='69'
-                    className='w-6 md:w-7 h-fit'
+                    className='hidden md:grid w-6 md:w-7 h-fit'
                 />
-                <p className='hidden md:grid text-xl text-gray-900 font-bold tracking-tight'>RedaxGPT</p> 
+                <p className='grid text-xl text-gray-900 font-bold tracking-tight'>RedaxGPT</p> 
             </div>
             <div className='grid justify-items-end lg:hidden'>
-                <Overlay overlayType='drawer-right' content={<SideBar />}>
+                <Overlay overlayType='drawer-right' title='RedaxGPT' content={<SideBar />}>
                     <Bars3BottomRightIcon className='w-6 h-auto' />   
                 </Overlay> 
             </div>
