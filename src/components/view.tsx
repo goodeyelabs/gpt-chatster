@@ -34,7 +34,7 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr] overflow-y-auto">
+        <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr] overflow-y-auto overscroll-contain">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10"></div>
             <div className="grid grid-rows-[4rem_1fr_4rem]">
                 <div className="grid sticky top-0 items-center">
@@ -51,7 +51,7 @@ export default function View({ children }:viewProps) {
                         <p>Middle</p>
                     </div>
                 </div>
-                <div className="grid sticky bottom-0 items-center border-t border-gray-200">
+                <div className="grid sticky bottom-0 items-center border-t border-gray-200 bg-white z-10">
                     <p>Bottom</p>
                 </div>
             </div>
