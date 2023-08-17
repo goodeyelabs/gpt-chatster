@@ -105,7 +105,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-cols-[1fr_auto] items-start px-4 py-0'>
+        <div className='grid gap-3 grid-cols-[1fr_auto] px-5 pb-6 bg-white'>
             <textarea 
                 ref={textareaRef}
                 autoFocus
@@ -114,7 +114,7 @@ export default function MessageInput() {
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 rows={1}
                 placeholder='Send a message to RedaxGPT...' 
-                className='grid w-full min-h-[2.5rem] py-2 px-4 border border-gray-300 rounded-[1.25rem] resize-none text-md font-base text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none'>
+                className='grid w-full h-[2.5rem] py-2 px-4 border border-gray-300 rounded-[1.25rem] resize-none text-md font-base text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
             </textarea>
             <Button icon={<Cog6ToothIcon />} text='Settings' />
         </div>
