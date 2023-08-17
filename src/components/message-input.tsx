@@ -105,7 +105,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-cols-[auto_auto_1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-200 items-end'>
+        <div className='grid gap-3 grid-cols-[auto_auto_1fr_auto] min-h-[3.75rem] px-5 md:px-8 xl:px-12 2xl:px-16 py-4 bg-white border-t border-neutral-200 items-end'>
             <Button icon={<Cog6ToothIcon />} text='Config' />    
             <Button icon={<BeakerIcon />} text='GPT 3.5' />    
             <textarea 
@@ -116,7 +116,7 @@ export default function MessageInput() {
                 value={currentPrompt} 
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 placeholder='Send a message' 
-                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-[1.25rem] resize-none text-base font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
+                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-gradient-to-t to-gray-100/50 from-gray-200/50 rounded-[1.25rem] resize-none text-base font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
             </textarea>
             <Button icon={<PaperAirplaneIcon onClick={handleEnterPress} />} />    
         </div>
