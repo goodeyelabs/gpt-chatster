@@ -20,20 +20,41 @@ export function SideBar() {
     )
 }
 
-function AppView({ children }:viewProps) {    
+export default function View({ children }:viewProps) {    
     return (
-        <div id='view' className='grid grid-cols-[1fr] md:grid-cols-[400px_1fr] grid-rows-[4.25rem_1fr] h-screen h-screen-ios overflow-y-hidden'>
-            <div id='header' className='grid col-span-2'>
-                <Header />
-            </div>
-            <SideBar />
-            <div id='main' className='grid w-full h-full overflow-y-auto grid-rows-[5rem_1fr_auto] bg-white dark:bg-redax-dark'>
-                <MainHeader />
-                <Messages />
-                <MessageInput />
+        // <div id='view' className='grid grid-cols-[1fr] md:grid-cols-[400px_1fr] grid-rows-[4.25rem_1fr] h-screen h-screen-ios overflow-y-hidden'>
+        //     <div id='header' className='grid col-span-2'>
+        //         <Header />
+        //     </div>
+        //     <SideBar />
+        //     <div id='main' className='grid w-full h-full overflow-y-auto grid-rows-[5rem_1fr_auto] bg-white dark:bg-redax-dark'>
+        //         <MainHeader />
+        //         <Messages />
+        //         <MessageInput />
+        //     </div>
+        // </div>
+
+        <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr]">
+            <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10"></div>
+            <div className="grid grid-rows-[4rem_1fr_4rem]">
+                <div className="grid sticky top-0 items-center">
+                    <p>Top</p>
+                </div>
+                <div className="grid min-h-full">
+                    <div className="grid h-screen place-content-center">
+                        <p>Middle</p>
+                    </div>
+                    <div className="grid h-screen place-content-center">
+                        <p>Middle</p>
+                    </div>
+                    <div className="grid h-screen place-content-center">
+                        <p>Middle</p>
+                    </div>
+                </div>
+                <div className="grid sticky bottom-0 items-center border-t border-gray-200">
+                    <p>Bottom</p>
+                </div>
             </div>
         </div>
     )
 }
-
-export default AppView
