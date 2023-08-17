@@ -50,7 +50,7 @@ export default function View({ children }:viewProps) {
                 <div className="grid">
                     <Messages />
                 </div>
-                <div className="grid sticky bottom-0 min-h-[4rem]">
+                <div className="grid sticky bottom-0 min-h-[4rem] transform-gpu">
                     <MessageInput />
                 </div>
             </div>
