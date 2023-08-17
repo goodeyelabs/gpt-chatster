@@ -118,7 +118,7 @@ export default function MessageInput() {
                 placeholder='Send a message' 
                 className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-[1.25rem] resize-none text-base font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
             </textarea>
-            <Button icon={<PaperAirplaneIcon />} />    
+            <Button icon={<PaperAirplaneIcon onClick={handleEnterPress} />} />    
         </div>
     )
 

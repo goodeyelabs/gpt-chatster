@@ -6,6 +6,7 @@ import Messages from "./messages"
 import MessageInput from "./message-input"
 import Header from "./header"
 import Overlay from "./overlay"
+import NewHeader from "./new-header"
 
 type viewProps = {
     children?: any,
@@ -35,11 +36,9 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid min-h-screen min-h-screen-ios grid-rows-[3.75rem_1fr] transform-gpu">
-            <div className="grid sticky top-0 border-b border-gray-200 bg-white place-content-center">
-                <Overlay overlayType="drawer-left" content={<SideBar />}>
-                    <p>Open sidebar</p>
-                </Overlay>
+        <div className="grid min-h-screen min-h-screen-ios grid-rows-[auto_1fr] transform-gpu">
+            <div className="grid sticky top-0 border-b border-gray-200 bg-white">
+                <NewHeader />
             </div>
             <div className="grid grid-rows-[1fr_auto]">
                 {/* <div className="grid sticky top-[4rem] place-content-center bg-neutral-50">
