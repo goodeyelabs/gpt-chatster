@@ -105,7 +105,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-cols-[1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-20'>
+        <div className='grid gap-3 grid-cols-[1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-20 items-end'>
             <textarea 
                 ref={textareaRef}
                 autoFocus
@@ -113,7 +113,7 @@ export default function MessageInput() {
                 value={currentPrompt} 
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 placeholder='Send a message' 
-                className='grid w-full h-[2.5rem] py-2 px-4 border border-gray-300 rounded-[1.25rem] resize-none text-sm font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
+                className='grid w-full min-h-[2.5rem] py-2 px-4 border border-gray-300 rounded-[1.25rem] resize-none text-sm font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
             </textarea>
             <Button icon={<Cog6ToothIcon />} text='Settings' />
         </div>
