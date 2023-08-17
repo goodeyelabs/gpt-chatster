@@ -34,13 +34,13 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr]">
+        <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr] overflow-y-auto">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10"></div>
             <div className="grid grid-rows-[4rem_1fr_4rem]">
                 <div className="grid sticky top-0 items-center">
                     <p>Top</p>
                 </div>
-                <div className="grid min-h-full">
+                <div className="grid">
                     <div className="grid h-screen place-content-center">
                         <p>Middle</p>
                     </div>
