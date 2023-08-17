@@ -35,7 +35,7 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid min-h-screen min-h-screen-ios grid-rows-[3.75rem_1fr]">
+        <div className="grid min-h-screen min-h-screen-ios grid-rows-[3.75rem_1fr] transform-gpu">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white place-content-center">
                 <Overlay overlayType="drawer-left" content={<SideBar />}>
                     <p>Open sidebar</p>
@@ -50,7 +50,7 @@ export default function View({ children }:viewProps) {
                 <div className="grid">
                     <Messages />
                 </div>
-                <div className="grid sticky bottom-0 min-h-[4rem] transform-gpu">
+                <div className="grid sticky bottom-0 min-h-[4rem]">
                     <MessageInput />
                 </div>
             </div>
