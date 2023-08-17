@@ -37,17 +37,17 @@ export default function View({ children }:viewProps) {
         <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr] overflow-y-auto overscroll-contain">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10"></div>
             <div className="grid grid-rows-[4rem_1fr_4rem]">
-                <div className="grid sticky top-0 items-center">
+                <div className="grid sticky top-[4rem] items-center bg-neutral-50">
                     <p>Top</p>
                 </div>
                 <div className="grid">
-                    <div className="grid h-screen place-content-center">
-                        <p>Middle</p>
+                    <div className="grid h-screen place-content-center bg-neutral-50">
+                        <p>First</p>
                     </div>
                     <div className="grid h-screen place-content-center">
                         <p>Middle</p>
                     </div>
-                    <div className="grid h-screen place-content-center">
+                    <div className="grid h-screen place-content-center bg-neutral-50">
                         <p>Middle</p>
                     </div>
                 </div>
