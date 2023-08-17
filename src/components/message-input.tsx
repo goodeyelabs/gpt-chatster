@@ -105,7 +105,8 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-cols-[1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-200 items-end'>
+        <div className='grid gap-3 grid-cols-[auto_1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-200 items-end'>
+        <Button icon={<Cog6ToothIcon />} text='Settings' />    
             <textarea 
                 ref={textareaRef}
                 autoFocus
