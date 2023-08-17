@@ -37,7 +37,7 @@ export default function Header() {
                 <p className='hidden md:grid text-xl text-gray-900 font-bold tracking-tight'>RedaxGPT</p> 
             </div>
             <div className='grid justify-items-end lg:hidden'>
-                <Overlay overlayType='drawer-left' content={<SideBar />}>
+                <Overlay overlayType='drawer-right' content={<SideBar />}>
                     <Bars3BottomRightIcon className='w-6 h-auto' />   
                 </Overlay> 
             </div>
