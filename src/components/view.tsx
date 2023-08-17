@@ -35,7 +35,7 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid grid-rows-[4rem_1fr] overflow-y-auto overscroll-contain">
+        <div className="grid grid-rows-[4rem_1fr]">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white place-content-center">
                 <p>Header</p>
             </div>
