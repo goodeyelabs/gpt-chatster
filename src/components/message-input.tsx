@@ -113,7 +113,7 @@ export default function MessageInput() {
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 rows={1}
                 placeholder='Send a message to RedaxGPT...' 
-                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-full resize-none text-smfont-base tracking-tight appearance-none outline-none'>
+                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-full resize-none text-md font-base text-neutral-600 tracking-tight appearance-none outline-none'>
             </textarea>
             <div />
         </div>
