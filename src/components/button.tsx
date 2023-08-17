@@ -18,7 +18,10 @@ function Button({ icon, text, classProp, onClick, noBackground }:buttonProps) {
             onClick={onClick || null} 
             className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] w-[40px] md:w-auto grid-flow-col text-sm font-medium tracking-tight text-neutral-600 hover:text-neutral-700 dark:text-stone-400/90 dark:hover:text-stone-200 ${!noBackground ? 'bg-transparent hover:bg-neutral-100 dark:bg-zinc-800/80 dark:hover:bg-zinc-700' : ''} px-4 pl-4 transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none`}
         >
-            {styledIcon}
+            {
+                icon &&
+                    styledIcon
+            }
             {
                 text &&
                     <span className='truncate hidden md:grid'>{text}</span>

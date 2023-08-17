@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
 import { setScrollMain, setGptResponseIndex } from '@/redux/commonReducer'
 import Button from './button'
-import { BeakerIcon, Cog6ToothIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, Cog6ToothIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -105,18 +105,20 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-cols-[auto_auto_1fr] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-200 items-end'>
+        <div className='grid gap-3 grid-cols-[auto_auto_1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white border-t border-neutral-200 items-end'>
             <Button icon={<Cog6ToothIcon />} text='Settings' />    
             <Button icon={<BeakerIcon />} text='GPT 3.5' />    
             <textarea 
                 ref={textareaRef}
                 autoFocus
                 onKeyDown={handleEnterPress}
+                rows={1}
                 value={currentPrompt} 
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 placeholder='Send a message' 
                 className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-[1.25rem] resize-none text-base font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
             </textarea>
+            <Button icon={<PaperAirplaneIcon />} />    
         </div>
     )
 
