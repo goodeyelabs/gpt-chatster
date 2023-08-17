@@ -3,6 +3,8 @@ import { useEffect, useState, useRef, KeyboardEventHandler } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
 import { setScrollMain, setGptResponseIndex } from '@/redux/commonReducer'
+import Button from './button'
+import { Cog6ToothIcon } from '@heroicons/react/24/outline'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -103,8 +105,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid grid-cols-[auto_1fr_auto] items-center px-4 py-4'>
-            <div />
+        <div className='grid gap-3 grid-cols-[1fr_auto] items-center px-4 py-4'>
             <textarea 
                 ref={textareaRef}
                 autoFocus
@@ -113,9 +114,9 @@ export default function MessageInput() {
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 rows={1}
                 placeholder='Send a message to RedaxGPT...' 
-                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-full resize-none text-md font-base text-neutral-600 tracking-tight appearance-none outline-none'>
+                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-[1.25rem] resize-none text-md font-base text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none'>
             </textarea>
-            <div />
+            <Button icon={<Cog6ToothIcon />} text='Settings' />
         </div>
     )
 

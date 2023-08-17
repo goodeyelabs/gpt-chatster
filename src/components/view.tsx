@@ -35,12 +35,12 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid grid-rows-[4rem_1fr]">
+        <div className="grid min-h-screen grid-rows-[4rem_1fr]">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white place-content-center">
                 <p>Header</p>
             </div>
             <div className="grid grid-rows-[4rem_1fr_auto]">
-                <div className="grid sticky top-[4rem] place-content-center bg-neutral-50">
+                <div className="grid sticky top-[4rem] z-10 place-content-center bg-neutral-50">
                     <Overlay overlayType="drawer-left" content={<SideBar />}>
                         <p>Open sidebar</p>
                     </Overlay>
@@ -48,7 +48,7 @@ export default function View({ children }:viewProps) {
                 <div className="grid">
                     <Messages />
                 </div>
-                <div className="grid sticky bottom-0 border-t min-h-[5rem] md:min-h-[4rem] border-gray-200 bg-white">
+                <div className="grid sticky bottom-0 z-10 border-t min-h-[5rem] md:min-h-[4rem] border-gray-200 bg-white">
                     <MessageInput />
                 </div>
             </div>

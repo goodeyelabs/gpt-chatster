@@ -21,7 +21,7 @@ body {
 
 @layer base {
   body {
-    @apply min-h-full;
+    @apply min-h-screen;
     @apply min-h-screen-ios;
   }
 }
