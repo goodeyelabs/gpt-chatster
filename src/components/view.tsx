@@ -5,6 +5,7 @@ import MainHeader from "./main-header"
 import Messages from "./messages"
 import MessageInput from "./message-input"
 import Header from "./header"
+import Overlay from "./overlay"
 
 type viewProps = {
     children?: any,
@@ -35,10 +36,14 @@ export default function View({ children }:viewProps) {
         // </div>
 
         <div className="grid h-screen h-screen-ios w-screen grid-rows-[4rem_1fr] overflow-y-auto overscroll-contain">
-            <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10"></div>
-            <div className="grid grid-rows-[4rem_1fr_auto]">
-                <div className="grid sticky top-[4rem] items-center bg-neutral-50">
-                    <p>Top</p>
+            <div className="grid sticky top-0 border-b border-gray-200 bg-white z-10 place-content-center">
+                <p>Header</p>
+            </div>
+            <div className="grid grid-rows-[4rem_1fr_4rem]">
+                <div className="grid sticky top-[4rem] place-content-center bg-neutral-50">
+                    <Overlay overlayType="drawer-left" content={<div style={{height:2000, placeContent: 'center'}}>Drawer</div>}>
+                        <p>Open drawer</p>
+                    </Overlay>
                 </div>
                 <div className="grid">
                     <div className="grid h-screen place-content-center bg-neutral-50">
@@ -51,8 +56,8 @@ export default function View({ children }:viewProps) {
                         <p>Middle</p>
                     </div>
                 </div>
-                <div className="grid sticky bottom-0 items-center border-t border-gray-200 bg-white z-10 items-center">
-                    <MessageInput />
+                <div className="grid sticky bottom-0 border-t border-gray-200 bg-white z-10 place-content-center">
+                    <p>Footer</p>
                 </div>
             </div>
         </div>
