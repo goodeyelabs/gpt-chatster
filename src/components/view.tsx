@@ -48,7 +48,7 @@ export default function View({ children }:viewProps) {
                 <div className="grid">
                     <Messages />
                 </div>
-                <div className="grid sticky bottom-0 border-t min-h-[5rem] md:min-h-[4rem] border-gray-200 bg-white place-content-center">
+                <div className="grid sticky bottom-0 border-t min-h-[5rem] md:min-h-[4rem] border-gray-200 bg-white">
                     <MessageInput />
                 </div>
             </div>

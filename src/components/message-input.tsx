@@ -103,21 +103,19 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='sticky bottom-0 bg-white dark:bg-redax-dark min-h-[5rem] py-8 grid grid-flow-col gap-6 border-t border-none px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 items-end'>
-            {/* <RoundButton onClick={handleSubmit} icon={<Cog8ToothIcon />} /> */}
-            <div className='grid bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 w-full min-h-[12px] py-2 px-6 items-center rounded-[20px]'>
-                <textarea 
-                    ref={textareaRef}
-                    autoFocus
-                    onKeyDown={handleEnterPress}
-                    value={currentPrompt} 
-                    onChange={event => handleMessageChange(event.currentTarget.value)}
-                    rows={1}
-                    placeholder='Send a message to RedaxGPT...' 
-                    className='resize-none bg-transparent w-full h-full font-medium tracking-tight overflow-y-auto text-slate-500 dark:text-neutral-300 dark:placeholder:text-neutral-400 text-md text-left appearance-none outline-none'>
-                </textarea>
-            </div>
-            {/* <RoundButton startColor='bg-blue-700' onClick={handleSubmit} icon={<PaperAirplaneIcon />} /> */}
+        <div className='grid grid-cols-[auto_1fr_auto] items-center px-4 py-4'>
+            <div />
+            <textarea 
+                ref={textareaRef}
+                autoFocus
+                onKeyDown={handleEnterPress}
+                value={currentPrompt} 
+                onChange={event => handleMessageChange(event.currentTarget.value)}
+                rows={1}
+                placeholder='Send a message to RedaxGPT...' 
+                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-neutral-100 rounded-full resize-none text-smfont-base tracking-tight appearance-none outline-none'>
+            </textarea>
+            <div />
         </div>
     )
 
