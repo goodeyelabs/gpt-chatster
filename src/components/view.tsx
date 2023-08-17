@@ -47,7 +47,7 @@ export default function View({ children }:viewProps) {
                         <p>Open sidebar</p>
                     </Overlay>
                 </div> */}
-                <div className="grid">
+                <div className="grid h-full">
                     <Messages />
                 </div>
                 <div className="grid sticky bottom-0 min-h-[4rem]">
