@@ -24,28 +24,28 @@ export default function Overlay({ children, content, overlayType, title }:overla
         switch(overlayType) {
             case 'drawer-right':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-right' : 'animate-slide-out-to-right'} grid z-20 w-[90%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax-light justify-self-end shadow-xl grid-rows-[auto_1fr] items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-right' : 'animate-slide-out-to-right'} grid transform-gpu z-20 w-[90%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax-light justify-self-end shadow-xl grid-rows-[auto_1fr] items-start`}>
                         <Header />
                         {newContent}
                     </div>
                 )
             case 'drawer-left':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid z-20 w-[90%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax-light justify-self-start shadow-xl grid-rows-[auto_1fr] items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid transform-gpu z-20 w-[90%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax-light justify-self-start shadow-xl grid-rows-[auto_1fr] items-start`}>
                         <Header />
                         {newContent}
                     </div>
                 )
             case 'popup':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid z-20 w-[95%] md:w-[650px] h-[60vh] md:h-[500px] mb-[2.5%] md:mb-0 bg-white dark:bg-redax-light justify-self-center self-end md:self-center rounded-2xl sm:rounded-xl shadow-xl items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid transform-gpu z-20 w-[95%] md:w-[650px] h-[60vh] md:h-[500px] mb-[2.5%] md:mb-0 bg-white dark:bg-redax-light justify-self-center self-end md:self-center rounded-2xl sm:rounded-xl shadow-xl items-start`}>
                         <PopupHeader />
                         {newContent}
                     </div>
                 )
             case 'menu':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid absolute z-20 w-auto h-auto justify-self-center self-center shadow-xl`}>
+                    <div className={`${!overlayIsClosing ? 'animate-pop-up-from-bottom' : 'animate-pop-down-to-bottom'} grid transform-gpu absolute z-20 w-auto h-auto justify-self-center self-center shadow-xl`}>
                         {newContent}
                     </div>
                 )
@@ -83,7 +83,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
     function Wrapper() {
         return (
             <div id='overlay_wrapper' className='fixed grid w-screen h-screen h-screen-ios z-50 inset-0'>
-                <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8] w-screen h-screen`} onClick={closeOverlay} />
+                <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} transform-gpu z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8] w-screen h-screen h-screen-ios`} onClick={closeOverlay} />
                 <Content />
             </div>
         )
