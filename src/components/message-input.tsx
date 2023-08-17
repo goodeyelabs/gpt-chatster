@@ -113,7 +113,7 @@ export default function MessageInput() {
                 value={currentPrompt} 
                 onChange={event => handleMessageChange(event.currentTarget.value)}
                 placeholder='Send a message' 
-                className='grid w-full min-h-[2.5rem] py-2 px-4 border border-gray-300 rounded-[1.25rem] resize-none text-sm font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
+                className='grid w-full min-h-[2.5rem] py-2 px-4 border border-gray-300 rounded-[1.25rem] resize-none text-base font-medium text-neutral-700 placeholder:text-neutral-500 tracking-tight appearance-none outline-none overflow-y-hidden'>
             </textarea>
             <Button icon={<Cog6ToothIcon />} text='Settings' />
         </div>
