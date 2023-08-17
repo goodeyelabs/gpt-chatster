@@ -105,7 +105,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-cols-[1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white'>
+        <div className='grid gap-3 grid-cols-[1fr_auto] min-h-[3.75rem] px-5 py-4 bg-white min-h-screen-ios'>
             <textarea 
                 ref={textareaRef}
                 autoFocus
