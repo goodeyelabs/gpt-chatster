@@ -8,12 +8,19 @@ import { SideBar } from './view'
 function Menu() {
     return (
         <>  
-            <Button icon={<LightBulbIcon />} text='FAQ' />
-            <Button icon={<InformationCircleIcon />} text='Help' />
-            <Button icon={<StarIcon />} text='Upgrade' />
+            <div className='h-[2.5rem] grid place-content-center px-3'>
+                <p className='text-sm font-semibold text-neutral-700'>FAQ</p>
+            </div>
+            <div className='h-[2.5rem] grid place-content-center px-3'>
+                <p className='text-sm font-semibold text-neutral-700'>Help</p>
+            </div>
+            <div className='h-[2.5rem] grid place-content-center px-3'>
+                <p className='text-sm font-semibold text-neutral-700'>Upgrade</p>
+            </div>
             <EllipsisVerticalIcon className='w-5 h-auto self-center opacity-50'/>
             <Button icon={<SunIcon />} />
             <Button icon={<UserIcon />} />
+
         </>
     )
 }
@@ -37,7 +44,7 @@ export default function Header() {
                 <p className='grid text-xl text-gray-900 font-bold tracking-tight'>RedaxGPT</p> 
             </div>
             <div className='grid justify-items-end lg:hidden'>
-                <Overlay overlayType='drawer-right' title='RedaxGPT' content={<SideBar />}>
+                <Overlay overlayType='drawer-right' title='RedaxGPT' content={<Menu />}>
                     <Bars3BottomRightIcon className='w-6 h-auto' />   
                 </Overlay> 
             </div>
