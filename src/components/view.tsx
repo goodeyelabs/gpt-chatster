@@ -7,6 +7,7 @@ import MessageInput from "./message-input"
 import Header from "./header"
 import Overlay from "./overlay"
 import NewHeader from "./new-header"
+import ChatButton from "./chat-button"
 
 type viewProps = {
     children?: any,
@@ -24,18 +25,21 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid h-screen h-screen-ios grid-rows-[auto_1fr] grid-cols-[minmax(auto,400px)_1fr] transform-gpu">
+        <div className="grid h-full h-full-ios grid-rows-[auto_1fr] grid-cols-[minmax(auto,400px)_1fr] transform-gpu">
             <div className="grid sticky top-0 col-start-1 col-span-2 shadow-[0_1px_0_0] shadow-gray-200 bg-white z-30">
                 <NewHeader />
             </div>
-            <div className="sticky top-[4rem] grid col-start-1 row-start-2 row-span-2 z-20 h-[calc(100vh-4rem)] shadow-[1px_0_0_0] shadow-gray-200 overflow-y-auto">
-                <div className="grid h-full">
+            <div className="sticky top-[4rem] grid col-start-1 row-start-2 row-span-2 z-20 h-full shadow-[1px_0_0_0] shadow-gray-200 overflow-y-auto">
+                <div className="grid h-full grid-rows-[1fr_auto]">
                     <div className="grid">
                         <Sessions />
                     </div>
+                    <div className="grid sticky bottom-0">
+                        <ChatButton />
+                    </div>
                 </div>
             </div>
-            <div className="sticky top-[4rem] grid col-start-2 row-start-2 row-span-2 h-[calc(100vh-4rem)] shadow-[1px_0_0_0] shadow-gray-200 overflow-y-auto">
+            <div className="sticky top-[4rem] grid col-start-2 row-start-2 row-span-2 h-full shadow-[1px_0_0_0] shadow-gray-200 overflow-y-auto">
                 <div className="grid h-full grid-rows-[1fr_auto]">
                     <div className="grid">
                         <Messages />
