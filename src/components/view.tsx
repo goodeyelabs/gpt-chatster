@@ -24,7 +24,7 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid h-screen h-screen-ios grid-rows-[auto_1fr_auto] grid-cols-[400px_1fr]  transform-gpu overflow-y-auto">
+        <div className="grid h-screen h-screen-ios grid-rows-[auto_1fr_auto] grid-cols-[minmax(auto,400px)_1fr] transform-gpu overflow-y-auto">
             <div className="grid sticky top-0 col-start-1 col-span-2 border-b border-gray-200 bg-white">
                 <NewHeader />
             </div>
