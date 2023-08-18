@@ -30,38 +30,12 @@ export default function Messages() {
     if (list[activeSession]) {
         return (
             <div className='grid content-start gap-8 w-full px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 pt-6 pb-10 mx-auto'>
-                {/* {
-                    list[activeSession].messages.map((m:object, m_index:number) => {
-                        const msg = list[activeSession].messages[m_index]
-                        
-                        //  TODO: make this bit DRY
-                        //  GPT response bubble
-                        if (msg.author === 'server') {
-                            return (
-                                <div key={m_index} className='grid gap-3 w-[90%] place-self-start justify-start justify-items-start'>
-                                    <div className='grid cursor-pointer rounded-[10px] bg-slate-200/40 dark:bg-neutral-800/50 px-6 py-[10px]'>
-                                        <p className='text-sm text-slate-500 dark:text-slate-300 font-medium tracking-tight'>{msg.message || 'New message'}</p>
-                                    </div>
-                                    <p className='text-xs text-slate-400/70 dark:text-slate-600 tracking-tight'><span className='font-semibold dark:text-slate-500'>RedaxGPT</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
-                                </div>
-                            )
-                        }
-
-                        //  User response bubble
-                        return (
-                            <div key={m_index} className='grid gap-3 w-[90%] place-self-end justify-end justify-items-end'>
-                                <div className='grid cursor-pointer rounded-[10px] bg-slate-600 dark:bg-slate-800 px-6 py-[10px]'>
-                                    <p className='text-sm text-white dark:text-slate-200 font-medium tracking-tight'>{msg.message || 'New message'}</p>
-                                </div>
-                                <p className='text-xs text-slate-400/70 dark:text-slate-600 place-self-end tracking-tight'><span className='font-semibold dark:text-slate-500'>Stanley</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
-                            </div>
-                        )
-                    })
-                } */}
                 {
                     messages.map((m:object, m_idx:number) => {
                         const msg:any = m
 
+                        //  TODO: make this bit DRY
+                        //  GPT response bubble
                         if (msg.author === 'server') {
                             return (
                                 <div key={m_idx} className='grid gap-3 w-[90%] place-self-start justify-start justify-items-start'>
@@ -76,14 +50,15 @@ export default function Messages() {
                         //  User response bubble
                         return (
                             <div key={m_idx} className='grid gap-3 w-[90%] place-self-end justify-end justify-items-end'>
-                                <div className='grid cursor-pointer rounded-[20px] bg-purple-400 dark:bg-slate-800 px-6 py-[10px]'>
-                                <p className='text-base font-medium text-slate-100 dark:text-slate-300 tracking-tight'>{msg.message || 'New message'}</p>
+                                <div className='grid cursor-pointer rounded-[20px] bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-light-blue)] dark:bg-slate-800 px-6 py-[10px]'>
+                                <p className='text-base font-medium text-slate-50 dark:text-slate-300 tracking-tight'>{msg.message || 'New message'}</p>
                                 </div>
                                 <p className='text-xs text-slate-400/70 dark:text-slate-600 place-self-end tracking-tight'><span className='font-semibold dark:text-slate-500'>Stanley</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
                             </div>
                         )
                     })    
                 }
+                {/* Next div is needed for scrollMain to work */}
                 <div ref={mainRef}></div>
             </div>
         )
