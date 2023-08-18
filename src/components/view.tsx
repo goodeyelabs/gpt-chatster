@@ -52,11 +52,11 @@ export default function View({ children }:viewProps) {
         // </div>
 
         <div className="grid min-h-screen min-h-screen-ios grid-rows-[4rem_1fr_auto] grid-cols-[400px_1fr]">
-            <div className="sticky top-0 grid row-start-1 col-start-1 col-span-full">
+            <div className="sticky top-0 grid row-start-1 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-gray-200">
                 <NewHeader />
             </div>
-            <div className="sticky top-[4rem] h-[calc(100vh-4rem)] grid row-start-2 row-span-full col-start-1">
-                <div className="grid h-full overflow-y-auto">
+            <div className="sticky top-[4rem] z-20 h-[calc(100vh-4rem)] grid row-start-2 row-span-full col-start-1">
+                <div className="grid h-full pb-[4rem] overflow-y-auto shadow-[1px_0_0_0] shadow-gray-200">
                     <Sessions />
                     <Sessions />
                     <Sessions />
