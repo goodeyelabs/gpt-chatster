@@ -4,7 +4,7 @@ import Button from './button'
 import Image from 'next/image'
 import Overlay from './overlay'
 import NewOverlay from './new-overlay'
-import NewSideBar from './sidebar'
+import Conversations from './conversations'
 
 function Menu() {
     return (
@@ -30,9 +30,7 @@ export default function Header() {
     return (
         <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-[4rem] px-5 md:px-8 xl:px-12 2xl:px-16 bg-white items-center'>
             <div className='grid justify-items-start md:hidden'>
-                <NewOverlay overlayType='drawer-left' title='Conversations' content={
-                    <NewSideBar />
-                }>
+                <NewOverlay overlayType='drawer-left' content={<Conversations />}>
                     <ChevronLeftIcon className='w-6 h-auto'/>
                 </NewOverlay>
             </div>
