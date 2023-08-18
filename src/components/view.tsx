@@ -34,7 +34,7 @@ export default function View({ children }:viewProps) {
             <div className="grid sticky bottom-0 col-start-2">
                 <MessageInput />
             </div>
-            <div className="sticky top-[4rem] grid col-start-1 row-start-2 row-span-2 place-content-center h-[calc(100vh-4rem)] shadow-[1px_0_0_0] shadow-gray-200 overflow-y-auto">
+            <div className="sticky top-[4rem] grid col-start-1 row-start-2 row-span-2 place-content-center h-[calc(100vh-4rem)] h-[calc(webkitFillAvailable-4rem)] shadow-[1px_0_0_0] shadow-gray-200 overflow-y-auto">
                 <div className="grid grid-rows-[1fr auto] h-full">
                     <div className="grid col-start-2">
                     <Messages />
