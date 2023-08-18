@@ -8,6 +8,7 @@ import Header from "./header"
 import Overlay from "./overlay"
 import NewHeader from "./new-header"
 import ChatButton from "./chat-button"
+import Conversations from "./conversations"
 
 type viewProps = {
     children?: any,
@@ -51,23 +52,28 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className="grid min-h-screen min-h-screen-ios grid-rows-[4rem_1fr_auto] grid-cols-[400px_1fr]">
-            <div className="sticky top-0 grid row-start-1 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-gray-200">
+        <div className='grid w-screen h-screen h-screen-ios grid-rows-[4rem_1fr] grid-cols-[400px_1fr]'>
+            {/* //  Header */}
+            <div className='grid sticky z-30 top-0 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-gray-200'>
                 <NewHeader />
             </div>
-            <div className="sticky top-[4rem] z-20 h-[calc(100vh-4rem)] grid row-start-2 row-span-full col-start-1">
-                <div className="grid h-full pb-[4rem] overflow-y-auto shadow-[1px_0_0_0] shadow-gray-200">
-                    <Sessions />
-                    <Sessions />
-                    <Sessions />
-                    <Sessions />
+            {/* Sidebar */}
+            <div className='grid z-20 h-full overflow-y-auto scroll-smooth col-start-1 row-start-2 shadow-[1px_0_0_0] shadow-gray-200'>
+                <Conversations />
+                <Sessions />
+                <Sessions />
+                <Sessions />
+            </div>
+            {/* // Main */}
+            <div className='grid grid-rows-[1fr_auto] overflow-y-auto scroll-smooth col-start-2 row-start-2'>
+                {/* // Content */}
+                <div className='grid row-start-1'>
+                    <Messages />
                 </div>
-            </div>
-            <div className="grid row-start-2 col-start-2">
-                <Messages />
-            </div>
-            <div className="sticky bottom-0 grid row-start-3 col-start-2">
-                <MessageInput />
+                {/* // Footer */}
+                <div className='grid sticky bottom-0 row-start-2'>
+                    <MessageInput />
+                </div>
             </div>
         </div>
     )

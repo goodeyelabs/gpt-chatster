@@ -1,3 +1,4 @@
+'use client'
 import { setScrollMain } from "@/redux/commonReducer";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setActiveSession } from "@/redux/sessionsReducer";
@@ -32,7 +33,7 @@ function List({ closeOverlay }: { closeOverlay?:any}) {
 
 export default function Conversations({ closeOverlay }: { closeOverlay?:any}) {
     return (
-        <div className="grid grid-rows-[auto_1fr] h-screen h-screen-ios overflow-y-auto">
+        <div className="grid grid-rows-[auto_1fr] h-full overflow-y-auto">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white h-[4rem] px-5 md:px-8 xl:px-12 2xl:px-16 items-center">
                 <p onClick={closeOverlay}>Close this modal</p>
             </div>
