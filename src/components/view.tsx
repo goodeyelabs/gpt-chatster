@@ -28,11 +28,14 @@ export default function View({ children }:viewProps) {
             <div className="grid sticky top-0 col-start-1 col-span-2 border-b border-gray-200 bg-white">
                 <NewHeader />
             </div>
-            <div className="grid col-start-1 col-span-2">
+            <div className="grid col-start-2">
                 <Messages />
             </div>
-            <div className="grid sticky bottom-0 col-start-1 col-span-2">
+            <div className="grid sticky bottom-0 col-start-2">
                 <MessageInput />
+            </div>
+            <div className="grid col-start-1 row-start-2 row-span-2 place-content-center">
+                <p>Side</p>
             </div>
         </div>
     )
