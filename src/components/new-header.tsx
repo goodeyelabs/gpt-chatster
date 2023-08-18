@@ -32,7 +32,7 @@ export default function Header() {
         <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-[4rem] px-5 md:px-8 xl:px-12 2xl:px-16 bg-white items-center'>
             <div className='grid justify-items-start md:hidden'>
                 <NewOverlay overlayType='drawer-left' title='Conversations' content={
-                    <div className="grid grid-rows-[auto_1fr] transform-gpu h-screen overflow-y-auto">
+                    <div className="grid grid-rows-[auto_1fr] transform-gpu h-screen h-screen-ios overflow-y-auto">
                         <div className="grid sticky top-0 border-b border-gray-200 bg-white">
                             <p>Header</p>
                         </div>
