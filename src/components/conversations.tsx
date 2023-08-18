@@ -1,4 +1,38 @@
-import Sessions from "./sessions"
+import { setScrollMain } from "@/redux/commonReducer";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setActiveSession } from "@/redux/sessionsReducer";
+
+function List({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
+    const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
+    const dispatch = useAppDispatch();
+
+    let output:object[] = []
+
+    Object.keys(sessions).map((val:string, idx:number, ary:string[]) => {
+        return output.push(sessions[idx])
+    })
+    output = output.reverse()
+    
+    function handleClick(index:number) {
+        dispatch(setActiveSession(index))
+        dispatch(setScrollMain(true))
+        closeOverlay()
+    }
+
+    return (
+        <>
+            {
+                output.map((c:any, c_idx:number) => {
+                    return (
+                        <div onClick={() => handleClick(c_idx)} className='cursor-pointer'>
+                            <p>{(c.messages && c.messages[0]) ? c.messages[0].message : 'New conversation'}</p>
+                        </div>
+                    )
+                })
+            }
+        </>
+    )
+}
 
 export default function Conversations({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
     return (
@@ -7,10 +41,10 @@ export default function Conversations({ closeOverlay }: { closeOverlay?:React.Mo
                 <p onClick={closeOverlay}>Close this modal</p>
             </div>
             <div className="grid grid-rows-[1fr_auto]">
-                <div className="grid">
-                    <Sessions />
+                <div className="grid items-start content-start gap-8">
+                    <List closeOverlay={closeOverlay} />
                 </div>
-                <div className="grid sticky bottom-0 min-h-[4rem] border-t border-neutral-200 items-center">
+                <div className="grid sticky bottom-0 min-h-[4rem] border-t border-neutral-200 bg-white items-center">
                     <p>How the font size?</p>
                 </div>
             </div>
