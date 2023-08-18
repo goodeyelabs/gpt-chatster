@@ -11,7 +11,7 @@ export default function Conversations({ closeOverlay }: { closeOverlay?:React.Mo
                     <Sessions />
                 </div>
                 <div className="grid sticky bottom-0 min-h-[4rem] border-t border-neutral-200 items-center">
-                    <p>How's the font size?</p>
+                    <p>How the font size?</p>
                 </div>
             </div>
         </div>
