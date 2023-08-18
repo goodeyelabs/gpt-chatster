@@ -24,22 +24,15 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid min-h-screen min-h-screen-ios grid-rows-[auto_1fr] transform-gpu">
+        <div className="grid min-h-screen min-h-screen-ios grid-rows-[auto_1fr_auto] transform-gpu">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white">
                 <NewHeader />
             </div>
-            <div className="grid grid-rows-[1fr_auto]">
-                {/* <div className="grid sticky top-[4rem] place-content-center bg-neutral-50">
-                    <Overlay overlayType="drawer-left" content={<SideBar />}>
-                        <p>Open sidebar</p>
-                    </Overlay>
-                </div> */}
-                <div className="grid h-full">
-                    <Messages />
-                </div>
-                <div className="grid sticky bottom-0 min-h-[4rem]">
-                    <MessageInput />
-                </div>
+            <div className="grid h-full">
+                <Messages />
+            </div>
+            <div className="grid sticky bottom-0 min-h-[4rem]">
+                <MessageInput />
             </div>
         </div>
     )
