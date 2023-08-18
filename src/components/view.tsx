@@ -52,28 +52,37 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className='grid w-screen h-screen h-screen-ios grid-rows-[4rem_1fr] grid-cols-[minmax(auto,400px)_1fr]'>
-            {/* //  Header */}
+        // <div className='grid w-screen h-screen h-screen-ios grid-rows-[4rem_1fr] grid-cols-[minmax(auto,375px)_1fr]'>
+        //     {/* //  Header */}
+        //     <div className='grid sticky z-30 top-0 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-gray-200'>
+        //         <NewHeader />
+        //     </div>
+        //     {/* Sidebar */}
+        //     <div className='grid z-20 h-full overflow-y-auto scroll-smooth col-start-1 row-start-2 shadow-[1px_0_0_0] shadow-gray-200'>
+        //         <Conversations />
+        //         <Sessions />
+        //         <Sessions />
+        //         <Sessions />
+        //     </div>
+        //     {/* // Main */}
+        //     <div className='grid grid-rows-[1fr_auto] overflow-y-auto scroll-smooth col-start-2 row-start-2'>
+        //         {/* // Content */}
+        //         <div className='grid row-start-1'>
+        //             <Messages />
+        //         </div>
+        //         {/* // Footer */}
+        //         <div className='grid sticky bottom-0 row-start-2'>
+        //             <MessageInput />
+        //         </div>
+        //     </div>
+        // </div>
+
+        <div className='grid w-screen min-h-screen min-h-screen-ios grid-rows-[4rem_1fr] grid-cols-[minmax(auto,375px)_1fr]'>
             <div className='grid sticky z-30 top-0 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-gray-200'>
                 <NewHeader />
             </div>
-            {/* Sidebar */}
-            <div className='grid z-20 h-full overflow-y-auto scroll-smooth col-start-1 row-start-2 shadow-[1px_0_0_0] shadow-gray-200'>
-                <Conversations />
-                <Sessions />
-                <Sessions />
-                <Sessions />
-            </div>
-            {/* // Main */}
-            <div className='grid grid-rows-[1fr_auto] overflow-y-auto scroll-smooth col-start-2 row-start-2'>
-                {/* // Content */}
-                <div className='grid row-start-1'>
-                    <Messages />
-                </div>
-                {/* // Footer */}
-                <div className='grid sticky bottom-0 row-start-2'>
-                    <MessageInput />
-                </div>
+            <div className="grid col-start-1 grid-row-2 min-h-full shadow-[1px_0_0_0] shadow-gray-200 place-content-center">
+                <p>SIde</p>
             </div>
         </div>
     )

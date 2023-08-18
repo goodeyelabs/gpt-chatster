@@ -16,13 +16,11 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
-  overflow-y: hidden;
 }
 
 @layer base {
   body {
-    @apply h-screen;
-    @apply h-screen-ios;
+    @apply min-h-screen;
+    @apply min-h-screen-ios;
   }
 }
