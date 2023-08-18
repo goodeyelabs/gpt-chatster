@@ -59,6 +59,8 @@ export default function View({ children }:viewProps) {
                 <div className="grid h-full overflow-y-auto">
                     <Sessions />
                     <Sessions />
+                    <Sessions />
+                    <Sessions />
                 </div>
             </div>
             <div className="grid row-start-2 col-start-2">
