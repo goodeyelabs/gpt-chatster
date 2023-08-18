@@ -24,8 +24,8 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid h-screen h-screen-ios grid-rows-[auto_1fr_auto] grid-cols-[minmax(auto,400px)_1fr] transform-gpu overflow-y-auto">
-            <div className="grid sticky top-0 col-start-1 col-span-2 border-b border-gray-200 bg-white">
+        <div className="grid min-h-screen min-h-screen-ios grid-rows-[auto_1fr_auto] grid-cols-[minmax(auto,400px)_1fr] transform-gpu">
+            <div className="grid sticky top-0 col-start-1 col-span-2 shadow-[0_1px_0_0] shadow-gray-200 bg-white">
                 <NewHeader />
             </div>
             <div className="grid col-start-2">
@@ -34,7 +34,7 @@ export default function View({ children }:viewProps) {
             <div className="grid sticky bottom-0 col-start-2">
                 <MessageInput />
             </div>
-            <div className="grid col-start-1 row-start-2 row-span-2 place-content-center">
+            <div className="sticky top-[4rem] grid col-start-1 row-start-2 row-span-2 place-content-center h-[calc(100vh-4rem)] shadow-[1px_0_0_0] shadow-gray-200">
                 <p>Side</p>
             </div>
         </div>
