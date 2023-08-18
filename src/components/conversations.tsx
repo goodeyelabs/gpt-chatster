@@ -2,7 +2,7 @@ import { setScrollMain } from "@/redux/commonReducer";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setActiveSession } from "@/redux/sessionsReducer";
 
-function List({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
+function List({ closeOverlay }: { closeOverlay?:any}) {
     const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
     const dispatch = useAppDispatch();
 
@@ -13,7 +13,7 @@ function List({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
     })
     output = output.reverse()
     
-    function handleClick(index:number) {
+    const handleClick = (index:number) => {
         dispatch(setActiveSession(index))
         dispatch(setScrollMain(true))
         closeOverlay()
@@ -34,7 +34,7 @@ function List({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
     )
 }
 
-export default function Conversations({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
+export default function Conversations({ closeOverlay }: { closeOverlay?:any}) {
     return (
         <div className="grid grid-rows-[auto_1fr] h-screen h-screen-ios overflow-y-auto">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white h-[4rem] px-5 md:px-8 xl:px-12 2xl:px-16 items-center">
