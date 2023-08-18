@@ -24,7 +24,7 @@ function List({ closeOverlay }: { closeOverlay?:React.MouseEventHandler}) {
             {
                 output.map((c:any, c_idx:number) => {
                     return (
-                        <div onClick={() => handleClick(c_idx)} className='cursor-pointer'>
+                        <div key={c_idx} onClick={() => handleClick(c_idx)} className='cursor-pointer'>
                             <p>{(c.messages && c.messages[0]) ? c.messages[0].message : 'New conversation'}</p>
                         </div>
                     )
