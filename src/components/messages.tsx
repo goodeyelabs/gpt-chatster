@@ -1,6 +1,6 @@
 'use client'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { formatDate } from '@/tools/utils'
+import { formatDate, orderSessionsByCreateDate, getSessionMessages } from '@/tools/utils'
 import { setActiveSession } from '@/redux/sessionsReducer'
 import { useEffect, useRef, useState } from 'react'
 import { setScrollMain } from '@/redux/commonReducer'
@@ -11,6 +11,9 @@ export default function Messages() {
     const [mounted, setMounted] = useState(false)
     const mainRef = useRef<HTMLDivElement>(null); 
     const dispatch = useAppDispatch();
+
+    const list:any = orderSessionsByCreateDate(sessions)
+    const messages = getSessionMessages(list[activeSession].messages)
 
     useEffect(() => {
         setActiveSession(0)
@@ -24,12 +27,12 @@ export default function Messages() {
         }
     },[scrollMain])
 
-    if (sessions[activeSession]) {
+    if (list[activeSession]) {
         return (
             <div className='grid content-start gap-8 w-full px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 pt-6 pb-10 mx-auto'>
-                {
-                    Object.keys(sessions[activeSession].messages).map((m:string, m_index:number) => {
-                        const msg = sessions[activeSession].messages[m_index]
+                {/* {
+                    list[activeSession].messages.map((m:object, m_index:number) => {
+                        const msg = list[activeSession].messages[m_index]
                         
                         //  TODO: make this bit DRY
                         //  GPT response bubble
@@ -54,6 +57,32 @@ export default function Messages() {
                             </div>
                         )
                     })
+                } */}
+                {
+                    messages.map((m:object, m_idx:number) => {
+                        const msg:any = m
+
+                        if (msg.author === 'server') {
+                            return (
+                                <div key={m_idx} className='grid gap-3 w-[90%] place-self-start justify-start justify-items-start'>
+                                    <div className='grid cursor-pointer rounded-[20px] bg-slate-200/40 dark:bg-neutral-800/50 px-6 py-[10px]'>
+                                        <p className='text-base font-medium text-slate-500 dark:text-slate-300 tracking-tight'>{msg.message || 'New message'}</p>
+                                    </div>
+                                    <p className='text-xs text-slate-400/70 dark:text-slate-600 tracking-tight'><span className='font-semibold dark:text-slate-500'>RedaxGPT</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
+                                </div>
+                            )
+                        }
+
+                        //  User response bubble
+                        return (
+                            <div key={m_idx} className='grid gap-3 w-[90%] place-self-end justify-end justify-items-end'>
+                                <div className='grid cursor-pointer rounded-[20px] bg-purple-400 dark:bg-slate-800 px-6 py-[10px]'>
+                                <p className='text-base font-medium text-slate-100 dark:text-slate-300 tracking-tight'>{msg.message || 'New message'}</p>
+                                </div>
+                                <p className='text-xs text-slate-400/70 dark:text-slate-600 place-self-end tracking-tight'><span className='font-semibold dark:text-slate-500'>Stanley</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
+                            </div>
+                        )
+                    })    
                 }
                 <div ref={mainRef}></div>
             </div>
