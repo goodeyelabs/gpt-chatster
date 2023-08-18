@@ -27,8 +27,8 @@ export default function NewOverlay({ children, content, overlayType, title }:ove
     function Wrapper() {
         return (
             <div id='overlay_wrapper' className='fixed inset-0 z-50 grid'>
-                {/* <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} transform-gpu z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8] w-screen h-screen h-screen-ios`} onClick={closeOverlay} /> */}
-                <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid bg-white`}>
+                <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} transform-gpu z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8]`} onClick={closeOverlay} />
+                <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid z-20 bg-white w-[80%]`}>
                     {newContent}
                 </div>
             </div>
