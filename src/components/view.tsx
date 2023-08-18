@@ -24,18 +24,6 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        // <div id='view' className='grid grid-cols-[1fr] md:grid-cols-[400px_1fr] grid-rows-[4.25rem_1fr] h-screen h-screen-ios overflow-y-hidden'>
-        //     <div id='header' className='grid col-span-2'>
-        //         <Header />
-        //     </div>
-        //     <SideBar />
-        //     <div id='main' className='grid w-full h-full overflow-y-auto grid-rows-[5rem_1fr_auto] bg-white dark:bg-redax-dark'>
-        //         <MainHeader />
-        //         <Messages />
-        //         <MessageInput />
-        //     </div>
-        // </div>
-
         <div className="grid min-h-screen min-h-screen-ios grid-rows-[auto_1fr] transform-gpu">
             <div className="grid sticky top-0 border-b border-gray-200 bg-white">
                 <NewHeader />

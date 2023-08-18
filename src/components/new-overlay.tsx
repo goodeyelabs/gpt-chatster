@@ -19,7 +19,7 @@ export default function NewOverlay({ children, content, overlayType, title }:ove
         setOverlayIsClosing(true);
     }
 
-    const newContent = React.cloneElement(
+    const contentWithOverlayProps = React.cloneElement(
         content,
         {closeOverlay: closeOverlay}
     )
@@ -29,7 +29,7 @@ export default function NewOverlay({ children, content, overlayType, title }:ove
             <div id='overlay_wrapper' className='fixed inset-0 z-50 grid'>
                 <div id='overlay_background' className={`${!overlayIsClosing ? 'animate-fade-in' : 'animate-fade-out'} transform-gpu z-10 absolute inset-0 cursor-pointer bg-zinc-950/[0.8]`} onClick={closeOverlay} />
                 <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid z-20 bg-white w-[80%]`}>
-                    {newContent}
+                    {contentWithOverlayProps}
                 </div>
             </div>
         )
