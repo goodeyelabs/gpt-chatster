@@ -10,13 +10,13 @@ function Menu() {
     return (
         <>  
             <div className='h-[2.5rem] grid place-content-center px-3'>
-                <p className='text-sm font-semibold text-neutral-700'>FAQ</p>
+                <p className='text-sm font-semibold text-neutral-600'>FAQ</p>
             </div>
             <div className='h-[2.5rem] grid place-content-center px-3'>
-                <p className='text-sm font-semibold text-neutral-700'>Help</p>
+                <p className='text-sm font-semibold text-neutral-600'>Help</p>
             </div>
             <div className='h-[2.5rem] grid place-content-center px-3'>
-                <p className='text-sm font-semibold text-neutral-700'>Upgrade</p>
+                <p className='text-sm font-semibold text-neutral-600'>Upgrade</p>
             </div>
             <EllipsisVerticalIcon className='w-5 h-auto self-center opacity-50'/>
             <Button icon={<SunIcon />} />
