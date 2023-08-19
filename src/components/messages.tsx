@@ -17,6 +17,7 @@ export default function Messages() {
 
     useEffect(() => {
         setActiveSession(0)
+        dispatch(setScrollMain(true))
         setMounted(true)
     },[])
 

@@ -77,14 +77,14 @@ export default function View({ children }:viewProps) {
         //     </div>
         // </div>
 
-        <div className='grid w-screen h-screen h-screen-ios grid-rows-[4rem_1fr] grid-cols-[minmax(auto,375px)_1fr]'>
+        <div className='grid w-screen h-screen h-screen-ios grid-rows-[auto_1fr] grid-cols-[minmax(auto,375px)_1fr]'>
             <div className='grid sticky z-30 top-0 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-gray-200'>
                 <NewHeader />
             </div>
-            <div className="grid z-10 h-full overflow-y-auto scroll-smooth shadow-[1px_0_0_0] shadow-gray-200">
+            <div className="grid z-10 h-full overflow-y-auto shadow-[1px_0_0_0] shadow-gray-200">
                 <Sessions />
             </div>
-            <div className="grid h-full overflow-y-auto scroll-smooth grid-rows-[1fr_auto]">
+            <div className="grid h-full overflow-y-auto grid-rows-[1fr_auto]">
                 <div>
                     <Messages />
                 </div>
