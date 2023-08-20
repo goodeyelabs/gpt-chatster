@@ -24,7 +24,7 @@ export default function Sessions() {
         output = output.reverse()
 
         return (
-            <div className='grid content-start gap-4 px-5 sm:px-8 py-6'>
+            <div className='grid content-start gap-4 px-5 sm:px-8 py-3'>
                 {
                     sessions && Object.keys(sessions).sort((a,b) => Number(b) - Number(a)).map((s:string, s_index:number) => {
                         let name = 'New chat session'
@@ -35,7 +35,7 @@ export default function Sessions() {
 
                         return (
                             <div 
-                                className={`${activeSession === s_index ? 'bg-neutral-100 dark:bg-neutral-800' : 'bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-900'} group transition-all ease-in-out grid cursor-pointer px-5 py-3 rounded-[10px]`}
+                                className={`${activeSession === s_index ? 'bg-white shadow-[0_0_0_1px] shadow-slate-300 dark:bg-neutral-800' : 'bg-transparent hover:bg-neutral-50 dark:hover:bg-neutral-900'} group transition-all ease-in-out leading-relaxed grid cursor-pointer px-5 py-3 rounded-[10px]`}
                                 onClick={() => handleClick(s_index)} 
                                 key={s_index} 
                             >

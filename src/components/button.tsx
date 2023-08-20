@@ -3,20 +3,21 @@ import { cloneElement } from 'react';
 type buttonProps = {
     text?: string,
     icon?: any,
-    classProp?: string,
+    customClass?: string,
     onClick?: any,
-    noBackground?: boolean,
 }
 
-function Button({ icon, text, classProp, onClick, noBackground }:buttonProps) {
+function Button({ icon, text, customClass, onClick }:buttonProps) {
     const styledIcon = cloneElement(
-        icon, {className: classProp || 'h-5 w-5 dark:text-stone-400/90 dark:group-hover:text-stone-200'},
+        icon, {className: 'h-5 w-5'},
     )
+
+    const customStyleInsert = customClass ? customClass : ''
 
     return (
         <button 
             onClick={onClick || null} 
-            className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] w-[40px] md:w-auto grid-flow-col text-sm font-medium tracking-tight text-neutral-600 hover:text-neutral-700 dark:text-stone-400/90 dark:hover:text-stone-200 ${!noBackground ? 'bg-neutral-100 hover:bg-neutral-200/80 dark:bg-zinc-800/80 dark:hover:bg-zinc-700' : ''} px-4 pl-4 transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none`}
+            className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] w-[40px] md:w-auto grid-flow-col text-neutral-600 dark:text-stone-400/90 bg-neutral-100 dark:bg-zinc-800/80 hover:brightness-95 text-sm font-medium px-4 pl-4 transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none ${customStyleInsert}`}
         >
             {
                 icon &&

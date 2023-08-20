@@ -83,6 +83,9 @@ const config: Config = {
                   height: webkitFillAvailable,
               },
           },
+          '.tracking-slight': {
+              letterSpacing: '-0.015rem',
+          }
       };
 
       addUtilities(utilities)

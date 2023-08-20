@@ -105,17 +105,19 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] px-5 md:px-6 xl:px-8 py-[calc((4.5rem-2rem)/2)] backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-end'>
-            <textarea 
-                ref={textareaRef}
-                autoFocus
-                onKeyDown={handleEnterPress}
-                rows={1}
-                value={currentPrompt} 
-                onChange={event => handleMessageChange(event.currentTarget.value)}
-                placeholder='Send a message' 
-                className='grid w-full min-h-[2.5rem] py-2 px-4 bg-white border border-neutral-300 rounded-[1.25rem] resize-none text-base font-medium text-neutral-600 placeholder:text-neutral-400 tracking-tight placeholder:tracking-tight appearance-none outline-none overflow-y-hidden'>
-            </textarea>
+        <div className='grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-center'>
+            <div className='grid min-h-[40px] py-2 px-5 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-300 rounded-[calc(40px/2)]'>
+                <textarea 
+                    ref={textareaRef}
+                    autoFocus
+                    onKeyDown={handleEnterPress}
+                    rows={1}
+                    value={currentPrompt} 
+                    onChange={event => handleMessageChange(event.currentTarget.value)}
+                    placeholder='Send a message' 
+                    className='grid w-full resize-none text-base tracking-slight font-medium text-neutral-600 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
+                </textarea>
+            </div>
             <div className='grid'>
                 <Button icon={<Cog6ToothIcon />} text='Config' /> 
             </div>  
