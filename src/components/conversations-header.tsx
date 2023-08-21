@@ -1,5 +1,5 @@
 'use client'
-import { PencilSquareIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon, PencilSquareIcon, PlusIcon } from "@heroicons/react/24/outline";
 import Button from "./button";
 import { useAppDispatch } from "@/redux/hooks";
 import { addSession } from "@/redux/sessionsReducer";
@@ -10,7 +10,8 @@ export default function ConversationsHeader() {
     return (
         <div className='grid h-[var(--sub-header-height)] gap-3 grid-flow-col px-5 md:px-6 xl:pl-8 xl:pr-8 items-center bg-white'>
             <div className='grid grid-cols-[1fr_auto] gap-3 grid-flow-col items-center'>
-            <div className='grid min-h-[40px] items-center py-2 px-4 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-200 rounded-[calc(40px/2)]'>
+            <div className='grid gap-1.5 grid-cols-[auto_1fr] min-h-[40px] items-center py-2 px-4 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-200 rounded-[calc(40px/2)]'>
+                    <MagnifyingGlassIcon className='w-4 h-4 text-neutral-400' />
                     <textarea                         
                         rows={1}
                         placeholder='Search chats...' 

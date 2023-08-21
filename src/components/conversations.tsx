@@ -6,10 +6,10 @@ import { orderSessionsByCreateDate } from "@/tools/utils";
 import { useEffect } from "react";
 
 function List({ closeOverlay }: { closeOverlay?:any}) {
-    const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
+    const { activeSession, newSessions } = useAppSelector(state => state.sessions.data)
     const dispatch = useAppDispatch();
 
-    const list = orderSessionsByCreateDate(sessions)
+    const list = newSessions.slice().reverse()
     
     const handleClick = (index:number) => {
         dispatch(setActiveSession(index))
@@ -20,6 +20,8 @@ function List({ closeOverlay }: { closeOverlay?:any}) {
             <div className='grid'>
                 {
                     list.map((c:any, c_idx:number) => {
+                        const s = c.newMessages
+
                         return (
                             <div 
                                 key={c_idx} 
@@ -28,7 +30,7 @@ function List({ closeOverlay }: { closeOverlay?:any}) {
                             >
                                 <div className={`grid border-t py-6 px-3 ${activeSession === c_idx || activeSession === c_idx - 1 ? 'border-white' : 'border-neutral-200 border-dashed'}`}>
                                     <p className={`text-sm font-medium text-neutral-700 leading-relaxed ${activeSession === c_idx ? 'text-neutral-950' : ''}`}>
-                                        {(c.messages && c.messages[0]) ? c.messages[0].message : 'New conversation'}
+                                        {(s[0]) ? s[0].message : 'New conversation'}
                                     </p>
                                 </div>
                             </div>

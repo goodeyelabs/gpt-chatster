@@ -6,14 +6,14 @@ import { useEffect, useRef, useState } from 'react'
 import { setScrollMain } from '@/redux/commonReducer'
 
 export default function Messages() {
-    const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
+    const { activeSession, sessions, newSessions } = useAppSelector(state => state.sessions.data)
     const { scrollMain } = useAppSelector(state => state.common.data)
     const [mounted, setMounted] = useState(false)
     const mainRef = useRef<HTMLDivElement>(null); 
     const dispatch = useAppDispatch();
 
-    const list:any = orderSessionsByCreateDate(sessions)
-    const messages = getSessionMessages(list[activeSession].messages)
+    const list:any = newSessions.slice().reverse()
+    const messages = list[activeSession].newMessages
 
     useEffect(() => {
         setActiveSession(0)

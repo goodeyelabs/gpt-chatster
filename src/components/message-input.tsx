@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
 import { setScrollMain, setGptResponseIndex, setPrivacy } from '@/redux/commonReducer'
 import Button from './button'
-import { BeakerIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { ChatBubbleLeftIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/outline'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -107,16 +107,19 @@ export default function MessageInput() {
     return (
         <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--sub-header-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-end`}>
             <div className='grid items-center min-h-[40px] py-2 px-5 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-300 rounded-[calc(40px/2)]'>
-                <textarea 
-                    ref={textareaRef}
-                    autoFocus
-                    onKeyDown={handleEnterPress}
-                    rows={1}
-                    value={currentPrompt} 
-                    onChange={event => handleMessageChange(event.currentTarget.value)}
-                    placeholder='Send a message' 
-                    className='grid w-full resize-none text-sm tracking-slight font-medium text-neutral-800 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden leading-relaxed'>
-                </textarea>
+                <div className='grid gap-2 grid-cols-[auto_1fr] items-start'>
+                    <ChatBubbleLeftIcon className='mt-0.5 w-5 h-5 text-neutral-400' />
+                    <textarea 
+                        ref={textareaRef}
+                        autoFocus
+                        onKeyDown={handleEnterPress}
+                        rows={1}
+                        value={currentPrompt} 
+                        onChange={event => handleMessageChange(event.currentTarget.value)}
+                        placeholder='Send a message' 
+                        className='grid w-full resize-none text-sm tracking-slight font-medium text-neutral-800 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden leading-relaxed'>
+                    </textarea>
+                </div>
             </div>
             <div className='hidden md:grid'>
                 <Button 
