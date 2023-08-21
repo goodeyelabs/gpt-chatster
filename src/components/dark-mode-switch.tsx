@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
 import Overlay from '@/components/overlay';
-import RoundButton from './round-button';
+import RoundButton from './button';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import Button from './button';
 
