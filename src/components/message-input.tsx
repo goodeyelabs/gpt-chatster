@@ -35,7 +35,8 @@ export default function MessageInput() {
         if (currentPrompt && checkValid(currentPrompt)) {
             dispatch(addMessage({sessionID: activeSession, author: 'user', message: currentPrompt}))
             dispatch(setScrollMain(true))
-            setGptResponse(true)    
+            setGptResponse(true)
+            dispatch(setCurrentPrompt(''))
         }
     }
 
@@ -105,7 +106,7 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--sub-header-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-end`}>
+        <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--footer-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-end`}>
             <div className='grid items-center min-h-[40px] py-2 px-5 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-300 rounded-[calc(40px/2)]'>
                 <div className='grid gap-2 grid-cols-[auto_1fr] items-start'>
                     <ChatBubbleLeftIcon className='mt-0.5 w-5 h-5 text-neutral-400' />

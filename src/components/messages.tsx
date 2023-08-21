@@ -1,22 +1,21 @@
 'use client'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { formatDate, orderSessionsByCreateDate, getSessionMessages } from '@/tools/utils'
-import { setActiveSession } from '@/redux/sessionsReducer'
+import { setActiveChat } from '@/redux/sessionsReducer'
 import { useEffect, useRef, useState } from 'react'
 import { setScrollMain } from '@/redux/commonReducer'
 
 export default function Messages() {
-    const { activeSession, sessions, newSessions } = useAppSelector(state => state.sessions.data)
+    const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
     const { scrollMain } = useAppSelector(state => state.common.data)
     const [mounted, setMounted] = useState(false)
     const mainRef = useRef<HTMLDivElement>(null); 
     const dispatch = useAppDispatch();
 
-    const list:any = newSessions.slice().reverse()
-    const messages = list[activeSession].newMessages
+    const list:any = sessions
+    const messages = list[activeSession].messages
 
     useEffect(() => {
-        setActiveSession(0)
         dispatch(setScrollMain(true))
         setMounted(true)
     },[])
@@ -62,7 +61,7 @@ export default function Messages() {
                                 className='grid px-2.5 md:px-3 xl:px-4'
                             >
                                 <div className='grid gap-2 w-[90%] place-self-end justify-end justify-items-end py-4'>
-                                    <div className='grid bg-gradient-to-r from-[var(--color-light-blue)] to-[var(--color-blue)] rounded-[10px] px-2.5 md:px-3 xl:px-4'>
+                                    <div className='grid bg-gradient-to-r from-blue-500 to-sky-400 rounded-[10px] px-2.5 md:px-3 xl:px-4'>
                                         <p className='text-sm font-medium leading-relaxed text-white py-2'>
                                             {msg.message || 'New message'}
                                         </p>
