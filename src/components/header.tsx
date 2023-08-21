@@ -45,7 +45,7 @@ export default function Header() {
                     height='69'
                     className='hidden md:grid w-6 md:w-7 h-fit'
                 />
-                <p className='grid grid-flow-col text-xl text-gray-900 dark:text-neutral-200 font-bold tracking-slight'>Redax<span className='tracking-tight font-light pl-0.5 text-transparent bg-clip-text bg-gradient-to-tr from-[var(--color-light-blue)] to-[var(--color-purple)]'>GPT</span></p> 
+                <p className='grid grid-flow-col text-xl md:text-lg text-gray-900 dark:text-neutral-200 font-bold tracking-slight'>Redax<span className='tracking-tight font-light pl-0.5 text-transparent bg-clip-text bg-gradient-to-tr from-[var(--color-light-blue)] to-[var(--color-purple)]'>GPT</span></p> 
             </div>
             <div className='grid justify-items-end lg:hidden'>
                 <Overlay overlayType='drawer-right' title='RedaxGPT' content={<Menu />}>
