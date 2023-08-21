@@ -14,7 +14,7 @@ const config: Config = {
       colors: {
         'redax': {
           light: '#191919',
-          DEFAULT: '#121212',
+          DEFAULT: 'red',
           dark: '#151515',
         },
       },
@@ -91,11 +91,11 @@ const config: Config = {
       addUtilities(utilities)
       addComponents({
         '.flag': {
-          display: 'block',
-          width: '26px',
-          height: 'auto',
-          borderRadius: '4px',
-          filter: 'brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.2))',
+            display: 'block',
+            width: '26px',
+            height: 'auto',
+            borderRadius: '4px',
+            filter: 'brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.2))',
         },
       })
     })

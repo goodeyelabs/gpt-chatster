@@ -123,6 +123,7 @@ export default function MessageInput() {
                     icon={privacy ? <LockClosedIcon /> : <LockOpenIcon />} 
                     text={privacy ? 'Privacy On' : 'Privacy Off'}
                     onClick={() => dispatch(privacy ? setPrivacy(false) : setPrivacy(true))}
+                    customClass={`${!privacy ? 'bg-red-100 text-red-400' : ''}`}
                 />    
             </div>
             <div className='grid'>
