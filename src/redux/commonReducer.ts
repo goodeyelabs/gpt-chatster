@@ -7,6 +7,7 @@ export interface InitialState {
         scrollMain: boolean,
         auth: boolean,
         gptResponseIndex: number,
+        privacy: boolean,
     }
 }
 
@@ -15,6 +16,7 @@ const initialState: InitialState = {
         scrollMain: false,
         auth: true,
         gptResponseIndex: 0,
+        privacy: true,
     }
 }
 
@@ -31,8 +33,11 @@ export const sessionsSlice = createSlice({
         setGptResponseIndex: (state, action: PayloadAction<number>) => {
             state.data = {...state.data, gptResponseIndex: action.payload}
         },
+        setPrivacy: (state, action: PayloadAction<boolean>) => {
+            state.data = {...state.data, privacy: action.payload}
+        },
     }
 })
 
-export const { setScrollMain, setAuth, setGptResponseIndex } = sessionsSlice.actions
+export const { setScrollMain, setAuth, setGptResponseIndex, setPrivacy } = sessionsSlice.actions
 export default sessionsSlice.reducer

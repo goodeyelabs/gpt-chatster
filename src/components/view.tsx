@@ -1,12 +1,6 @@
-import Sessions from "./sessions"
-import Banner from "./banner"
-import SideFooter from "./side-footer"
-import MainHeader from "./main-header"
 import Messages from "./messages"
 import MessageInput from "./message-input"
-import Header from "./header"
-import Overlay from "./overlay"
-import NewHeader from "./new-header"
+import NewHeader from "./header"
 import Conversations from "./conversations"
 import SendFeedback from "./send-feedback"
 import ConversationsHeader from "./conversations-header"
@@ -18,11 +12,7 @@ type viewProps = {
 
 export function SideBar() {
     return (
-        <div id='sidebar' className="grid sticky top-0 overflow-y-auto grid-rows-[5rem_1fr_auto] h-full w-full border-r border-slate-200 dark:border-neutral-800/80 bg-slate-50/50 dark:bg-redax-light">
-            <Banner />
-            <Sessions />
-            <SideFooter />
-        </div>
+        <div />
     )
 }
 
@@ -37,21 +27,25 @@ export default function View({ children }:viewProps) {
                 <div className="grid sticky top-0">
                     <ConversationsHeader />
                 </div>
+                {/* Sidebar content */}
                 <div>
                     <Conversations />
                 </div>
+                {/* Sidebar dock */}
                 <div className="grid sticky bottom-0">
                     <SendFeedback />
                 </div>
             </div>
             <div className="grid h-full overflow-y-auto grid-rows-[auto_1fr]">
-                {/* Messages Header */}
+                {/* Main header */}
                 <div className="grid">
                     <MessagesHeader />
                 </div>
+                {/* Main content */}
                 <div>
                     <Messages />
                 </div>
+                {/* Main dock */}
                 <div className="grid sticky bottom-0">
                     <MessageInput />
                 </div>

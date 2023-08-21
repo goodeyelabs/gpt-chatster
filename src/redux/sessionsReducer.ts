@@ -67,7 +67,7 @@ const initialState: InitialState = {
                     },
                     2: {
                         timestamp: 1692084004,
-                        message: "Do you have all your examination certifcates to hand?",
+                        message: "Do you have all your examination certificates to hand?",
                         author: 'server',
                     },
                     3: {

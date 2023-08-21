@@ -17,7 +17,7 @@ function Button({ icon, text, customClass, onClick }:buttonProps) {
     return (
         <button 
             onClick={onClick || null} 
-            className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] w-[40px] md:w-auto grid-flow-col text-neutral-600 dark:text-stone-400/90 bg-neutral-100 dark:bg-zinc-800/80 hover:brightness-95 text-sm font-medium px-4 pl-4 transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none ${customStyleInsert}`}
+            className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] w-[40px] md:w-auto grid-flow-col text-neutral-600 bg-neutral-100 hover:brightness-95 text-sm font-medium tracking-slight px-3 pl-3 transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none ${customStyleInsert}`}
         >
             {
                 icon &&

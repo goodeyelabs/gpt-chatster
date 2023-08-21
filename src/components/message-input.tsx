@@ -2,15 +2,15 @@
 import { useEffect, useState, useRef, KeyboardEventHandler } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
-import { setScrollMain, setGptResponseIndex } from '@/redux/commonReducer'
+import { setScrollMain, setGptResponseIndex, setPrivacy } from '@/redux/commonReducer'
 import Button from './button'
-import { BeakerIcon, Cog6ToothIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { BeakerIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
     const dispatch = useAppDispatch();
     const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
-    const { gptResponseIndex } = useAppSelector(state => state.common.data)
+    const { gptResponseIndex, privacy } = useAppSelector(state => state.common.data)
     const [gptResponse, setGptResponse] = useState(false)
 
     //  Record the current value of the message input box before submission
@@ -105,8 +105,8 @@ export default function MessageInput() {
       }, [gptResponse]);
 
     return (
-        <div className='grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-center'>
-            <div className='grid min-h-[40px] py-2 px-5 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-300 rounded-[calc(40px/2)]'>
+        <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--sub-header-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 border-t border-neutral-200 border-none items-end`}>
+            <div className='grid items-center min-h-[40px] py-2 px-5 bg-white shadow-[inset_0_0_0_1px] shadow-neutral-300 rounded-[calc(40px/2)]'>
                 <textarea 
                     ref={textareaRef}
                     autoFocus
@@ -115,15 +115,22 @@ export default function MessageInput() {
                     value={currentPrompt} 
                     onChange={event => handleMessageChange(event.currentTarget.value)}
                     placeholder='Send a message' 
-                    className='grid w-full resize-none text-base tracking-slight font-medium text-neutral-600 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
+                    className='grid w-full resize-none text-sm tracking-slight font-medium text-neutral-800 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden leading-relaxed'>
                 </textarea>
             </div>
-            <div className='grid'>
-                <Button icon={<Cog6ToothIcon />} text='Config' /> 
-            </div>  
             <div className='hidden md:grid'>
-                <Button icon={<BeakerIcon />} text='GPT 3.5' />    
-            </div>   
+                <Button 
+                    icon={privacy ? <LockClosedIcon /> : <LockOpenIcon />} 
+                    text={privacy ? 'Privacy On' : 'Privacy Off'}
+                    onClick={() => dispatch(privacy ? setPrivacy(false) : setPrivacy(true))}
+                />    
+            </div>
+            <div className='grid'>
+                <Button 
+                    icon={<Cog6ToothIcon />} 
+                    text='Config' 
+                /> 
+            </div>  
         </div>
     )
 
