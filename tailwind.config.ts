@@ -13,8 +13,10 @@ const config: Config = {
     extend: {
       colors: {
         'redax': {
-          light: '#191919',
-          DEFAULT: 'red',
+          lighter: '#232323',
+          light: '#212121',
+          DEFAULT: '#181818',
+          medium: '#191919',
           dark: '#151515',
         },
       },
