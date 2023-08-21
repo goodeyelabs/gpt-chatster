@@ -10,7 +10,7 @@ export default function MessageInput() {
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
     const dispatch = useAppDispatch();
     const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
-    const { gptResponseIndex, privacy } = useAppSelector(state => state.common.data)
+    const { gptResponseIndex, privacy, scrollMain, focusInput } = useAppSelector(state => state.common.data)
     const [gptResponse, setGptResponse] = useState(false)
 
     //  Record the current value of the message input box before submission
@@ -99,11 +99,11 @@ export default function MessageInput() {
                 dispatch(addMessage({sessionID: activeSession, author: 'server', message: grabGptResponse()}))
                 dispatch(setScrollMain(true))
                 setGptResponse(false)
-            }, 2000)
+            }, 1000)
     
             return () => clearTimeout(res);
         }
-      }, [gptResponse]);
+    }, [gptResponse]);
 
     return (
         <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--footer-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 dark:bg-redax/80 items-end`}>
@@ -140,4 +140,8 @@ export default function MessageInput() {
     )
 
     return null
+}
+
+function setServerTyping(activeSession: number): any {
+    throw new Error('Function not implemented.')
 }
