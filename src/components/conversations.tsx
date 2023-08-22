@@ -12,7 +12,7 @@ export default function Conversations({ closeOverlay }: { closeOverlay?:any}) {
     function handleClick(index:number) {
         dispatch(setActiveChat(index))
         dispatch(setScrollMain(true))
-        closeOverlay()
+        closeOverlay ? closeOverlay() : null
     }
 
     return (
