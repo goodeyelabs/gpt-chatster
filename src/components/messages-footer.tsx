@@ -7,7 +7,7 @@ import Button from './button'
 import { ChatBubbleLeftIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/outline'
 import Overlay from './overlay'
 import Config from '@/app/menus/config'
-import useAutosizeTextArea from '@/tools/useAutosizeTextArea'
+import TextareaAutosize from 'react-textarea-autosize';
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -15,8 +15,6 @@ export default function MessageInput() {
     const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
     const { gptResponseIndex, privacy, scrollMain } = useAppSelector(state => state.common.data)
     const [gptResponse, setGptResponse] = useState(false)
-
-    useAutosizeTextArea(textareaRef.current, currentPrompt);
 
     //  Record the current value of the message input box before submission
     function handleMessageChange(val:string) {
@@ -52,15 +50,6 @@ export default function MessageInput() {
             handleSubmit()
           }
     }
-
-    //  Handle textarea auto grow height based on text entered
-    // useEffect(() => {
-    //     if (textareaRef && textareaRef.current) {
-    //         // textareaRef.current.style.height = '0px';
-    //         // const scrollHeight = textareaRef.current.scrollHeight;
-    //         // textareaRef.current.style.height = scrollHeight + 'px'
-    //       }
-    // },[currentPrompt])
 
     //  Grab a fake GPT response string from presets
     function grabGptResponse() {
@@ -115,15 +104,16 @@ export default function MessageInput() {
             <div className='grid items-center min-h-[38px] py-2 px-5 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300 dark:shadow-redax-light rounded-[calc(40px/2)]'>
                 <div className='grid gap-3 grid-cols-[auto_1fr] items-center'>
                     <ChatBubbleLeftIcon className='hidden md:grid mt-0.5 self-start w-5 h-5 text-neutral-400' />
-                    <textarea 
+                    <TextareaAutosize 
                         ref={textareaRef}
                         autoFocus
+                        onKeyDown={handleEnterPress}
                         rows={1}
                         value={currentPrompt} 
                         onChange={event => handleMessageChange(event.currentTarget.value)}
                         placeholder='Send a message' 
                         className='grid w-full resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
-                    </textarea>
+                    </TextareaAutosize>
                 </div>
             </div>
             <div className='grid'>
