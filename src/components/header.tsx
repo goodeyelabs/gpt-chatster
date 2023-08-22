@@ -10,13 +10,13 @@ function Menu() {
     return (
         <>  
             <div className='grid grid-flow-col gap-10 h-full items-center'>
-                <div className='h-full grid place-content-center cursor-pointer text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                <div className='h-full grid place-content-center cursor-pointer text-neutral-700 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-200'>
                     <p className='text-sm font-semibold'>How to use</p>
                 </div>
-                <div className='h-full grid place-content-center cursor-pointer text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                <div className='h-full grid place-content-center cursor-pointer text-neutral-700 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-200'>
                     <p className='text-sm font-semibold'>FAQ & Help</p>
                 </div>
-                <div className='h-full grid place-content-center cursor-pointer text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                <div className='h-full grid place-content-center cursor-pointer text-neutral-700 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-200'>
                     <p className='text-sm font-semibold'>Upgrade</p>
                 </div>
                 <div className='w-[1px] h-5 border-r border-neutral-300 dark:border-neutral-800 border-dotted'/>
@@ -31,7 +31,7 @@ function Menu() {
 
 export default function Header() {   
     return (
-        <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-[var(--header-height)] px-5 md:px-6 xl:px-8 bg-white dark:bg-redax-dark/70 items-center shadow-[0_1px_0_0] shadow-gray-200 dark:shadow-redax-light'>
+        <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-full px-5 md:px-6 xl:px-8 bg-white dark:bg-redax-dark/70 items-center shadow-[0_1px_0_0] shadow-gray-200 dark:shadow-redax-light'>
             <div className='grid justify-items-start md:hidden'>
                 <NewOverlay overlayType='drawer-left' content={<Conversations />}>
                     <ChevronLeftIcon className='w-6 h-auto'/>

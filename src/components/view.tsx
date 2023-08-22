@@ -49,31 +49,39 @@ function Main() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid grid-rows-[3.5rem_1fr] grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
+        <div className="grid grid-rows-[3.75rem_1fr] grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
             <div className="z-20 grid row-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
                 <Header />
             </div>
             <div className="z-10 grid row-start-2 col-start-1 shadow-[1px_0_0_0] shadow-neutral-200/80 bg-blue-25 overflow-y-auto">
-                <div className="grid grid-rows-[1fr_3.5rem]">
-                    <div className="grid h-full">
-                    <div className="grid grid-rows-[3.5rem_1fr]">
-                            <p>Side content</p>
+                <div className="grid grid-rows-[1fr_auto]">
+                    <div className="grid h-full grid-rows-[3.5rem_1fr]">
+                        <div className="grid sticky top-0">
+                            <ConversationsHeader />
+                        </div>
+                        <div className="grid items-start">
+                            <Conversations />
+                            <Conversations />
+                            <Conversations />
                         </div>
                     </div>
-                    <div className="grid sticky bottom-0 bg-blue-25">
-                        <p>Side footer</p>
+                    <div className="grid sticky bottom-0 bg-blue-25 shadow-[0_-1px_0_0] shadow-neutral-200/80">
+                        <SendFeedback />
                     </div>
                 </div>
             </div>
             <div className="z-0 grid row-start-2 col-start-2 shadow-[1px_0_0_0] shadow-neutral-200 bg-white overflow-y-auto">
-                <div className="grid grid-rows-[1fr_3.5rem]">
-                    <div className="grid h-full">
-                        <div className="grid grid-rows-[3.5rem_1fr]">
-                            <p>Main content</p>
+                <div className="grid grid-rows-[1fr_auto]">
+                    <div className="grid h-full grid-rows-[3.5rem_1fr]">
+                        <div className="grid">
+                            <ConversationsHeader />
+                        </div>
+                        <div className="grid items-start">
+                            <Messages />
                         </div>
                     </div>
-                    <div className="grid sticky bottom-0 bg-white">
-                        <p>Main footer</p>
+                    <div className="grid sticky bottom-0 bg-blue-25">
+                        <MessageInput />
                     </div>
                 </div>
             </div>
