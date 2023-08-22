@@ -9,8 +9,6 @@ export interface InitialState {
         gptResponseIndex: number,
         privacy: boolean,
         searchTerm: string,
-        focusInput: boolean,
-        serverTyping: number | null,
     }
 }
 
@@ -21,8 +19,6 @@ const initialState: InitialState = {
         gptResponseIndex: 0,
         privacy: true,
         searchTerm: "",
-        focusInput: true,
-        serverTyping: null,
     }
 }
 
@@ -45,14 +41,8 @@ export const sessionsSlice = createSlice({
         setSearchTerm: (state, action: PayloadAction<string>) => {
             state.data = {...state.data, searchTerm: action.payload}
         },
-        setFocusInput: (state, action: PayloadAction<boolean>) => {
-            state.data = {...state.data, focusInput: action.payload}
-        },
-        setServerTyping: (state, action: PayloadAction<number|null>) => {
-            state.data = {...state.data, serverTyping: action.payload}
-        },
     }
 })
 
-export const { setScrollMain, setAuth, setGptResponseIndex, setPrivacy, setSearchTerm, setFocusInput } = sessionsSlice.actions
+export const { setScrollMain, setAuth, setGptResponseIndex, setPrivacy, setSearchTerm } = sessionsSlice.actions
 export default sessionsSlice.reducer

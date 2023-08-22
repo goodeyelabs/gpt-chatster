@@ -10,14 +10,14 @@ function Menu() {
     return (
         <>  
             <div className='grid grid-flow-col gap-10 h-full items-center'>
-                <div className='h-full grid place-content-center cursor-pointer text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200'>
-                    <p className='text-sm font-bold'>How to use</p>
+                <div className='h-full grid place-content-center cursor-pointer text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                    <p className='text-sm font-semibold'>How to use</p>
                 </div>
-                <div className='h-full grid place-content-center cursor-pointer text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200'>
-                    <p className='text-sm font-bold'>FAQ & Help</p>
+                <div className='h-full grid place-content-center cursor-pointer text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                    <p className='text-sm font-semibold'>FAQ & Help</p>
                 </div>
-                <div className='h-full grid place-content-center cursor-pointer text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200'>
-                    <p className='text-sm font-bold'>Upgrade</p>
+                <div className='h-full grid place-content-center cursor-pointer text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                    <p className='text-sm font-semibold'>Upgrade</p>
                 </div>
                 <div className='w-[1px] h-5 border-r border-neutral-300 dark:border-neutral-800 border-dotted'/>
             </div>

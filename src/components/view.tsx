@@ -42,11 +42,11 @@ export default function View({ children }:viewProps) {
                     <MessagesHeader />
                 </div>
                 {/* Main content */}
-                <div>
+                <div className="grid">
                     <Messages />
                 </div>
                 {/* Main dock */}
-                <div className="grid sticky bottom-0">
+                <div className="grid md:sticky md:bottom-0">
                     <MessageInput />
                 </div>
             </div>
