@@ -19,7 +19,7 @@ export function SideBar() {
 export default function View({ children }:viewProps) {    
     return (
         <div className="grid grid-rows-[4rem_1fr] grid-cols-[minmax(auto,380px)_1fr]">
-            <div className="grid row-start-1 row-span-full col-start-1 shadow-[0_1px_0_0] shadow-neutral-200 sticky top-0 h-screen h-screen-ios">
+            <div className="grid row-start-1 row-span-full col-start-1 shadow-[1px_0_0_0] shadow-neutral-200 sticky top-0 h-screen h-screen-ios overflow-y-auto">
                 <div className="grid h-[2000px]">
                     <p>Side content</p>
                 </div>
