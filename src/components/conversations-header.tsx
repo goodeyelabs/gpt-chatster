@@ -1,21 +1,21 @@
 'use client'
 import { MagnifyingGlassIcon, PencilSquareIcon, PlusIcon } from "@heroicons/react/24/outline";
 import NewChatButton from "./new-chat-button";
-import { useAppDispatch } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addChat } from "@/redux/sessionsReducer";
-import { useState } from "react";
+import { setSearchTerm } from "@/redux/commonReducer";
 
 export default function ConversationsHeader() {
     const dispatch = useAppDispatch()
-    const [searchTerm, setSearchTerm] = useState<string>('')
+    const { searchTerm } = useAppSelector(state => state.common.data)
 
     function handleChange(e:any) {
         const str = e.currentTarget.value
-        setSearchTerm(str)
+        dispatch(setSearchTerm(str))
     }
 
     return (
-        <div className='grid h-[var(--sub-header-height)] gap-3 grid-flow-col px-5 md:px-6 xl:pl-8 xl:pr-8 items-center bg-white dark:bg-redax-medium'>
+        <div className='grid h-[var(--sub-header-height)] gap-3 grid-flow-col px-5 md:px-6 xl:pl-8 xl:pr-8 items-center bg-blue-25 dark:bg-redax-medium'>
             <div className='grid grid-cols-[1fr_auto] gap-3 grid-flow-col items-center'>
                 <div className='grid gap-1 grid-cols-[auto_1fr] min-h-[40px] items-center py-2 px-4 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300/60 dark:shadow-redax-lighter rounded-[calc(40px/2)]'>
                     <MagnifyingGlassIcon className='w-4 h-4 text-neutral-400' />

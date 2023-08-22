@@ -27,7 +27,7 @@ export default function Messages() {
         }
     },[scrollMain])
 
-    if (list[activeSession]) {
+    if (mounted && list[activeSession]) {
         return (
             <div className='grid py-0 lg:py-3 items-start content-start w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-32 bg-white dark:bg-redax'>
                 {
@@ -40,7 +40,7 @@ export default function Messages() {
                             return (
                                 <div 
                                     key={m_idx} 
-                                    className='grid px-2.5 md:px-3 xl:px-4'
+                                    className='grid px-2.5 md:px-3 xl:px-4 animate-pop-up-from-bottom'
                                     >
                                     <div className='grid gap-2 w-[90%] place-self-start justify-start justify-items-start py-4'>
                                         <div className='grid bg-slate-200/40 dark:bg-redax-light rounded-[10px] px-2.5 md:px-3 xl:px-4'>
@@ -58,7 +58,7 @@ export default function Messages() {
                         return (
                             <div 
                                 key={m_idx} 
-                                className='grid px-2.5 md:px-3 xl:px-4'
+                                className='grid px-2.5 md:px-3 xl:px-4 animate-pop-up-from-bottom'
                             >
                                 <div className='grid gap-2 w-[90%] place-self-end justify-end justify-items-end py-4'>
                                     <div className='grid bg-gradient-to-r from-blue-500 to-sky-400 rounded-[10px] px-2.5 md:px-3 xl:px-4'>
