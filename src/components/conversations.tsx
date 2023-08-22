@@ -5,6 +5,8 @@ import { setActiveChat } from "@/redux/sessionsReducer";
 
 export default function Conversations({ closeOverlay }: { closeOverlay?:any}) {
     const { activeSession, sessions } = useAppSelector(state => state.sessions.data)
+    const { searchTerm } = useAppSelector(state => state.common.data)
+
     const dispatch = useAppDispatch();
 
     const list = sessions.slice().reverse()
@@ -18,7 +20,7 @@ export default function Conversations({ closeOverlay }: { closeOverlay?:any}) {
     return (
         <div className='grid'>
             {
-                list.map((c:any, c_idx:number) => {
+                !searchTerm && list.map((c:any, c_idx:number) => {
                     const s = c.messages
 
                     return (
@@ -35,6 +37,16 @@ export default function Conversations({ closeOverlay }: { closeOverlay?:any}) {
                         </div>
                     )
                 })
+            }
+            {
+                searchTerm &&
+                    <div className='grid cursor-pointer px-5 md:px-6 xl:px-8'>
+                        <div className={`grid border-t py-6 px-3 border-neutral-300/50 dark:border-redax-lighter border-dashed'}`}>
+                            <p className={`line-clamp-3 text-sm font-base text-gray-950 dark:text-stone-300/90 leading-normal md:leading-relaxed tracking-slight`}>
+                                Searching is coming soon!
+                            </p>
+                        </div>
+                    </div>
             }
         </div>
     )

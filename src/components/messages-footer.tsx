@@ -109,7 +109,7 @@ export default function MessageInput() {
 
     return (
         <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--footer-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 dark:bg-redax items-end`}>
-            <div className='grid items-center min-h-[40px] py-2 px-5 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300 dark:shadow-redax-light rounded-[calc(40px/2)]'>
+            <div className='grid items-center min-h-[38px] py-2 px-5 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300 dark:shadow-redax-light rounded-[calc(40px/2)]'>
                 <div className='grid gap-3 grid-cols-[auto_1fr] items-center'>
                     <ChatBubbleLeftIcon className='hidden md:grid mt-0.5 self-start w-5 h-5 text-neutral-400' />
                     <textarea 
@@ -120,7 +120,7 @@ export default function MessageInput() {
                         value={currentPrompt} 
                         onChange={event => handleMessageChange(event.currentTarget.value)}
                         placeholder='Send a message' 
-                        className='grid w-full h-[40px] resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
+                        className='grid w-full resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
                     </textarea>
                 </div>
             </div>
