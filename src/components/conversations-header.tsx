@@ -22,6 +22,7 @@ export default function ConversationsHeader() {
                     icon={<PencilSquareIcon />} 
                     text='New'
                     onClick={() => dispatch(addChat())}
+                    customClass="bg-gradient-to-l from-[var(--color-purple)] to-[var(--color-light-blue)] text-white"
                 />
             </div>
         </div>
