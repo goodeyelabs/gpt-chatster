@@ -1,9 +1,11 @@
 'use client'
-import { Bars3BottomRightIcon, ChevronLeftIcon, StarIcon, SunIcon, UserIcon } from '@heroicons/react/24/outline'
+import { Bars3BottomRightIcon, ChevronLeftIcon, SunIcon, UserIcon } from '@heroicons/react/24/outline'
 import Button from './button'
 import Image from 'next/image'
 import Overlay from './overlay'
 import { SideMenu } from './view'
+import Account from '@/app/menus/account'
+import Appearance from '@/app/menus/appearance'
 
 function RightMenu() {
     return (
@@ -29,10 +31,10 @@ function Menu() {
                 <div className='w-[1px] h-5 border-r border-neutral-300 dark:border-neutral-800 border-dotted'/>
             </div>
             <div className='grid grid-flow-col gap-3 items-center cursor-pointer pl-10'>
-            <Overlay overlayType='popup' title='Appearance' content={<div />}>
+            <Overlay overlayType='popup' title='Appearance' content={<Appearance />}>
                 <Button icon={<SunIcon />} />
             </Overlay>
-            <Overlay overlayType='popup' title='Account' content={<div />}>
+            <Overlay overlayType='popup' title='Account' content={<Account />}>
                 <Button icon={<UserIcon />} />
             </Overlay>
             </div>

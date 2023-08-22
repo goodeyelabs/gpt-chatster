@@ -6,6 +6,7 @@ import { setScrollMain, setGptResponseIndex, setPrivacy } from '@/redux/commonRe
 import Button from './button'
 import { ChatBubbleLeftIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/outline'
 import Overlay from './overlay'
+import Config from '@/app/menus/config'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -132,7 +133,7 @@ export default function MessageInput() {
                 />    
             </div>
             <div className='grid'>
-                <Overlay overlayType='popup' title='Entity redaction' content={<div />}>
+                <Overlay overlayType='popup' title='Entity redaction' content={<Config />}>
                     <Button 
                         icon={<Cog6ToothIcon />} 
                         text='Config' 
