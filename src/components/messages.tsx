@@ -21,11 +21,11 @@ export default function Messages() {
     },[])
 
     useEffect(() => {
-        if (scrollMain) {
+        if (scrollMain && mounted) {
             mainRef?.current?.scrollIntoView()
             dispatch(setScrollMain(false))
         }
-    },[scrollMain])
+    },[mounted,scrollMain])
 
     if (mounted && list[activeSession]) {
         return (
