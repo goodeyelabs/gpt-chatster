@@ -10,6 +10,24 @@ type viewProps = {
     children?: any,
 }
 
+export function SideMenu() {
+    return (
+        <div className="grid grid-rows-[1fr_auto]">
+            <div className="grid h-full grid-rows-[auto_1fr]">
+                <div className="grid sticky top-0">
+                    <ConversationsHeader />
+                </div>
+                <div className="grid items-start">
+                    <Conversations />
+                </div>
+            </div>
+            <div className="grid sticky bottom-0 bg-blue-25 shadow-[0_-1px_0_0] shadow-neutral-200/80">
+                <ConversationFooter />
+            </div>
+        </div>
+    )
+}
+
 export default function View({ children }:viewProps) {    
     return (
         <div className="grid grid-rows-[3.75rem_1fr] grid-cols-[1fr] md:grid-cols-[minmax(auto,300px)_1fr] lg:grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
@@ -17,19 +35,7 @@ export default function View({ children }:viewProps) {
                 <Header />
             </div>
             <div className="z-10 hidden md:grid row-start-2 shadow-[1px_0_0_0] shadow-neutral-200/80 dark:shadow-redax-lighter bg-blue-25 dark:bg-redax-medium overflow-y-auto">
-                <div className="grid grid-rows-[1fr_auto]">
-                    <div className="grid h-full grid-rows-[auto_1fr]">
-                        <div className="grid sticky top-0">
-                            <ConversationsHeader />
-                        </div>
-                        <div className="grid items-start">
-                            <Conversations />
-                        </div>
-                    </div>
-                    <div className="grid sticky bottom-0 bg-blue-25 shadow-[0_-1px_0_0] shadow-neutral-200/80">
-                        <ConversationFooter />
-                    </div>
-                </div>
+                <SideMenu />
             </div>
             <div className="z-0 grid row-start-2 shadow-[1px_0_0_0] shadow-neutral-200 bg-white overflow-y-auto">
                 <div className="grid grid-rows-[1fr_auto]">

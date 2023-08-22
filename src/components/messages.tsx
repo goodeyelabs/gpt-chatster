@@ -44,7 +44,7 @@ export default function Messages() {
                                     >
                                     <div className='grid gap-2 w-[90%] place-self-start justify-start justify-items-start py-4'>
                                         <div className='grid bg-slate-200/40 dark:bg-redax-light rounded-[10px] px-2.5 md:px-3 xl:px-4'>
-                                            <p className='text-sm font-base leading-relaxed text-gray-950 dark:text-stone-300 py-2'>
+                                            <p className='text-sm font-base tracking-slight leading-relaxed text-gray-950 dark:text-stone-300 py-2'>
                                                 {msg.message || 'New message'}
                                             </p>
                                         </div>
@@ -62,7 +62,7 @@ export default function Messages() {
                             >
                                 <div className='grid gap-2 w-[90%] place-self-end justify-end justify-items-end py-4'>
                                     <div className='grid bg-gradient-to-r from-blue-500 to-sky-400 rounded-[10px] px-2.5 md:px-3 xl:px-4'>
-                                        <p className='text-sm font-base leading-relaxed text-white py-2'>
+                                        <p className='text-sm font-base tracking-slight leading-relaxed text-white py-2'>
                                             {msg.message || 'New message'}
                                         </p>
                                     </div>

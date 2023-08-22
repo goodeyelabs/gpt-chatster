@@ -3,8 +3,7 @@ import { Bars3BottomRightIcon, ChevronLeftIcon, StarIcon, SunIcon, UserIcon } fr
 import Button from './button'
 import Image from 'next/image'
 import Overlay from './overlay'
-import NewOverlay from './new-overlay'
-import Conversations from './conversations'
+import { SideMenu } from './view'
 
 function Menu() {
     return (
@@ -33,9 +32,9 @@ export default function Header() {
     return (
         <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-full px-5 md:px-6 xl:px-8 bg-white dark:bg-redax-dark/70 items-center shadow-[0_1px_0_0] shadow-gray-200 dark:shadow-redax-light'>
             <div className='grid justify-items-start md:hidden'>
-                <NewOverlay overlayType='drawer-left' content={<Conversations />}>
+                <Overlay overlayType='drawer-left' title='Conversations' content={<SideMenu />}>
                     <ChevronLeftIcon className='w-6 h-auto'/>
-                </NewOverlay>
+                </Overlay>
             </div>
             <div className='grid grid-flow-col items-center gap-3'>
                 <Image 
