@@ -1,95 +1,100 @@
 'use client'
-import { Bars3Icon, InformationCircleIcon, PaperAirplaneIcon, StarIcon } from '@heroicons/react/24/outline'
-import Overlay from './overlay'
+import { Bars3BottomRightIcon, ChevronLeftIcon, SunIcon, UserIcon } from '@heroicons/react/24/outline'
+import Button from './button'
 import Image from 'next/image'
-import Link from 'next/link';
-import DarkModeSwitch from '@/components/dark-mode-switch'
-import UserAvatar from './user'
-import { SideBar } from './view';
-import Button from './button';
+import Overlay from './overlay'
+import { SideMenu } from './view'
+import Account from '@/app/menus/account'
+import How from '@/app/menus/how'
+import Help from '@/app/menus/help'
+import Upgrade from '@/app/menus/upgrade'
+import DarkModeSwitch from './dark-mode-switch'
 
-function UpgradeMenu() {
+function RightMenu() {
     return (
-        <div className='grid place-content-center'>
-            <div className='grid items-center place-content-center justify-items-center gap-4'>
-                <StarIcon className='w-16 h-16 text-slate-500' />
-                <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400'>Upgrade options are on the way...</p>
-            </div>
-        </div>
-    )
-}
-
-function HelpMenu() {
-    return (
-        <div className='grid place-content-center'>
-            <div className='grid items-center place-content-center justify-items-center gap-4'>
-                <InformationCircleIcon className='w-16 h-16 text-slate-500' />
-                <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400'>Help docs are on the way...</p>
-            </div>
-        </div>
-    )
-}
-
-function FeedbackMenu() {
-    return (
-        <div className='grid place-content-center'>
-            <div className='grid items-center place-content-center justify-items-center gap-4'>
-                <PaperAirplaneIcon className='w-16 h-16 text-slate-500' />
-                <p className='text-sm font-medium tracking-tight text-slate-500 dark:text-slate-400'>Send feedback functionality is on the way...</p>
-            </div>
-        </div>
-    )
-}
-
-function Header() {
-    return (
-        <div className='grid col-span-full bg-white dark:bg-zinc-900 h-full sticky top-0 border-b border-slate-200 dark:border-neutral-800/80 px-4 sm:px-8'>
-            <div className='grid h-full w-full mx-auto max-w-10xl items-center justify-items-start grid-cols-[1fr_auto]'>
-                <div className='grid md:hidden items-center grid-flow-col gap-3'>
-                    <Overlay overlayType={'drawer-left'} title='Chat sessions' content={<SideBar />}>
-                        <div className='group transition-all duration-75 items-center cursor-pointer grid select-none'>
-                            <Bars3Icon className="h-6 w-6 text-zinc-800 dark:text-zinc-300 group-hover:text-blue-400" />
-                        </div>
+            <div className='grid grid-flow-row gap-4 h-full items-start content-start py-4 px-5 sm:px-8 md:px-12px lg:px-16px'>
+                <div className='grid grid-flow-col justify-stretch gap-3 pb-4 border-b border-dashed border-neutral-200'>
+                    <DarkModeSwitch dontHideText />
+                    <Overlay overlayType='popup' title='Account' content={<Account />}>
+                        <Button icon={<UserIcon />} dontHideText />
                     </Overlay>
-                    <div className='grid grid-flow-col gap-3 items-center select-none cursor-pointer'>
-                        <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-lg md:text-xl tracking-tight'>RedaxGPT</p>
+                </div>
+                <Overlay overlayType='popup' title='How to use' content={<How />}>
+                    <div className='h-full grid place-content-center cursor-pointer bg-blue-25 hover:bg-neutral-100 rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                        <p className='text-sm font-semibold'>How to use</p>
                     </div>
-                </div>
-                <div className='hidden md:grid grid-flow-col gap-3 items-center select-none cursor-pointer'>
-                    <Image 
-                        src='/logo-circle.svg'
-                        alt='Logo'
-                        width='64'
-                        height='69'
-                        className='w-7 h-fit'
-                    />
-                    <p className='truncate text-zinc-800 dark:text-slate-100 font-bold text-xl tracking-tight'>RedaxGPT</p>
-                </div>
-                <div className='grid grid-flow-col gap-8'>
-                    <Overlay overlayType='popup' title='Help center' content={<HelpMenu />}>
-                        <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Help center</p>
-                        </div>
-                    </Overlay>
-                    <Overlay overlayType='popup' title='Upgrade to Enterprise' content={<UpgradeMenu />}>
-                        <div className='group transition-all duration-75 items-center cursor-pointer hidden md:grid grid-flow-col gap-2 select-none'>
-                            <p className='text-sm font-semibold text-slate-700 dark:text-zinc-300 group-hover:text-blue-400'>Upgrade</p>
-                        </div>
-                    </Overlay>
-                    <div className='hidden md:grid h-6 border-r border-dotted border-slate-300 dark:border-zinc-700 self-center' />
-                    <div className='grid grid-flow-col gap-4'>
-                        <Overlay overlayType='popup' title='Send feedback' content={<FeedbackMenu />}>
-                            <div className='hidden md:grid'>
-                                <Button icon={<PaperAirplaneIcon />} text='Feedback' />
-                            </div>
-                        </Overlay> 
-                        <DarkModeSwitch />
-                        <UserAvatar />
+                </Overlay>
+                <Overlay overlayType='popup' title='FAQ + Help' content={<Help />}>
+                    <div className='h-full grid place-content-center cursor-pointer  bg-blue-25 hover:bg-neutral-100 rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                        <p className='text-sm font-semibold'>FAQ + Help</p>
                     </div>
-                </div>
+                </Overlay>
+                <Overlay overlayType='popup' title='Upgrade to Enterprise' content={<Upgrade />}>
+                    <div className='h-full grid place-content-center cursor-pointer  bg-blue-25 hover:bg-neutral-100 rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                        <p className='text-sm font-semibold'>Upgrade</p>
+                    </div>
+                </Overlay>
+            </div>
+    )
+}
+
+function Menu() {
+    return (
+        <>
+            <div className='grid grid-flow-col gap-10 h-full items-center'>
+                <Overlay overlayType='popup' title='How to use' content={<How />}>
+                    <div className='h-full grid place-content-center cursor-pointer text-neutral-700 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                        <p className='text-sm font-semibold'>How to use</p>
+                    </div>
+                </Overlay>
+                <Overlay overlayType='popup' title='FAQ + Help' content={<Help />}>
+                    <div className='h-full grid place-content-center cursor-pointer text-neutral-700 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                        <p className='text-sm font-semibold'>FAQ + Help</p>
+                    </div>
+                </Overlay>
+                <Overlay overlayType='popup' title='Upgrade to Enterprise' content={<Upgrade />}>
+                    <div className='h-full grid place-content-center cursor-pointer text-neutral-700 hover:text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                        <p className='text-sm font-semibold'>Upgrade</p>
+                    </div>
+                </Overlay>
+                <div className='w-[1px] h-5 border-r border-neutral-300 dark:border-neutral-800 border-dotted'/>
+            </div>
+            <div className='grid grid-flow-col gap-3 items-center cursor-pointer pl-10'>
+                <DarkModeSwitch />
+                <Overlay overlayType='popup' title='Account' content={<Account />}>
+                    <Button icon={<UserIcon />} />
+                </Overlay>
+            </div>
+        </>
+    )
+}
+
+export default function Header() {   
+    return (
+        <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-full px-4 md:px-6 xl:px-8 bg-white dark:bg-redax-dark/70 items-center shadow-[0_1px_0_0] shadow-gray-200 dark:shadow-redax-light'>
+            <div className='grid justify-items-start md:hidden cursor-pointer'>
+                <Overlay overlayType='drawer-left' title='Chats' content={<SideMenu />}>
+                    <ChevronLeftIcon className='w-6 h-auto'/>
+                </Overlay>
+            </div>
+            <div className='grid grid-flow-col items-center gap-3 cursor-pointer'>
+                <Image 
+                    src='/logo-circle.svg'
+                    alt='Logo'
+                    width='64'
+                    height='69'
+                    className='hidden md:grid w-6 md:w-7 h-fit'
+                />
+                <p className='grid grid-flow-col text-xl text-gray-900 dark:text-neutral-200 font-bold tracking-slight'>Redax<span className='tracking-tight font-light pl-0.5 text-transparent bg-clip-text bg-gradient-to-tr from-[var(--color-light-blue)] to-[var(--color-purple)]'>GPT</span></p> 
+            </div>
+            <div className='grid justify-items-end lg:hidden'>
+                <Overlay overlayType='drawer-right' title='RedaxGPT' content={<RightMenu />}>
+                    <Bars3BottomRightIcon className='w-6 h-auto cursor-pointer' />   
+                </Overlay> 
+            </div>
+            <div className='hidden lg:grid grid-flow-col justify-end items-center'>
+                <Menu />
             </div>
         </div>
     )
 }
-
-export default Header

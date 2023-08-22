@@ -2,13 +2,17 @@
 import { useEffect, useState, useRef, KeyboardEventHandler } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { addMessage, setCurrentPrompt } from '@/redux/sessionsReducer'
-import { setScrollMain, setGptResponseIndex } from '@/redux/commonReducer'
+import { setScrollMain, setGptResponseIndex, setPrivacy } from '@/redux/commonReducer'
+import Button from './button'
+import { ChatBubbleLeftIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/outline'
+import Overlay from './overlay'
+import Config from '@/app/menus/config'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
     const dispatch = useAppDispatch();
     const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
-    const { gptResponseIndex } = useAppSelector(state => state.common.data)
+    const { gptResponseIndex, privacy, scrollMain } = useAppSelector(state => state.common.data)
     const [gptResponse, setGptResponse] = useState(false)
 
     //  Record the current value of the message input box before submission
@@ -33,7 +37,8 @@ export default function MessageInput() {
         if (currentPrompt && checkValid(currentPrompt)) {
             dispatch(addMessage({sessionID: activeSession, author: 'user', message: currentPrompt}))
             dispatch(setScrollMain(true))
-            setGptResponse(true)    
+            setGptResponse(true)
+            dispatch(setCurrentPrompt(''))
         }
     }
 
@@ -96,30 +101,51 @@ export default function MessageInput() {
                 dispatch(addMessage({sessionID: activeSession, author: 'server', message: grabGptResponse()}))
                 dispatch(setScrollMain(true))
                 setGptResponse(false)
-            }, 2000)
+            }, 1000)
     
             return () => clearTimeout(res);
         }
-      }, [gptResponse]);
+    }, [gptResponse]);
 
     return (
-        <div className='sticky bottom-0 bg-white dark:bg-redax-dark min-h-[5rem] py-8 grid grid-flow-col gap-6 border-t border-none px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 items-end'>
-            {/* <RoundButton onClick={handleSubmit} icon={<Cog8ToothIcon />} /> */}
-            <div className='grid bg-white dark:bg-neutral-900 border border-slate-300 dark:border-neutral-700 w-full min-h-[12px] py-2 px-6 items-center rounded-[20px]'>
-                <textarea 
-                    ref={textareaRef}
-                    autoFocus
-                    onKeyDown={handleEnterPress}
-                    value={currentPrompt} 
-                    onChange={event => handleMessageChange(event.currentTarget.value)}
-                    rows={1}
-                    placeholder='Send a message to RedaxGPT...' 
-                    className='resize-none bg-transparent w-full h-full font-medium tracking-tight overflow-y-auto text-slate-500 dark:text-neutral-300 dark:placeholder:text-neutral-400 text-md text-left appearance-none outline-none'>
-                </textarea>
+        <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--footer-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 dark:bg-redax items-end`}>
+            <div className='grid items-center min-h-[40px] py-2 px-5 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300 dark:shadow-redax-light rounded-[calc(40px/2)]'>
+                <div className='grid gap-3 grid-cols-[auto_1fr] items-center'>
+                    <ChatBubbleLeftIcon className='hidden md:grid mt-0.5 self-start w-5 h-5 text-neutral-400' />
+                    <textarea 
+                        ref={textareaRef}
+                        autoFocus
+                        onKeyDown={handleEnterPress}
+                        rows={1}
+                        value={currentPrompt} 
+                        onChange={event => handleMessageChange(event.currentTarget.value)}
+                        placeholder='Send a message' 
+                        className='grid w-full h-[40px] resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
+                    </textarea>
+                </div>
             </div>
-            {/* <RoundButton startColor='bg-blue-700' onClick={handleSubmit} icon={<PaperAirplaneIcon />} /> */}
+            <div className='grid'>
+                <Button 
+                    icon={privacy ? <LockClosedIcon /> : <LockOpenIcon />} 
+                    text={privacy ? 'Privacy On' : 'Privacy Off'}
+                    onClick={() => dispatch(privacy ? setPrivacy(false) : setPrivacy(true))}
+                    customClass={`${!privacy ? 'bg-red-100 text-red-400 dark:text-red-400' : ''}`}
+                />    
+            </div>
+            <div className='grid'>
+                <Overlay overlayType='popup' title='Entity redaction' content={<Config />}>
+                    <Button 
+                        icon={<Cog6ToothIcon />} 
+                        text='Config' 
+                    /> 
+                </Overlay>
+            </div>  
         </div>
     )
 
     return null
+}
+
+function setServerTyping(activeSession: number): any {
+    throw new Error('Function not implemented.')
 }

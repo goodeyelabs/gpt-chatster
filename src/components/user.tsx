@@ -1,5 +1,4 @@
 'use client'
-import RoundButton from "./round-button"
 import Image from "next/image"
 import { setAuth } from '@/redux/commonReducer'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
@@ -34,14 +33,14 @@ export default function UserAvatar() {
     if (auth) {
         return (
             <Overlay overlayType='drawer-right' title='Account' content={<AccountMenu />}>
-                <RoundButton icon={<Avatar />} />
+                <Button icon={<Avatar />} customClass='bg-transparent border border-slate-200 px-0 py-0 md:w-[40px] item-center' />
             </Overlay>
         )
     }
     
     return (
         <Overlay overlayType='popup' content={<div />}>
-            <RoundButton icon={<UserIcon />} />
+            <Button icon={<UserIcon />} />
         </Overlay>
     )
 }

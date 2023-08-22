@@ -13,9 +13,14 @@ const config: Config = {
     extend: {
       colors: {
         'redax': {
-          light: '#191919',
-          DEFAULT: '#121212',
-          dark: '#151515',
+          lighter: '#232323',
+          light: '#212121',
+          DEFAULT: '#151515',
+          medium: '#191919',
+          dark: '#131313',
+        },
+        'blue': {
+          25: 'rgb(252,252,252)'
         },
       },
       fontFamily: {
@@ -83,16 +88,19 @@ const config: Config = {
                   height: webkitFillAvailable,
               },
           },
+          '.tracking-slight': {
+              letterSpacing: '0',
+          }
       };
 
       addUtilities(utilities)
       addComponents({
         '.flag': {
-          display: 'block',
-          width: '26px',
-          height: 'auto',
-          borderRadius: '4px',
-          filter: 'brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.2))',
+            display: 'block',
+            width: '26px',
+            height: 'auto',
+            borderRadius: '4px',
+            filter: 'brightness(1.35) drop-shadow(0 1px 3px rgba(0,0,0,0.2))',
         },
       })
     })

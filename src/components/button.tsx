@@ -3,25 +3,30 @@ import { cloneElement } from 'react';
 type buttonProps = {
     text?: string,
     icon?: any,
-    classProp?: string,
+    customClass?: string,
     onClick?: any,
-    noBackground?: boolean,
+    dontHideText?:boolean,
 }
 
-function Button({ icon, text, classProp, onClick, noBackground }:buttonProps) {
+function Button({ icon, text, customClass, onClick, dontHideText }:buttonProps) {
     const styledIcon = cloneElement(
-        icon, {className: classProp || 'h-6 w-6 dark:text-stone-400/90 dark:group-hover:text-stone-200'},
+        icon, {className: 'h-5 w-5'},
     )
+
+    const customStyleInsert = customClass ? customClass : ''
 
     return (
         <button 
             onClick={onClick || null} 
-            className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] grid-flow-col text-sm font-medium tracking-tight text-slate-500 hover:text-slate-700 dark:text-stone-400/90 dark:hover:text-stone-200 ${!noBackground ? 'bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800/80 dark:hover:bg-zinc-700' : ''} px-4 pl-3 transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none`}
+            className={`grid place-content-center items-center gap-2 group cursor-pointer h-[40px] ${dontHideText ? 'w-auto' : 'w-[40px] md:w-auto'} grid-flow-col text-gray-700 dark:text-neutral-400 bg-slate-200/20 dark:bg-neutral-950/20 hover:brightness-75 dark:hover:brightness-100 dark:hover:bg-neutral-950/50 text-sm font-medium tracking-slight justify-items-center px-3 ${text ? 'pr-3' : 'pr-3'} transition-all duration-75 ease-in-out rounded-[20px] border-0 outline-none select-none `}
         >
-            {styledIcon}
+            {
+                icon &&
+                    styledIcon
+            }
             {
                 text &&
-                    <span className='truncate'>{text}</span>
+                    <span className={`${dontHideText ? 'grid' : 'hidden md:grid'} truncate`}>{text}</span>
             }
         </button>
     )

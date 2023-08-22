@@ -1,39 +1,57 @@
-import Sessions from "./sessions"
-import Banner from "./banner"
-import SideFooter from "./side-footer"
-import MainHeader from "./main-header"
 import Messages from "./messages"
-import MessageInput from "./message-input"
+import MessagesFooter from "./messages-footer"
+import Conversations from "./conversations"
+import ConversationFooter from "./conversations-footer"
+import ConversationsHeader from "./conversations-header"
+import MessagesHeader from "./messages-header"
 import Header from "./header"
 
 type viewProps = {
     children?: any,
 }
 
-export function SideBar() {
+export function SideMenu({ closeOverlay }: {closeOverlay?:any}) {
     return (
-        <div id='sidebar' className="grid sticky top-0 overflow-y-auto grid-rows-[5rem_1fr_auto] h-full w-full border-r border-slate-200 dark:border-neutral-800/80 bg-slate-50/50 dark:bg-redax-light">
-            <Banner />
-            <Sessions />
-            <SideFooter />
+        <div className="grid h-full grid-rows-[1fr_auto]">
+            <div className="grid h-full grid-rows-[auto_1fr]">
+                <div className="grid sticky top-0">
+                    <ConversationsHeader />
+                </div>
+                <div className="grid items-start">
+                    <Conversations closeOverlay={closeOverlay}/>
+                </div>
+            </div>
+            <div className="grid sticky bottom-0 bg-blue-25 shadow-[0_-1px_0_0] dark:shadow-redax-lighter shadow-neutral-200/80">
+                <ConversationFooter />
+            </div>
         </div>
     )
 }
 
-function AppView({ children }:viewProps) {    
+export default function View({ children }:viewProps) {    
     return (
-        <div id='view' className='grid grid-cols-[1fr] md:grid-cols-[400px_1fr] grid-rows-[4.25rem_1fr] h-screen h-screen-ios overflow-y-hidden'>
-            <div id='header' className='grid col-span-2'>
+        <div className="grid grid-rows-[3.75rem_1fr] grid-cols-[1fr] md:grid-cols-[minmax(auto,300px)_1fr] lg:grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
+            <div className="z-20 grid row-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
                 <Header />
             </div>
-            <SideBar />
-            <div id='main' className='grid w-full h-full overflow-y-auto grid-rows-[5rem_1fr_auto] bg-white dark:bg-redax-dark'>
-                <MainHeader />
-                <Messages />
-                <MessageInput />
+            <div className="z-10 hidden md:grid row-start-2 shadow-[1px_0_0_0] shadow-neutral-200/80 dark:shadow-redax-lighter bg-blue-25 dark:bg-redax-medium overflow-y-auto">
+                <SideMenu />
+            </div>
+            <div className="z-0 grid row-start-2 shadow-[1px_0_0_0] shadow-neutral-200 bg-white dark:bg-redax overflow-y-auto">
+                <div className="grid grid-rows-[1fr_auto]">
+                    <div className="grid h-full grid-rows-[auto_1fr]">
+                        <div className="grid">
+                            <MessagesHeader />
+                        </div>
+                        <div className="grid items-start">
+                            <Messages />
+                        </div>
+                    </div>
+                    <div className="grid sticky bottom-0 bg-blue-25">
+                        <MessagesFooter />
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
-
-export default AppView

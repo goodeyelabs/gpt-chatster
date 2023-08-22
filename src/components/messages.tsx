@@ -1,7 +1,7 @@
 'use client'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { formatDate } from '@/tools/utils'
-import { setActiveSession } from '@/redux/sessionsReducer'
+import { formatDate, orderSessionsByCreateDate, getSessionMessages } from '@/tools/utils'
+import { setActiveChat } from '@/redux/sessionsReducer'
 import { useEffect, useRef, useState } from 'react'
 import { setScrollMain } from '@/redux/commonReducer'
 
@@ -12,8 +12,11 @@ export default function Messages() {
     const mainRef = useRef<HTMLDivElement>(null); 
     const dispatch = useAppDispatch();
 
+    const list:any = sessions
+    const messages = list[activeSession].messages
+
     useEffect(() => {
-        setActiveSession(0)
+        dispatch(setScrollMain(true))
         setMounted(true)
     },[])
 
@@ -24,37 +27,52 @@ export default function Messages() {
         }
     },[scrollMain])
 
-    if (sessions[activeSession]) {
+    if (list[activeSession]) {
         return (
-            <div className='grid content-start gap-8 w-full px-5 sm:px-8 md:px-12 lg:px-24 xl:px-32 pt-6 pb-10 mx-auto'>
+            <div className='grid py-0 lg:py-3 items-start content-start w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-32 bg-white dark:bg-redax'>
                 {
-                    Object.keys(sessions[activeSession].messages).map((m:string, m_index:number) => {
-                        const msg = sessions[activeSession].messages[m_index]
-                        
+                    messages.map((m:object, m_idx:number) => {
+                        const msg:any = m
+
                         //  TODO: make this bit DRY
                         //  GPT response bubble
                         if (msg.author === 'server') {
                             return (
-                                <div key={m_index} className='grid gap-3 w-[90%] place-self-start justify-start justify-items-start'>
-                                    <div className='grid cursor-pointer rounded-[10px] bg-slate-200/40 dark:bg-neutral-800/50 px-6 py-[10px]'>
-                                        <p className='text-sm text-slate-500 dark:text-slate-300 font-medium tracking-tight'>{msg.message || 'New message'}</p>
+                                <div 
+                                    key={m_idx} 
+                                    className='grid px-2.5 md:px-3 xl:px-4'
+                                    >
+                                    <div className='grid gap-2 w-[90%] place-self-start justify-start justify-items-start py-4'>
+                                        <div className='grid bg-slate-200/40 dark:bg-redax-light rounded-[10px] px-2.5 md:px-3 xl:px-4'>
+                                            <p className='text-sm font-base tracking-slight leading-relaxed text-gray-950 dark:text-stone-300 py-2'>
+                                                {msg.message || 'New message'}
+                                            </p>
+                                        </div>
+                                        <p className='text-xs text-neutral-400/80 dark:text-neutral-500/70 tracking-normal'><span className='font-base'>RedaxGPT</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
                                     </div>
-                                    <p className='text-xs text-slate-400/70 dark:text-slate-600 tracking-tight'><span className='font-semibold dark:text-slate-500'>RedaxGPT</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
                                 </div>
                             )
                         }
 
                         //  User response bubble
                         return (
-                            <div key={m_index} className='grid gap-3 w-[90%] place-self-end justify-end justify-items-end'>
-                                <div className='grid cursor-pointer rounded-[10px] bg-slate-600 dark:bg-slate-800 px-6 py-[10px]'>
-                                    <p className='text-sm text-white dark:text-slate-200 font-medium tracking-tight'>{msg.message || 'New message'}</p>
+                            <div 
+                                key={m_idx} 
+                                className='grid px-2.5 md:px-3 xl:px-4'
+                            >
+                                <div className='grid gap-2 w-[90%] place-self-end justify-end justify-items-end py-4'>
+                                    <div className='grid bg-gradient-to-r from-blue-500 to-sky-400 rounded-[10px] px-2.5 md:px-3 xl:px-4'>
+                                        <p className='text-sm font-base tracking-slight leading-relaxed text-white py-2'>
+                                            {msg.message || 'New message'}
+                                        </p>
+                                    </div>
+                                    <p className='text-xs text-neutral-400/80 dark:text-neutral-500/70 tracking-normal'><span className='font-base'>Stanley</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
                                 </div>
-                                <p className='text-xs text-slate-400/70 dark:text-slate-600 place-self-end tracking-tight'><span className='font-semibold dark:text-slate-500'>Stanley</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
                             </div>
                         )
-                    })
+                    })    
                 }
+                {/* Next div is needed for scrollMain to work */}
                 <div ref={mainRef}></div>
             </div>
         )
