@@ -19,6 +19,9 @@ const config: Config = {
           medium: '#191919',
           dark: '#131313',
         },
+        'blue': {
+          25: 'rgb(252,252,252)'
+        },
       },
       fontFamily: {
         'sans': ['Inter', ...defaultTheme.fontFamily.sans],
