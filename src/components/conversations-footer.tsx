@@ -7,10 +7,12 @@ export default function ConversationsFooter() {
             <Button 
                 icon={<LightBulbIcon />} 
                 text='Share feedback' 
+                dontHideText
             />
             <Button 
                 icon={<InformationCircleIcon />} 
                 text='About' 
+                dontHideText
             />
         </div>
     )
