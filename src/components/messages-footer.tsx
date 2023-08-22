@@ -108,8 +108,8 @@ export default function MessageInput() {
     return (
         <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--footer-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 dark:bg-redax/80 items-end`}>
             <div className='grid items-center min-h-[40px] py-2 px-5 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300 dark:shadow-redax-light rounded-[calc(40px/2)]'>
-                <div className='grid gap-2 grid-cols-[auto_1fr] items-start'>
-                    <ChatBubbleLeftIcon className='hidden md:grid mt-0.5 w-5 h-5 text-neutral-400' />
+                <div className='grid gap-3 grid-cols-[auto_1fr] items-center'>
+                    <ChatBubbleLeftIcon className='hidden md:grid self-start w-5 h-5 text-neutral-400' />
                     <textarea 
                         ref={textareaRef}
                         autoFocus
