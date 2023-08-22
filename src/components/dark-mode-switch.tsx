@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes';
 import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
 import Overlay from '@/components/overlay';
-import RoundButton from './button';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import Button from './button';
 
@@ -11,7 +10,13 @@ export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
     const { theme, setTheme, systemTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
 
-    function AccountMenu() {
+    function AccountMenu({ closeOverlay }: {closeOverlay?:any}) {
+
+        function handleClick(mode:string) {
+            setTheme(mode)
+            //return closeOverlay()
+        }
+
         return (
             <div className="grid gap-4 px-8 py-6">
                 <div className='relative grid'>
@@ -39,12 +44,6 @@ export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
         )
     }
 
-
-    function handleClick(mode:string) {
-        setTheme(mode)
-        closeOverlay()
-    }
-
     useEffect(() => {
         setMounted(true)
     },[])
@@ -62,26 +61,26 @@ export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
                 {
                     theme === 'light' &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <RoundButton icon={<SunIcon />} />
+                            <Button icon={<SunIcon />} />
                         </Overlay>
                 }
                 {
                     theme === 'dark' &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <RoundButton icon={<MoonIcon />} />
+                            <Button icon={<MoonIcon />} />
                         </Overlay>
                 }
                 {
                     (theme === 'system' && systemTheme === 'light') &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <RoundButton icon={<SunIcon />} />
+                            <Button icon={<SunIcon />} />
                         </Overlay>
 
                 }
                 {
                     (theme === 'system' && systemTheme === 'dark') &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <RoundButton icon={<MoonIcon />} />
+                            <Button icon={<MoonIcon />} />
                         </Overlay>
                 }
             </>
@@ -89,6 +88,6 @@ export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
     }
 
     return (
-        <RoundButton icon={<SunIcon />} />
+        <Button icon={<MoonIcon />} />
     )
 }

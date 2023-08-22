@@ -5,10 +5,10 @@ import Image from 'next/image'
 import Overlay from './overlay'
 import { SideMenu } from './view'
 import Account from '@/app/menus/account'
-import Appearance from '@/app/menus/appearance'
 import How from '@/app/menus/how'
 import Help from '@/app/menus/help'
 import Upgrade from '@/app/menus/upgrade'
+import DarkModeSwitch from './dark-mode-switch'
 
 function RightMenu() {
     return (
@@ -40,9 +40,7 @@ function Menu() {
                 <div className='w-[1px] h-5 border-r border-neutral-300 dark:border-neutral-800 border-dotted'/>
             </div>
             <div className='grid grid-flow-col gap-3 items-center cursor-pointer pl-10'>
-            <Overlay overlayType='popup' title='Appearance' content={<Appearance />}>
-                <Button icon={<SunIcon />} />
-            </Overlay>
+            <DarkModeSwitch />
             <Overlay overlayType='popup' title='Account' content={<Account />}>
                 <Button icon={<UserIcon />} />
             </Overlay>

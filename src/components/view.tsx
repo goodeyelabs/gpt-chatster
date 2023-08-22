@@ -10,7 +10,7 @@ type viewProps = {
     children?: any,
 }
 
-export function SideMenu() {
+export function SideMenu({ closeOverlay }: {closeOverlay?:any}) {
     return (
         <div className="grid h-full grid-rows-[1fr_auto]">
             <div className="grid h-full grid-rows-[auto_1fr]">
@@ -18,7 +18,7 @@ export function SideMenu() {
                     <ConversationsHeader />
                 </div>
                 <div className="grid items-start">
-                    <Conversations />
+                    <Conversations closeOverlay={closeOverlay}/>
                 </div>
             </div>
             <div className="grid sticky bottom-0 bg-blue-25 shadow-[0_-1px_0_0] shadow-neutral-200/80">
