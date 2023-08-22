@@ -15,7 +15,7 @@ export default function ConversationsHeader() {
                     <textarea                         
                         rows={1}
                         placeholder='Search chats...' 
-                        className='grid w-full resize-none text-sm font-medium tracking-slight bg-white dark:bg-redax-lighter text-neutral-600 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
+                        className='grid w-full resize-none text-base md:text-sm font-medium tracking-slight bg-white dark:bg-redax-lighter text-neutral-600 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
                     </textarea>
                 </div>
                 <NewChatButton 
