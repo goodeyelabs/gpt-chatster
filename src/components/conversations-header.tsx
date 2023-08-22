@@ -3,9 +3,16 @@ import { MagnifyingGlassIcon, PencilSquareIcon, PlusIcon } from "@heroicons/reac
 import NewChatButton from "./new-chat-button";
 import { useAppDispatch } from "@/redux/hooks";
 import { addChat } from "@/redux/sessionsReducer";
+import { useState } from "react";
 
 export default function ConversationsHeader() {
     const dispatch = useAppDispatch()
+    const [searchTerm, setSearchTerm] = useState<string>('')
+
+    function handleChange(e:any) {
+        const str = e.currentTarget.value
+        setSearchTerm(str)
+    }
 
     return (
         <div className='grid h-[var(--sub-header-height)] gap-3 grid-flow-col px-5 md:px-6 xl:pl-8 xl:pr-8 items-center bg-white dark:bg-redax-medium'>
@@ -15,6 +22,8 @@ export default function ConversationsHeader() {
                     <textarea                         
                         rows={1}
                         placeholder='Search chats...' 
+                        value={searchTerm}
+                        onChange={handleChange}
                         className='grid w-full resize-none text-base md:text-sm font-medium tracking-slight bg-white dark:bg-redax-lighter text-neutral-600 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
                     </textarea>
                 </div>
