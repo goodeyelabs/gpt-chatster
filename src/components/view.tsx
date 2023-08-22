@@ -18,30 +18,30 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid h-screen h-screen-ios grid-cols-[minmax(auto,380px)_1fr]">
-            <div className="grid grid-rows-[4rem_1fr] shadow-[1px_0_0_0] shadow-neutral-200 h-screen h-screen-ios">
-                <div className="grid row-start-1 sticky top-0">
+        <div className="grid grid-cols-[1fr]">
+            {/* <div className="grid grid-rows-[4rem_1fr] shadow-[1px_0_0_0] shadow-neutral-200 h-screen h-screen-ios sticky top-0 overflow-y-auto">
+                <div className="grid row-start-1">
                     <p>Side header</p>
                 </div>
                 <div className="grid row-start-2">
-                    <div className="grid grid-rows-[1fr_4rem] overflow-y-auto h-[calc(100vh-4rem)]">
+                    <div className="grid grid-rows-[1fr_4rem]">
                         <div className="grid">
                             <div className="grid h-[2000px]">
                                 <p>Side content</p>
                             </div>
                         </div>
-                        <div className="grid sticky bottom-0">
+                        <div className="grid">
                             <p>Side footer</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="grid grid-rows-[4rem_1fr] h-screen h-screen-ios">
                 <div className="grid row-start-1 shadow-[0_1px_0_0] shadow-neutral-200 sticky top-0">
                     <p>Main header</p>
                 </div>
                 <div className="grid row-start-2">
-                    <div className="grid grid-rows-[1fr_4rem] overflow-y-auto h-[calc(100vh-4rem)]">
+                    <div className="grid grid-rows-[1fr_4rem]">
                         <div className="grid">
                             <div className="grid h-[2000px]">
                                 <p>Main content</p>
