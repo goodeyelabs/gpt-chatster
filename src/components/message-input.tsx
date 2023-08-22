@@ -10,7 +10,7 @@ export default function MessageInput() {
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
     const dispatch = useAppDispatch();
     const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
-    const { gptResponseIndex, privacy, scrollMain, focusInput } = useAppSelector(state => state.common.data)
+    const { gptResponseIndex, privacy, scrollMain } = useAppSelector(state => state.common.data)
     const [gptResponse, setGptResponse] = useState(false)
 
     //  Record the current value of the message input box before submission
