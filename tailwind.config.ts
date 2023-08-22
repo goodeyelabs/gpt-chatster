@@ -89,7 +89,7 @@ const config: Config = {
               },
           },
           '.tracking-slight': {
-              letterSpacing: '-0.015rem',
+              letterSpacing: '0',
           }
       };
 
