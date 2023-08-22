@@ -7,6 +7,7 @@ import Button from './button'
 import { ChatBubbleLeftIcon, Cog6ToothIcon, LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/outline'
 import Overlay from './overlay'
 import Config from '@/app/menus/config'
+import useAutosizeTextArea from '@/tools/useAutosizeTextArea'
 
 export default function MessageInput() {   
     const textareaRef = useRef<HTMLTextAreaElement>(null); 
@@ -14,6 +15,8 @@ export default function MessageInput() {
     const { currentPrompt, activeSession } = useAppSelector(state => state.sessions.data)
     const { gptResponseIndex, privacy, scrollMain } = useAppSelector(state => state.common.data)
     const [gptResponse, setGptResponse] = useState(false)
+
+    useAutosizeTextArea(textareaRef.current, currentPrompt);
 
     //  Record the current value of the message input box before submission
     function handleMessageChange(val:string) {
@@ -51,13 +54,13 @@ export default function MessageInput() {
     }
 
     //  Handle textarea auto grow height based on text entered
-    useEffect(() => {
-        if (textareaRef && textareaRef.current) {
-            textareaRef.current.style.height = '0px';
-            const scrollHeight = textareaRef.current.scrollHeight;
-            textareaRef.current.style.height = scrollHeight + 'px'
-          }
-    },[currentPrompt])
+    // useEffect(() => {
+    //     if (textareaRef && textareaRef.current) {
+    //         // textareaRef.current.style.height = '0px';
+    //         // const scrollHeight = textareaRef.current.scrollHeight;
+    //         // textareaRef.current.style.height = scrollHeight + 'px'
+    //       }
+    // },[currentPrompt])
 
     //  Grab a fake GPT response string from presets
     function grabGptResponse() {
