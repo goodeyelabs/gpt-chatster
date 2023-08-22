@@ -42,9 +42,9 @@ export default function Messages() {
                                     key={m_idx} 
                                     className='grid px-2.5 md:px-3 xl:px-4'
                                     >
-                                    <div className='grid gap-2 w-[90%] place-self-start justify-start justify-items-start py-4'>
+                                    <div className='grid gap-2 w-full md:w-[90%] place-self-start justify-start justify-items-start py-4'>
                                         <div className='grid bg-slate-200/40 dark:bg-redax-light rounded-[10px] px-2.5 md:px-3 xl:px-4'>
-                                            <p className='text-base md:text-sm font-base leading-relaxed text-neutral-900 dark:text-stone-300 py-2'>
+                                            <p className='text-base md:text-sm font-base leading-normal md:leading-relaxed text-neutral-900 dark:text-stone-300 py-2'>
                                                 {msg.message || 'New message'}
                                             </p>
                                         </div>
@@ -60,9 +60,9 @@ export default function Messages() {
                                 key={m_idx} 
                                 className='grid px-2.5 md:px-3 xl:px-4'
                             >
-                                <div className='grid gap-2 w-[90%] place-self-end justify-end justify-items-end py-4'>
+                                <div className='grid gap-2 w-full md:w-[90%] place-self-end justify-end justify-items-end py-4'>
                                     <div className='grid bg-gradient-to-r from-blue-500 to-sky-400 rounded-[10px] px-2.5 md:px-3 xl:px-4'>
-                                        <p className='text-base md:text-sm font-base leading-relaxed text-white py-2'>
+                                        <p className='text-base md:text-sm font-base leading-normal md:leading-relaxed text-white py-2'>
                                             {msg.message || 'New message'}
                                         </p>
                                     </div>
