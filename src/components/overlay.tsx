@@ -24,14 +24,14 @@ export default function Overlay({ children, content, overlayType, title }:overla
         switch(overlayType) {
             case 'drawer-right':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-right' : 'animate-slide-out-to-right'} grid transform-gpu z-20 w-[90%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax justify-self-end shadow-xl grid-rows-[auto_1fr] items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-right' : 'animate-slide-out-to-right'} grid transform-gpu z-20 w-[95%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax justify-self-end shadow-xl grid-rows-[auto_1fr] items-start`}>
                         <Header />
                         {newContent}
                     </div>
                 )
             case 'drawer-left':
                 return (
-                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid transform-gpu z-20 w-[90%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax justify-self-start shadow-xl grid-rows-[auto_1fr] items-start`}>
+                    <div className={`${!overlayIsClosing ? 'animate-slide-in-from-left' : 'animate-slide-out-to-left'} grid transform-gpu z-20 w-[95%] sm:w-[450px] h-screen h-screen-ios overflow-y-auto bg-white dark:bg-redax justify-self-start shadow-xl grid-rows-[auto_1fr] items-start`}>
                         <Header />
                         {newContent}
                     </div>
@@ -61,7 +61,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
                     <p className='text-xl text-gray-900 dark:text-neutral-300 font-bold tracking-slight truncate'>{title}</p>
                 </div>
                 <div className='grid place-content-center'>
-                    <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 cursor-pointer hover:text-blue-400'/>
+                    <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 dark:text-neutral-300 cursor-pointer hover:text-blue-400'/>
                 </div>
             </div>
         )
@@ -74,7 +74,7 @@ export default function Overlay({ children, content, overlayType, title }:overla
                     <p className='truncate text-zinc-800 dark:text-neutral-300 font-bold text-xl tracking-tight'>{title}</p>
                 </div>
                 <div className='grid place-content-center'>
-                    <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 cursor-pointer hover:text-blue-40'/>
+                    <XMarkIcon onClick={() => closeOverlay()} className='x-6 h-6 text-zinc-900 dark:text-neutral-300 cursor-pointer hover:text-blue-40'/>
                 </div>
             </div>
         )
