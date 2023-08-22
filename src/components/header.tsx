@@ -13,24 +13,24 @@ import DarkModeSwitch from './dark-mode-switch'
 function RightMenu() {
     return (
             <div className='grid grid-flow-row gap-4 h-full items-start content-start py-4 px-5 sm:px-8 md:px-12px lg:px-16px'>
-                <div className='grid grid-flow-col justify-stretch gap-3 pb-4 border-b border-dashed border-neutral-200'>
+                <div className='grid grid-flow-col justify-stretch gap-3 pb-4 border-b border-dashed border-neutral-200 dark:border-redax-lighter'>
                     <DarkModeSwitch dontHideText />
                     <Overlay overlayType='popup' title='Account' content={<Account />}>
                         <Button icon={<UserIcon />} dontHideText />
                     </Overlay>
                 </div>
                 <Overlay overlayType='popup' title='How to use' content={<How />}>
-                    <div className='h-full grid place-content-center cursor-pointer bg-blue-25 hover:bg-neutral-100 rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                    <div className='h-full grid place-content-center cursor-pointer bg-blue-25 hover:bg-neutral-100 dark:bg-redax-light rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
                         <p className='text-sm font-semibold'>How to use</p>
                     </div>
                 </Overlay>
                 <Overlay overlayType='popup' title='FAQ + Help' content={<Help />}>
-                    <div className='h-full grid place-content-center cursor-pointer  bg-blue-25 hover:bg-neutral-100 rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                    <div className='h-full grid place-content-center cursor-pointer  bg-blue-25 hover:bg-neutral-100 dark:bg-redax-light rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
                         <p className='text-sm font-semibold'>FAQ + Help</p>
                     </div>
                 </Overlay>
                 <Overlay overlayType='popup' title='Upgrade to Enterprise' content={<Upgrade />}>
-                    <div className='h-full grid place-content-center cursor-pointer  bg-blue-25 hover:bg-neutral-100 rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
+                    <div className='h-full grid place-content-center cursor-pointer  bg-blue-25 hover:bg-neutral-100 dark:bg-redax-light rounded-[10px] py-4 text-neutral-700 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'>
                         <p className='text-sm font-semibold'>Upgrade</p>
                     </div>
                 </Overlay>
