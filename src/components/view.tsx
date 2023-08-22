@@ -12,7 +12,7 @@ type viewProps = {
 
 export function SideMenu() {
     return (
-        <div className="grid grid-rows-[1fr_auto]">
+        <div className="grid h-full grid-rows-[1fr_auto]">
             <div className="grid h-full grid-rows-[auto_1fr]">
                 <div className="grid sticky top-0">
                     <ConversationsHeader />
