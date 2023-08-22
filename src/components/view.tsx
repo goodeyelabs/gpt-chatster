@@ -18,23 +18,41 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid h-screen h-screen-ios grid-rows-[4rem_1fr_4rem] grid-cols-[minmax(auto,400px)_1fr]">
-            {/* Main header */}
-            <div className="grid col-start-2 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">Main header</div>
-            {/* Side header */}
-            <div className="grid col-start-1 row-start-1 shadow-[1px_0_0_0] shadow-neutral-200">Side header</div>
-            {/* Main content */}
-            <div className="grid col-start-2 row-start-2 overflow-y-auto">
-                <div className="grid h-[2000px]">
-                    <p>Main content</p>
+        <div className="grid h-screen h-screen-ios grid-cols-[minmax(auto,380px)_1fr]">
+            <div className="grid grid-rows-[4rem_1fr] shadow-[1px_0_0_0] shadow-neutral-200 overflow-y-auto">
+                <div className="grid row-start-1 shadow-[0_1px_0_0] shadow-neutral-200 sticky top-0">
+                    <p>Side header</p>
+                </div>
+                <div className="grid row-start-2">
+                    <div className="grid grid-rows-[1fr_4rem]">
+                        <div className="grid">
+                            <div className="grid h-[2000px]">
+                                <p>Side content</p>
+                            </div>
+                        </div>
+                        <div className="grid shadow-[0_-1px_0_0] shadow-neutral-200 sticky bottom-0">
+                            <p>Side footer</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            {/* Side content */}
-            <div className="grid col-start-1 row-start-2 row-span-2 shadow-[1px_0_0_0] shadow-neutral-200">Side content</div>
-            {/* Main footer */}
-            <div className="grid col-start-2 row-start-3">Main footer</div>
-            {/* Side footer */}
-            <div className="grid col-start-1 row-start-3">Side footer</div>
+            <div className="grid grid-rows-[4rem_1fr] overflow-y-auto">
+                <div className="grid row-start-1 shadow-[0_1px_0_0] shadow-neutral-200 sticky top-0">
+                    <p>Main header</p>
+                </div>
+                <div className="grid row-start-2">
+                    <div className="grid grid-rows-[1fr_4rem]">
+                        <div className="grid">
+                            <div className="grid h-[2000px]">
+                                <p>Main content</p>
+                            </div>
+                        </div>
+                        <div className="grid shadow-[0_-1px_0_0] shadow-neutral-200 sticky bottom-0">
+                            <p>Main footer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
