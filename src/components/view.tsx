@@ -67,7 +67,7 @@ export default function View({ children }:viewProps) {
                             <p>Side content</p>
                         </div>
                     </div>
-                    <div className="grid sticky bottom-0 bg-slate-50/50">
+                    <div className="grid sticky bottom-0 bg-slate-50">
                         <p>Side footer</p>
                     </div>
                 </div>
