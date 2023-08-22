@@ -22,21 +22,21 @@ export default function DarkModeSwitch({ closeOverlay, dontHideText }: {dontHide
                 <div className='relative grid'>
                     {
                         theme === 'light' &&
-                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5' />
+                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5 text-green-500' />
                     }
                     <Button icon={<SunIcon />} text='Light' dontHideText onClick={() => mounted ? handleClick('light') : null} />
                 </div>
                 <div className='relative grid'>
                     {
                         theme === 'dark' &&
-                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5' />
+                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5 text-green-500' />
                     }
                     <Button icon={<MoonIcon />} text='Dark' dontHideText onClick={() => mounted ? handleClick('dark') : null} />
                 </div>
                 <div className='relative grid'>
                     {
                         theme === 'system' &&
-                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5' />
+                            <CheckCircleIcon className='absolute top-[50%] mt-[-10px] right-2 w-5 h-5 text-green-500' />
                     }
                     <Button icon={<ComputerDesktopIcon />} text='System' dontHideText onClick={() => mounted ? handleClick('system') : null} />
                 </div>
