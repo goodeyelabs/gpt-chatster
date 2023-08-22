@@ -10,34 +10,37 @@ type viewProps = {
     children?: any,
 }
 
-export function SideBar() {
-    return (
-        <div />
-    )
-}
-
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid grid-rows-[4rem_1fr] grid-cols-[minmax(auto,380px)_1fr] h-full">
-            <div className="grid row-start-1 row-span-full col-start-1 shadow-[1px_0_0_0] shadow-neutral-200 sticky top-0 h-screen h-screen-ios overflow-y-auto">
-                <div className="grid h-[2000px]">
-                    <p>Side content</p>
-                </div>
+        <div className="grid grid-rows-[3.5rem_3.5rem_1fr_3.5rem] grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
+            <div className="grid row-start-1 col-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
+
             </div>
-            <div className="grid row-start-1 col-start-2 shadow-[0_1px_0_0] shadow-neutral-200 sticky top-0">
-                <p>Main header</p>
+            <div className="grid row-start-2 row-span-3 col-start-1 shadow-[1px_0_0_0] shadow-neutral-200">
+
             </div>
-            <div className="grid row-start-2 col-start-2">
-                <div className="grid grid-rows-[1fr_4rem]">
-                    <div className="grid">
-                        <div className="grid h-[2000px]">
-                            <p>Main content</p>
-                        </div>
-                    </div>
-                    <div className="grid shadow-[0_-1px_0_0] shadow-neutral-200 sticky bottom-0">
-                        <p>Main footer</p>
-                    </div>
-                </div>
+
+            <div className="grid row-start-3 col-start-1 shadow-neutral-200">
+                <p>Side content</p>
+            </div>
+
+            <div className="grid row-start-2 col-start-1 shadow-[0_1px_0_0] shadow-neutral-200">
+
+            </div>
+            <div className="grid row-start-4 col-start-1 shadow-[0_-1px_0_0] shadow-neutral-200">
+
+            </div>
+
+            <div className="grid row-start-2 col-start-2 shadow-[0_1px_0_0] shadow-neutral-200">
+
+            </div>
+
+            <div className="grid row-start-3 col-start-2 shadow-neutral-200">
+                <p>Main content</p>
+            </div>
+
+            <div className="grid row-start-4 col-start-2 shadow-[0_-1px_0_0] shadow-neutral-200">
+
             </div>
         </div>
     )
