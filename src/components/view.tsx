@@ -1,50 +1,13 @@
 import Messages from "./messages"
-import MessageInput from "./message-input"
-import NewHeader from "./header"
+import MessagesFooter from "./messages-footer"
 import Conversations from "./conversations"
-import SendFeedback from "./conversations-footer"
+import ConversationFooter from "./conversations-footer"
 import ConversationsHeader from "./conversations-header"
 import MessagesHeader from "./messages-header"
 import Header from "./header"
 
 type viewProps = {
     children?: any,
-}
-
-function SideBar() {
-    return (
-        <div className="grid grid-rows-[3.5rem_1fr] shadow-[1px_0_0_0] shadow-neutral-200">
-            <div className="grid shadow-[0_1px_0_0] shadow-neutral-200 sticky top-[3.5rem]">
-                <p>Side header</p>
-            </div>
-            <div className="grid grid-rows-[1fr_3.5rem] overflow-y-auto h-full">
-                <div className="grid h-[2000px]">
-                    <p>Side content</p>
-                </div>
-                <div className="grid shadow-[0_-1px_0_0] shadow-neutral-200 sticky bottom-0">
-                    <p>Side footer</p>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-function Main() {
-    return (
-        <div className="grid grid-rows-[3.5rem_1fr]">
-            <div className="grid shadow-[0_1px_0_0] shadow-neutral-200 sticky top-[3.5rem]">
-                <p>Main header</p>
-            </div>
-            <div className="grid grid-rows-[1fr_3.5rem]">
-                <div className="grid h-[1px]">
-                    <p>Main content</p>
-                </div>
-                <div className="grid shadow-[0_-1px_0_0] shadow-neutral-200">
-                    <p>Main footer</p>
-                </div>
-            </div>
-        </div>
-    )
 }
 
 export default function View({ children }:viewProps) {    
@@ -64,7 +27,7 @@ export default function View({ children }:viewProps) {
                         </div>
                     </div>
                     <div className="grid sticky bottom-0 bg-blue-25 shadow-[0_-1px_0_0] shadow-neutral-200/80">
-                        <SendFeedback />
+                        <ConversationFooter />
                     </div>
                 </div>
             </div>
@@ -79,7 +42,7 @@ export default function View({ children }:viewProps) {
                         </div>
                     </div>
                     <div className="grid sticky bottom-0 bg-blue-25">
-                        <MessageInput />
+                        <MessagesFooter />
                     </div>
                 </div>
             </div>
