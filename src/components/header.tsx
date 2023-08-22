@@ -13,10 +13,10 @@ import DarkModeSwitch from './dark-mode-switch'
 function RightMenu() {
     return (
             <div className='grid grid-flow-row gap-4 h-full items-start content-start py-4 px-5 sm:px-8 md:px-12px lg:px-16px'>
-                <div className='grid grid-flow-col gap-3 pb-4 border-b border-dashed border-neutral-200'>
-                    <DarkModeSwitch />
+                <div className='grid grid-flow-col justify-stretch gap-3 pb-4 border-b border-dashed border-neutral-200'>
+                    <DarkModeSwitch dontHideText />
                     <Overlay overlayType='popup' title='Account' content={<Account />}>
-                        <Button icon={<UserIcon />} />
+                        <Button icon={<UserIcon />} dontHideText />
                     </Overlay>
                 </div>
                 <Overlay overlayType='popup' title='How to use' content={<How />}>

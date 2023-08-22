@@ -6,11 +6,11 @@ import Overlay from '@/components/overlay';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import Button from './button';
 
-export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
+export default function DarkModeSwitch({ closeOverlay, dontHideText }: {dontHideText?:boolean, closeOverlay?:any}) {
     const { theme, setTheme, systemTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
 
-    function AccountMenu({ closeOverlay }: {closeOverlay?:any}) {
+    function AccountMenu({ closeOverlay, dontHideText }: {dontHideText?:boolean, closeOverlay?:any,}) {
 
         function handleClick(mode:string) {
             setTheme(mode)
@@ -61,26 +61,26 @@ export default function DarkModeSwitch({ closeOverlay }: {closeOverlay?:any}) {
                 {
                     theme === 'light' &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <Button icon={<SunIcon />} />
+                            <Button icon={<SunIcon />} dontHideText={dontHideText} />
                         </Overlay>
                 }
                 {
                     theme === 'dark' &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <Button icon={<MoonIcon />} />
+                            <Button icon={<MoonIcon />} dontHideText={dontHideText} />
                         </Overlay>
                 }
                 {
                     (theme === 'system' && systemTheme === 'light') &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <Button icon={<SunIcon />} />
+                            <Button icon={<SunIcon />} dontHideText={dontHideText} />
                         </Overlay>
 
                 }
                 {
                     (theme === 'system' && systemTheme === 'dark') &&
                         <Overlay overlayType='drawer-right' title='Appearance' content={<AccountMenu />}>
-                            <Button icon={<MoonIcon />} />
+                            <Button icon={<MoonIcon />} dontHideText={dontHideText} />
                         </Overlay>
                 }
             </>
