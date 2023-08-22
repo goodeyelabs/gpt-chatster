@@ -2,7 +2,7 @@ import Messages from "./messages"
 import MessageInput from "./message-input"
 import NewHeader from "./header"
 import Conversations from "./conversations"
-import SendFeedback from "./send-feedback"
+import SendFeedback from "./conversations-footer"
 import ConversationsHeader from "./conversations-header"
 import MessagesHeader from "./messages-header"
 import Header from "./header"
@@ -53,7 +53,7 @@ export default function View({ children }:viewProps) {
             <div className="z-20 grid row-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
                 <Header />
             </div>
-            <div className="z-10 grid row-start-2 col-start-1 shadow-[1px_0_0_0] shadow-neutral-200/80 bg-blue-25 overflow-y-auto">
+            <div className="z-10 grid row-start-2 col-start-1 shadow-[1px_0_0_0] shadow-neutral-200/80 dark:shadow-redax-lighter bg-blue-25 dark:bg-redax-medium overflow-y-auto">
                 <div className="grid grid-rows-[1fr_auto]">
                     <div className="grid h-full grid-rows-[auto_1fr]">
                         <div className="grid sticky top-0">

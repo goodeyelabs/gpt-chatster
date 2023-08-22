@@ -2,7 +2,7 @@ import Messages from "./messages"
 import MessageInput from "./message-input"
 import NewHeader from "./header"
 import Conversations from "./conversations"
-import SendFeedback from "./send-feedback"
+import SendFeedback from "./conversations-footer"
 import ConversationsHeader from "./conversations-header"
 import MessagesHeader from "./messages-header"
 
