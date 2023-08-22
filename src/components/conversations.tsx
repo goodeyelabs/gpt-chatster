@@ -26,10 +26,10 @@ function List({ closeOverlay }: { closeOverlay?:any}) {
                             <div 
                                 key={c_idx} 
                                 onClick={() => handleClick(c.sessionID)} 
-                                className={`grid cursor-pointer px-5 md:px-6 xl:px-8 transition-all ease-in-out ${activeSession === c.sessionID ? 'bg-slate-100 dark:bg-redax-light hover:bg-blue-100/30 cursor-default' : 'hover:bg-neutral-100/40 dark:hover:bg-redax-light'}`}
+                                className={`grid cursor-pointer px-5 md:px-6 xl:px-8 transition-all ease-in-out ${activeSession === c.sessionID ? 'bg-slate-200/50 dark:bg-redax-light hover:bg-blue-100/30 cursor-default' : 'hover:bg-neutral-100/40 dark:hover:bg-redax-light'}`}
                             >
                                 <div className={`grid border-t py-6 px-3 ${activeSession === c.sessionID || activeSession === c.sessionID + 1 ? 'border-white dark:border-redax-light' : 'border-neutral-200 dark:border-redax-lighter border-dashed'}`}>
-                                    <p className={`line-clamp-3 text-sm font-medium text-neutral-700 dark:text-stone-300/90 leading-relaxed ${activeSession === c.sessionID ? 'text-neutral-950 dark:text-stone-200' : ''}`}>
+                                    <p className={`line-clamp-3 text-sm font-base text-neutral-900 dark:text-stone-300/90 leading-relaxed ${activeSession === c.sessionID ? 'text-neutral-950 dark:text-stone-200' : ''}`}>
                                         {(s[1]) ? s[1].message : 'New chat session'}
                                     </p>
                                 </div>

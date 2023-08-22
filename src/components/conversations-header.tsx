@@ -8,7 +8,7 @@ export default function ConversationsHeader() {
     const dispatch = useAppDispatch()
 
     return (
-        <div className='grid h-[var(--sub-header-height)] gap-3 grid-flow-col px-5 md:px-6 xl:pl-8 xl:pr-8 items-center bg-white dark:bg-redax-medium'>
+        <div className='grid h-[var(--sub-header-height)] gap-3 grid-flow-col px-5 md:px-6 xl:pl-8 xl:pr-8 items-center bg-blue-25 dark:bg-redax-medium'>
             <div className='grid grid-cols-[1fr_auto] gap-3 grid-flow-col items-center'>
                 <div className='grid gap-1 grid-cols-[auto_1fr] min-h-[40px] items-center py-2 px-4 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300/60 dark:shadow-redax-lighter rounded-[calc(40px/2)]'>
                     <MagnifyingGlassIcon className='w-4 h-4 text-neutral-400' />
