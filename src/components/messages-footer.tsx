@@ -118,7 +118,6 @@ export default function MessageInput() {
                     <textarea 
                         ref={textareaRef}
                         autoFocus
-                        onKeyDown={handleEnterPress}
                         rows={1}
                         value={currentPrompt} 
                         onChange={event => handleMessageChange(event.currentTarget.value)}
