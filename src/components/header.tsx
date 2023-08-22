@@ -71,7 +71,7 @@ function Menu() {
 
 export default function Header() {   
     return (
-        <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-full px-5 md:px-6 xl:px-8 bg-white dark:bg-redax-dark/70 items-center shadow-[0_1px_0_0] shadow-gray-200 dark:shadow-redax-light'>
+        <div className='grid gap-3 grid-cols-[auto_auto_1fr] md:grid-cols-[auto_1fr] h-full px-4 md:px-6 xl:px-8 bg-white dark:bg-redax-dark/70 items-center shadow-[0_1px_0_0] shadow-gray-200 dark:shadow-redax-light'>
             <div className='grid justify-items-start md:hidden cursor-pointer'>
                 <Overlay overlayType='drawer-left' title='Chats' content={<SideMenu />}>
                     <ChevronLeftIcon className='w-6 h-auto'/>
