@@ -51,13 +51,13 @@ export default function MessageInput() {
     }
 
     //  Handle textarea auto grow height based on text entered
-    // useEffect(() => {
-    //     if (textareaRef && textareaRef.current) {
-    //         textareaRef.current.style.height = '0px';
-    //         const scrollHeight = textareaRef.current.scrollHeight;
-    //         textareaRef.current.style.height = scrollHeight + 'px'
-    //       }
-    // },[textareaRef, currentPrompt])
+    useEffect(() => {
+        if (textareaRef && textareaRef.current) {
+            textareaRef.current.style.height = '0px';
+            const scrollHeight = textareaRef.current.scrollHeight;
+            textareaRef.current.style.height = scrollHeight + 'px'
+          }
+    },[currentPrompt])
 
     //  Grab a fake GPT response string from presets
     function grabGptResponse() {
