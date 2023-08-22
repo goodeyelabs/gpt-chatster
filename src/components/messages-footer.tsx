@@ -110,7 +110,7 @@ export default function MessageInput() {
                         onKeyDown={handleEnterPress}
                         rows={1}
                         value={currentPrompt} 
-                        onChange={event => handleMessageChange(event.currentTarget.value)}
+                        onChange={(event: { currentTarget: { value: string } }) => handleMessageChange(event.currentTarget.value)}
                         placeholder='Send a message' 
                         className='grid w-full resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
                     </TextareaAutosize>
