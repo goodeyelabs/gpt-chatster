@@ -72,15 +72,15 @@ export default function View({ children }:viewProps) {
                     </div>
                 </div>
             </div>
-            <div className="grid row-start-2 col-start-2 overflow-y-auto">
+            <div className="z-0 grid row-start-2 col-start-2 shadow-[1px_0_0_0] shadow-neutral-200 bg-slate-50/50 overflow-y-auto">
                 <div className="grid grid-rows-[1fr_3.5rem]">
                     <div className="grid h-full">
                         <div className="grid h-[2000px]">
-                            <p>Main content</p>
+                            <p>Side content</p>
                         </div>
                     </div>
-                    <div className="grid sticky bottom-0 bg-white">
-                        <p>Main footer</p>
+                    <div className="grid sticky bottom-0 bg-slate-50">
+                        <p>Side footer</p>
                     </div>
                 </div>
             </div>
