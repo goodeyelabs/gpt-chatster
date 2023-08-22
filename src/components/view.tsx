@@ -12,7 +12,7 @@ type viewProps = {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className="grid grid-rows-[3.75rem_1fr] grid-cols-[1fr] md:grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
+        <div className="grid grid-rows-[3.75rem_1fr] grid-cols-[1fr] md:grid-cols-[minmax(auto,300px)_1fr] lg:grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
             <div className="z-20 grid row-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
                 <Header />
             </div>

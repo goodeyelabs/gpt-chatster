@@ -29,7 +29,7 @@ function List({ closeOverlay }: { closeOverlay?:any}) {
                                 className={`grid cursor-pointer px-5 md:px-6 xl:px-8 transition-all ease-in-out ${activeSession === c.sessionID ? 'bg-slate-100 dark:bg-redax-light hover:bg-slate-100 cursor-default' : ' hover:bg-slate-100 dark:hover:bg-redax-light'}`}
                             >
                                 <div className={`grid border-t py-6 px-3 ${activeSession === c.sessionID || activeSession === c.sessionID + 1 ? 'border-blue-50 dark:border-redax-light' : 'border-neutral-300/50 dark:border-redax-lighter border-dashed'}`}>
-                                    <p className={`line-clamp-3 text-sm font-base text-gray-950 dark:text-stone-300/90 leading-normal md:leading-relaxed ${activeSession === c.sessionID ? 'text-neutral-950 dark:text-stone-200' : ''}`}>
+                                    <p className={`line-clamp-3 text-sm font-base text-gray-950 dark:text-stone-300/90 leading-normal md:leading-relaxed tracking-slight ${activeSession === c.sessionID ? 'text-neutral-950 dark:text-stone-200' : ''}`}>
                                         {(s[1]) ? s[1].message : 'New chat session'}
                                     </p>
                                 </div>

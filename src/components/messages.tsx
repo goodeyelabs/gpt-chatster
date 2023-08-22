@@ -29,7 +29,7 @@ export default function Messages() {
 
     if (list[activeSession]) {
         return (
-            <div className='grid pb-[var(--sub-header-height)] items-start content-start w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-32 bg-white dark:bg-redax'>
+            <div className='grid py-0 lg:py-3 items-start content-start w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-32 bg-white dark:bg-redax'>
                 {
                     messages.map((m:object, m_idx:number) => {
                         const msg:any = m

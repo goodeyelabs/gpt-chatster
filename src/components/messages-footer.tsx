@@ -118,11 +118,11 @@ export default function MessageInput() {
                         value={currentPrompt} 
                         onChange={event => handleMessageChange(event.currentTarget.value)}
                         placeholder='Send a message' 
-                        className='grid w-full resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden leading-relaxed'>
+                        className='grid w-full h-[40px] resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
                     </textarea>
                 </div>
             </div>
-            <div className='hidden md:grid'>
+            <div className='grid'>
                 <Button 
                     icon={privacy ? <LockClosedIcon /> : <LockOpenIcon />} 
                     text={privacy ? 'Privacy On' : 'Privacy Off'}
