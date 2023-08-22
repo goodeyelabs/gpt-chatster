@@ -18,38 +18,23 @@ export function SideBar() {
 
 export default function View({ children }:viewProps) {    
     return (
-        <div className='grid w-screen h-screen h-screen-ios grid-rows-[auto_1fr] grid-cols-[minmax(1fr)_1fr] md:grid-cols-[minmax(auto,400px)_1fr] dark:bg-redax'>
-            <div className='grid sticky z-30 top-0 col-start-1 col-span-full'>
-                <NewHeader />
-            </div>
-            <div className="hidden sm:grid z-10 grid-rows-[auto_1fr] h-full overflow-y-auto shadow-[1px_0_0_0] shadow-gray-200 dark:shadow-redax-light bg-white dark:bg-redax-medium">
-                {/* Sidebar Header */}
-                <div className="grid sticky top-0">
-                    <ConversationsHeader />
-                </div>
-                {/* Sidebar content */}
-                <div>
-                    <Conversations />
-                </div>
-                {/* Sidebar dock */}
-                <div className="grid sticky bottom-0">
-                    <SendFeedback />
+        <div className="grid h-screen h-screen-ios grid-rows-[4rem_1fr_4rem] grid-cols-[minmax(auto,400px)_1fr]">
+            {/* Main header */}
+            <div className="grid col-start-2 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">Main header</div>
+            {/* Side header */}
+            <div className="grid col-start-1 row-start-1 shadow-[1px_0_0_0] shadow-neutral-200">Side header</div>
+            {/* Main content */}
+            <div className="grid col-start-2 row-start-2 overflow-y-auto">
+                <div className="grid h-[2000px]">
+                    <p>Main content</p>
                 </div>
             </div>
-            <div className="grid h-full overflow-y-auto grid-rows-[auto_1fr]">
-                {/* Main header */}
-                <div className="grid">
-                    <MessagesHeader />
-                </div>
-                {/* Main content */}
-                <div className="grid">
-                    <Messages />
-                </div>
-                {/* Main dock */}
-                <div className="grid md:sticky md:bottom-0">
-                    <MessageInput />
-                </div>
-            </div>
+            {/* Side content */}
+            <div className="grid col-start-1 row-start-2 row-span-2 shadow-[1px_0_0_0] shadow-neutral-200">Side content</div>
+            {/* Main footer */}
+            <div className="grid col-start-2 row-start-3">Main footer</div>
+            {/* Side footer */}
+            <div className="grid col-start-1 row-start-3">Side footer</div>
         </div>
     )
 }
