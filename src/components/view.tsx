@@ -57,12 +57,19 @@ function Main() {
 export default function View({ children }:viewProps) {    
     return (
         <div className="grid grid-rows-[3.5rem_1fr] grid-cols-[minmax(auto,380px)_1fr] h-screen h-screen-ios">
-            <div className="grid row-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
+            <div className="z-20 grid row-start-1 col-span-full shadow-[0_1px_0_0] shadow-neutral-200">
 
             </div>
-            <div className="z-10 grid row-start-2 col-start-1 shadow-[1px_0_0_0] shadow-neutral-200 overflow-y-auto">
-                <div className="grid h-[2000px]">
-                    <p>Side</p>
+            <div className="z-10 grid row-start-2 col-start-1 shadow-[1px_0_0_0] shadow-neutral-200 bg-slate-50/50 overflow-y-auto">
+                <div className="grid grid-rows-[1fr_3.5rem]">
+                    <div className="grid h-full">
+                        <div className="grid h-[2000px]">
+                            <p>Side content</p>
+                        </div>
+                    </div>
+                    <div className="grid sticky bottom-0 bg-slate-50/50">
+                        <p>Side footer</p>
+                    </div>
                 </div>
             </div>
             <div className="grid row-start-2 col-start-2 overflow-y-auto">
