@@ -23,7 +23,7 @@ export default function DarkModeButton() {
     return (
         <div className='grid relative z-20 select-none'>
             <div 
-                onClick={handleShowMenu}
+                onClick={() => mounted ? handleShowMenu() : null}
                 className='w-auto h-10 grid place-content-center bg-neutral-100/50 hover:bg-neutral-200/50 dark:bg-redax-medium dark:hover:bg-redax-light rounded-full px-3 cursor-pointer'
             >
                 {
@@ -31,7 +31,7 @@ export default function DarkModeButton() {
                         <XMarkIcon className='w-5 h-5' />
                 }
                 {
-                    !showMenu &&
+                    !showMenu && mounted &&
                         <>
                             {
                                 theme === 'light' &&
@@ -51,6 +51,10 @@ export default function DarkModeButton() {
                                     <MoonIcon className='w-5 h-5' />
                             }
                         </>
+                }
+                {
+                    !mounted &&
+                        <SunIcon className='w-5 h-5' />
                 }
                 
             </div>
