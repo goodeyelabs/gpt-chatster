@@ -35,19 +35,7 @@ export default function Messages() {
                         const msg:any = m
 
                         return (
-                            <div 
-                                key={m_idx} 
-                                className='grid px-2.5 md:px-3 xl:px-4'
-                            >
-                                <div className='grid gap-2 w-[90%] place-self-end justify-end justify-items-end py-4'>
-                                    <div className='grid bg-gradient-to-r from-blue-500 to-sky-400 rounded-[10px] px-2.5 md:px-3 xl:px-4'>
-                                        <p className='text-sm font-base tracking-slight leading-relaxed text-white py-2'>
-                                            {msg.message || 'New message'}
-                                        </p>
-                                    </div>
-                                    <p className='text-xs text-neutral-400/80 dark:text-neutral-500/70 tracking-normal'><span className='font-base'>Stanley</span> &middot; {mounted ? formatDate(msg.timestamp.toString()) : 'Loading'}</p>
-                                </div>
-                            </div>
+                            <></>
                         )
                     })    
                 }
