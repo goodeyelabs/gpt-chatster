@@ -9,11 +9,7 @@ type buttonProps = {
 }
 
 function Button({ icon, text, customClass, onClick, dontHideText }:buttonProps) {
-    const styledIcon = cloneElement(
-        icon, {className: 'h-5 w-5'},
-    )
-
-    const customStyleInsert = customClass ? customClass : ''
+    const styledIcon = icon ? cloneElement(icon, {className: 'h-5 w-5'}) : null
 
     return (
         <button 
