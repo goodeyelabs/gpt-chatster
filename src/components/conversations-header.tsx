@@ -5,13 +5,18 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addChat } from "@/redux/sessionsReducer";
 import { setSearchTerm } from "@/redux/commonReducer";
 
-export default function ConversationsHeader() {
+export default function ConversationsHeader({ closeOverlay }: {closeOverlay?:any}) {
     const dispatch = useAppDispatch()
     const { searchTerm } = useAppSelector(state => state.common.data)
 
     function handleChange(e:any) {
         const str = e.currentTarget.value
         dispatch(setSearchTerm(str))
+    }
+
+    function handleNew() {
+        dispatch(addChat())
+        closeOverlay ? closeOverlay() : null
     }
 
     return (
@@ -30,7 +35,7 @@ export default function ConversationsHeader() {
                 <NewChatButton 
                     icon={<PencilSquareIcon />} 
                     text='New'
-                    onClick={() => dispatch(addChat())}
+                    onClick={handleNew}
                 />
             </div>
         </div>
