@@ -9,6 +9,7 @@ import How from '@/app/menus/how'
 import Help from '@/app/menus/help'
 import Upgrade from '@/app/menus/upgrade'
 import DarkModeSwitch from './dark-mode-switch'
+import UserButton from './user-button'
 
 function RightMenu() {
     return (
@@ -57,9 +58,7 @@ function Menu() {
             </div>
             <div className='grid grid-flow-col gap-3 items-center cursor-pointer pl-10'>
                 <DarkModeSwitch />
-                <Overlay overlayType='popup' title='Account' content={<Account />}>
-                    <Button icon={<UserIcon />} />
-                </Overlay>
+                <UserButton />
             </div>
         </>
     )
