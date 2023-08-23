@@ -24,7 +24,7 @@ export default function DarkModeButton() {
         <div className='grid relative z-20 select-none'>
             <div 
                 onClick={() => mounted ? handleShowMenu() : null}
-                className='w-auto h-10 grid place-content-center bg-neutral-100/50 hover:bg-neutral-200/50 dark:bg-redax-medium dark:hover:bg-redax-light rounded-full px-3 cursor-pointer'
+                className='w-auto h-10 grid place-content-center dark:duration-0 text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-neutral-200 bg-neutral-100/50 hover:bg-neutral-200/50 dark:bg-neutral-950 dark:hover:bg-neutral-800 rounded-full px-3 cursor-pointer'
             >
                 {
                     showMenu &&
