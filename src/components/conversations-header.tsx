@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addChat } from "@/redux/sessionsReducer";
 import { setSearchTerm } from "@/redux/commonReducer";
 
-export default function ConversationsHeader({ closeOverlay }: {closeOverlay?:any}) {
+export default function ConversationsHeader({ closeOverlay }:{ closeOverlay?:any }) {
     const dispatch = useAppDispatch()
     const { searchTerm } = useAppSelector(state => state.common.data)
 

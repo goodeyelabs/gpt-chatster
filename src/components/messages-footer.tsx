@@ -99,6 +99,11 @@ export default function MessageInput() {
         }
     }, [gptResponse]);
 
+    // Auto-focus the textarea input when activeSession changes, to allow immediate text entry
+    useEffect(() => {
+        textareaRef.current && textareaRef.current.focus()
+    },[activeSession])
+
     return (
         <div className={`grid h-[var(--footer-height)] gap-3 grid-flow-col grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] pb-[calc((var(--footer-height)-40px)/2)] px-5 md:px-6 xl:px-8 backdrop-blur-lg bg-white/50 dark:bg-redax items-end shadow-[0_-1px_0_0] shadow-neutral-200/80 dark:shadow-redax-lighter md:shadow-none`}>
             <div className='grid items-center min-h-[38px] py-2 px-5 bg-white dark:bg-redax-lighter shadow-[inset_0_0_0_1px] shadow-neutral-300 dark:shadow-redax-light rounded-[calc(40px/2)]'>
@@ -112,7 +117,7 @@ export default function MessageInput() {
                         value={currentPrompt} 
                         onChange={(event: { currentTarget: { value: string } }) => handleMessageChange(event.currentTarget.value)}
                         placeholder='Send a message' 
-                        className='grid w-full resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 appearance-none outline-none overflow-y-hidden'>
+                        className='grid w-full resize-none text-base md:text-sm tracking-slight bg-transparent font-medium text-neutral-950 dark:text-neutral-300 placeholder:text-neutral-400 placeholder:tracking-tight appearance-none outline-none overflow-y-hidden'>
                     </TextareaAutosize>
                 </div>
             </div>
