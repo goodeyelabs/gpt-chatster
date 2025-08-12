@@ -26,8 +26,8 @@ jobs:
       - name: Run ControlFront scan (CI mode)
         run: npx -y @controlfront/cli@latest scan
         env:
-          NEXT_PUBLIC_APP_URL: https://cf-dev-x8a9k2h1r7v3pzq5.ngrok.app
-          CF_ORG_ID: e77d8bf-4728-4ada-9432-aace32f5ab2
-          CF_PROJECT_ID: 05bac0a5-1c0b-4ba8-a87c-1f0df59b2ff3
+          NEXT_PUBLIC_APP_URL: https://app.controlfront.io
+          CF_ORG_ID: 446b215d-09c3-4d4f-9217-903d5bd7e8ca
+          CF_PROJECT_ID: 3e6d8d65-f688-44ef-9051-33c35439ae27
           CF_CI_MODE: "true"
-          CF_INGEST_TOKEN: kpojXmMB8i0k1hJ-XioWf6og0-N26p0ScrVZHerF44
+          CF_INGEST_TOKEN: pzHFBseIF98K-pZAyDI-nBPUHTpqi-YCwyzz56m_g_A
