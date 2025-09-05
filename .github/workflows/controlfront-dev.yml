@@ -40,6 +40,6 @@ jobs:
         env:
           NEXT_PUBLIC_APP_URL: https://cf-dev-x8a9k2h1r7v3pzq5.ngrok.app
           CF_ORG_ID: 48387437-c111-45f8-b038-b16110e2e87f
-          CF_PROJECT_ID: 20f37ea9-a504-4b80-85c4-15afa66b3542
+          CF_PROJECT_ID: e1c6a295-f218-4b3c-a8d9-318f85748d85
           CF_CI_MODE: "true"
-          CF_INGEST_TOKEN: Lp3WETGiwX-H7Nv35LNLuRidjZkPxSsyGb8PPM0aK9o
+          CF_INGEST_TOKEN: 1zW1EAWzwVKEz39cE767nu9HZipjzw4k5sEBszetTcw
