@@ -1,0 +1,45 @@
+name: ControlFront Scan (DEV)
+permissions:
+  actions: write
+  contents: read
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - ".github/workflows/*.yml"
+      - ".github/workflows/*.yaml"
+  pull_request:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - ".github/workflows/*.yml"
+      - ".github/workflows/*.yaml"
+  workflow_dispatch:
+    inputs:
+      cf_user_id:
+        description: "ControlFront user ID triggering the scan"
+        required: false
+        type: string
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Log triggering user ID
+        run: echo "cf_user_id is ${{ github.event.inputs.cf_user_id }}"
+      - name: Run ControlFront scan (CI mode)
+        run: npx -y @controlfront/cli@latest scan
+        env:
+          NEXT_PUBLIC_APP_URL: https://cf-dev-x8a9k2h1r7v3pzq5.ngrok.app
+          CF_ORG_ID: 48387437-c111-45f8-b038-b16110e2e87f
+          CF_PROJECT_ID: 5d88242e-3aa5-43ed-a56f-db95e89a4acf
+          CF_CI_MODE: "true"
+          CF_INGEST_TOKEN: PPorYNQC5JIelfpvdQ4ax5KZe9AvYAUIS5Wd3BekZz8
