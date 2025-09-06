@@ -23,6 +23,10 @@ on:
         description: "ControlFront user ID triggering the scan"
         required: false
         type: string
+      first_setup:
+        description: "Mark workflow installed without scanning"
+        required: false
+        type: boolean
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -35,11 +39,15 @@ jobs:
           node-version: '20'
       - name: Log triggering user ID
         run: echo "cf_user_id is ${{ github.event.inputs.cf_user_id }}"
+      - name: Mark workflow installed (first setup only)
+        if: ${{ github.event.inputs.first_setup == 'true' }}
+        run: echo "Workflow installed; skipping scan"
       - name: Run ControlFront scan (CI mode)
+        if: ${{ github.event.inputs.first_setup != 'true' }}
         run: npx -y @controlfront/cli@latest scan
         env:
           NEXT_PUBLIC_APP_URL: https://cf-dev-x8a9k2h1r7v3pzq5.ngrok.app
           CF_ORG_ID: 48387437-c111-45f8-b038-b16110e2e87f
-          CF_PROJECT_ID: 275297fd-b246-4692-b98c-e3d32b6e473d
+          CF_PROJECT_ID: ab0943a8-fa9f-47bc-83f5-9ad144a10037
           CF_CI_MODE: "true"
-          CF_INGEST_TOKEN: wppBMtOB4oFlV4GJabvlCF4PCVaaDZwWoAb07uMrcx4
+          CF_INGEST_TOKEN: kwzJaR8mmqcXjgOBGdFQ5-kTsLjt5mG1R45qQGHKkeI
