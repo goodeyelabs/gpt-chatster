@@ -44,8 +44,8 @@ jobs:
         run: |
           # Collect changed files relative to default branch
           git fetch origin ${{ github.event.repository.default_branch }}
-          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.repository.default_branch }}...HEAD | tr '
-' ',')
+          CHANGED_FILES="$(git diff --name-only origin/${{ github.event.repository.default_branch }}...HEAD | tr '
+' ',')"
           echo "Changed files: $CHANGED_FILES"
           npx -y @controlfront/cli@latest scan --changed-files "$CHANGED_FILES"
         env:
