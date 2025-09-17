@@ -1,4 +1,4 @@
-name: ControlFront Scan (DEV)
+name: ControlFront Scan (FOO)
 permissions:
   actions: write
   contents: read
