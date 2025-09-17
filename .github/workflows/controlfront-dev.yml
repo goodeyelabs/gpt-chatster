@@ -17,6 +17,11 @@ on:
         description: "ControlFront user ID triggering the scan"
         required: false
         type: string
+      cf_slug:
+        description: "Custom ControlFront slug (defaults to ci)"
+        required: false
+        default: "ci"
+        type: string
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -32,7 +37,7 @@ jobs:
       - name: Fetch ControlFront session token
         id: fetch_token
         run: |
-          response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/json" -d '{"repo_id":${{ github.repository_id }}}' https://cf-dev-x8a9k2h1r7v3pzq5.ngrok.app/api/github-actions/session)
+          response=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/json" -d '{"repo_id":${{ github.repository_id }},"slug":"${{ github.event.inputs.cf_slug }}"}' https://cf-dev-x8a9k2h1r7v3pzq5.ngrok.app/api/github-actions/session)
           echo "Response: $response"
           token=$(echo "$response" | jq -r '.cf_session_token')
           if [ "$token" = "null" ] || [ -z "$token" ]; then
